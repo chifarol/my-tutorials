@@ -4,7 +4,7 @@
 
 1. CSS Introduction
   - Syntax/Anatomy of CSS Rules
-  - Adding CSS Files to HTML Documents
+  - Adding CSS Styles to HTML Documents
   - Specificity
   - The `!important` rule
   - Units
@@ -16,7 +16,6 @@
   - Attribute selectors
   - Pseudo-class selectors
   - Pseudo-elements selectors
-2. CSS Box Model
 3. Colors
   - Color Names
   - Color Values
@@ -44,7 +43,13 @@
     - line-height
     - word-spacing
     - white-space
-7. Borders & Outline
+7. Fonts
+  - font-family
+  - font-style
+  - font-size
+  - font-weight
+8. Borders & Outline
+  - CSS Box Model
   - Borders
   - Border Width
   - Border Color
@@ -58,11 +63,6 @@
   - outline-width
   - outline-offset
   - outline
-8. Fonts
-  - font-family
-  - font-style
-  - font-size
-  - font-weight
 9. Height & Width
   - min & max
 10. Icons
