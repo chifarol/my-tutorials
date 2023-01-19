@@ -80,7 +80,7 @@
 16. JavaScript Maps
 17. JavaScript Sets
 17. Iterables
-18. JavaScript Regular Expressions
+18. JavaScript Regular Expressions & Expression Modifiers
 19. JavaScript Errors
   - Throw
   - Try...Catch...Finally
