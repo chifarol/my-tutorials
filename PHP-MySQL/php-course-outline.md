@@ -3,19 +3,21 @@
 ---
 
 1. PHP Introduction
+  - How the Web Works?
   - What is PHP?
-  - PHP Installation
-  - Installing XAMPP
+  - What Do I Need?
+  - Run you first PHP script
+  - What is a PHP File
+  - What Can PHP Do
+2. PHP Overview
   - Basic PHP Syntax
   - Case Sensitivity
   - PHP Comments
-2. PHP Output
   - echo
   - print
   - printf
   - print_r
   - var_dump
-  - Any content outside of the <?php ?> tags
 3. Variables
   - Creating (Declaring) Variables
   - Constants
@@ -63,13 +65,14 @@
   - Date() Function
 15. Include/Require Files
 16. File Upload
-17. JSON in PHP
-18. Errors/Exceptions
+17. Cookies ans Sessions
+18. JSON in PHP
+19. Errors/Exceptions
   - Throw
   - Try...Catch...Finally
   - Error Name Values
   - Error Object Properties
-19. PHP OOP 
+20. PHP OOP 
   -  What is OOP
   -  Classes/Objects
   -  Constructor
@@ -84,7 +87,7 @@
   -  Static Properties
   -  Namespaces
   -  Iterables
-20. MySQL Database MySQL Database
+21. MySQL Database MySQL Database
   - MySQL Database
   - MySQL Connect
   - MySQL Create DB

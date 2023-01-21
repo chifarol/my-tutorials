@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- for dark background -->
+    <link rel="stylesheet" href="../markdown.css" />
+    <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.7.0/styles/github-dark.min.css">
+    <!-- and it's easy to individually  load additional languages -->
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.7.0/languages/php.min.js" defer></script>
+    <title>PHP Tutorial By Ilodigwe Chinaza</title>
+</head>
+
+<body class="markdown-body">
+    <h1 id="php-tutorial">PHP Tutorial</h1>
+    <h2 id="1-php-introduction">1. PHP Introduction</h2>
+    <h3 id="1-1-how-the-web-works-">1.1 How the Web Works?</h3>
+    <p><img src="../assets/images/how-the-web-works.png" alt="How the Web Works" title="How the Web Works"></p>
+    <h3 id="1-2-what-is-php-">1.2 What is PHP?</h3>
+    <ul>
+        <li>PHP is originally derived from <strong>Personal Home Page Tools</strong>, now stands for <strong>PHP:
+                Hypertext Preprocessor</strong></li>
+        <li>PHP is a server-side language i.e PHP files/scripts are executed on the <strong>server</strong></li>
+        <li>PHP is free to download and use
+            It is powerful enough to be at the core of the biggest blogging system on the web (WordPress)!. It is deep
+            enough to run large social networks!. It is also easy enough to be a beginner&#39;s first server side
+            language!</li>
+    </ul>
+    <h3 id="1-3-what-do-i-need-">1.3 What Do I Need?</h3>
+    <p>To start using PHP, you can:</p>
+    <ul>
+        <li>
+            <p>To run PHP in your Computer, you will need to install a web server like Apache and a database like MySQL
+                – and both are supported by XAMPP.</p>
+            <p>OR</p>
+        </li>
+        <li>
+            <p>Find a web server with PHP and MySQL support</p>
+            <h4 id="installing-xampp">Installing XAMPP</h4>
+            <p>XAMPP stands for </p>
+        </li>
+        <li>X - Operating System (Linux, Windows, and Mac OS X) </li>
+        <li>A - Apache, </li>
+        <li>M - MySQL(or MariaDB), </li>
+        <li>P - PHP</li>
+        <li>Perl</li>
+    </ul>
+    <p>It is a local server that can run smoothly on our personal computer, and is accepted in both Windows and Linux.
+        It also helps you test websites and see if they work before actually publishing them to a web server.</p>
+    <p>Follow the steps below to install:</p>
+    <ol>
+        <li>Download XAMPP from the official <a href="http://www.apachefriends.org/de/download.html">XAMPP</a> website
+        </li>
+        <li>Deactivate any Antivirus software and Firewall blocking</li>
+        <li>Once the software bundle has been downloaded, you can start the installation by double clicking on the file
+            with the ending .exe.</li>
+    </ol>
+    <h4 id="installing-php">Installing PHP</h4>
+    <ol>
+        <li>Download <strong>Thread safe</strong> 32/64 bit zip package PHP8 from <a
+                href="https://windows.php.net/download#php-8.0">https://windows.php.net/download#php-8.0</a></li>
+        <li>Extract the zip package and paste the extracted folder onto your </li>
+        <li>Rename the folder to php8( or any name that you like)</li>
+        <li>One this folder and look for php.ini-development file</li>
+        <li>Make a copy of this file and rename copy version to php.ini</li>
+        <li>Open php.ini file with your preferred text editor and uncomment PHPIniDir “ext”</li>
+        <li>Save the file and close the editor.</li>
+    </ol>
+    <p>Set PHP 8 to System&#39;s Path:</p>
+    <ol>
+        <li>Open php8 folder and copy and folder path</li>
+        <li>Press Windows Key on your keyboard and type &#39;variable&#39; and hit Enter</li>
+        <li>Click Environment Variables</li>
+        <li>Click Edit and Click NEW on the right</li>
+        <li>Paste the php8 folder path</li>
+        <li>Click OK, OK, OK</li>
+        <li>To test if PHP is now installed in your computer, search for the command prompt in Windows by using the
+            search keyword cmd. Open it then type <code>php --version</code> and click enter. You should see something
+            similar to this:</li>
+    </ol>
+    <h4 id="installing-mysql">Installing MySQL</h4>
+    <ol>
+        <li>XAMPP already comes with MySQL so no need.</li>
+    </ol>
+    <h3 id="1-4-run-you-first-php-script">1.4 Run you first PHP script</h3>
+    <ol>
+        <li>For XAMPP to serve php files, the files must be located in <code>C:\xampp\htdocs</code> directory</li>
+        <li>Create a new folder called &quot;webcapz&quot; in <code>C:\xampp\htdocs</code> directory</li>
+        <li>Open the folder in VSCode and create a new file called <code>index.php</code> in
+            <code>C:\xampp\htdocs\webcapz</code></li>
+        <li>Inside the file, paste the following:</li>
+    </ol>
+    <pre><code class="lang-php"><span class="php"><span class="hljs-meta">&lt;?php</span>
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">"Hello World"</span>;
+    <span class="hljs-meta">?&gt;</span></span>
+    </code></pre>
+    <h3 id="1-5-what-is-a-php-file-">1.5 What is a PHP File?</h3>
+    <ul>
+        <li>PHP files have extension &quot;.php&quot;</li>
+        <li>PHP files can contain text, HTML, CSS, JavaScript, and PHP code</li>
+        <li>PHP code is executed on the server, and the result is returned to the browser as plain HTML</li>
+    </ul>
+    <h3 id="1-6-what-can-php-do-">1.6 What Can PHP Do?</h3>
+    <ul>
+        <li>PHP can generate dynamic page content</li>
+        <li>PHP can create, open, read, write, delete, and close files on the server</li>
+        <li>PHP can collect form data</li>
+        <li>PHP can send and receive cookies</li>
+        <li>PHP can add, delete, modify data in your database</li>
+        <li>PHP can be used to control user-access</li>
+        <li>PHP can encrypt data</li>
+        <li>With PHP you are not limited to output HTML. You can output images or PDF files. You can also output any
+            text, such as XHTML and XML.</li>
+    </ul>
+    <h2 id="2-php-overview">2. PHP Overview</h2>
+    <h3 id="2-1-basic-php-syntax-">2.1 Basic PHP Syntax?</h3>
+    <ul>
+        <li>
+            <p>A PHP script starts with <code>&lt;?php</code> and ends with <code>?&gt;</code>.</p>
+        </li>
+        <li>
+            <p>Since PHP files can contain text, HTML, CSS, JavaScript, and PHP code, a PHP script can be placed
+                anywhere in the document.</p>
+        </li>
+        <li>
+            <p>Sometimes the closing <code>?&gt;</code> is omitted if the rest of the code is php</p>
+        </li>
+        <li>
+            <p><strong>PHP statements must end with a semicolon (;).</strong></p>
+        </li>
+    </ul>
+    <pre><code class="lang-php"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>My first PHP page<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="php"><span class="hljs-meta">&lt;?php</span>
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">"Hello World!"</span>;
+    <span class="hljs-meta">?&gt;</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+    </code></pre>
+    <h3 id="2-2-case-sensitivity">2.2 Case Sensitivity</h3>
+    <ul>
+        <li>
+            <p>In PHP, keywords (e.g. if, else, while, echo, etc.), classes, functions, and user-defined functions are
+                not case-sensitive.</p>
+        </li>
+        <li>
+            <p>In the example below, all three echo statements below are equal and legal:</p>
+            <pre><code class="lang-php"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    
+    <span class="php"><span class="hljs-meta">&lt;?php</span>
+    <span class="hljs-keyword">ECHO</span> <span class="hljs-string">"Hello World!&lt;br&gt;"</span>;
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">"Hello World!&lt;br&gt;"</span>;
+    <span class="hljs-keyword">EcHo</span> <span class="hljs-string">"Hello World!&lt;br&gt;"</span>;
+    <span class="hljs-meta">?&gt;</span></span>
+    
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+    </code></pre>
+        </li>
+        <li>
+            <p>But All variable names are case-sensitive!</p>
+        </li>
+        <li>
+            <p>Look at the example below; only the first statement will display the value of the <code>$color</code>
+                variable! This is because <code>$color</code>, <code>$COLOR</code>, and <code>$coLOR</code> are treated
+                as three different variables:</p>
+            <pre><code class="lang-php"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    
+    <span class="php"><span class="hljs-meta">&lt;?php</span>
+    $color = <span class="hljs-string">"red"</span>;
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">"My car is "</span> . $color .  <span class="hljs-string">"&lt;br&gt;"</span>;
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">"My house is "</span> . $COLOR .  <span class="hljs-string">"&lt;br&gt;"</span>;
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">"My boat is "</span> . $coLOR .   <span class="hljs-string">"&lt;br&gt;"</span>;
+    <span class="hljs-meta">?&gt;</span></span>
+    
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+    </code></pre>
+        </li>
+    </ul>
+    <h3 id="2-3-comments-in-php">2.3 Comments in PHP</h3>
+    <p>A comment in PHP code is a line that is not executed as a part of the program.
+        Comments can be used to:</p>
+    <ul>
+        <li>Let others understand your code</li>
+        <li>Remind yourself of what you did - Most programmers have experienced coming back to their own work a year or
+            two later and having to re-figure out what they did. Comments can remind you of what you were thinking when
+            you wrote the code</li>
+        <li>While debugging it is used to cancel out some lines of code from executing in order to find where an error
+            is coming from</li>
+        <li>There are two types of comments: single line and multi line comment</li>
+        <li>
+            <p>In VSCode editor highlight the desired code and press <code>ctrl + c + k</code></p>
+            <p><strong>Single Line</strong></p>
+            <pre><code class="lang-php"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    
+    <span class="php"><span class="hljs-meta">&lt;?php</span>
+    <span class="hljs-comment">// This is a single-line comment</span>
+    
+    <span class="hljs-comment"># This is also a single-line  comment</span>
+    <span class="hljs-meta">?&gt;</span></span>
+    
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+    </code></pre>
+            <p><strong>Multi Line</strong></p>
+            <pre><code class="lang-php"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    
+    <span class="php"><span class="hljs-meta">&lt;?php</span>
+    <span class="hljs-comment">/*
+    This is a multiple-lines comment block
+    that spans over multiple
+    lines
+    */</span>
+    <span class="hljs-meta">?&gt;</span></span>
+    
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+    </code></pre>
+            <h3 id="2-3-displaying-or-outputting-values">2.3 Displaying or outputting values</h3>
+            <p>PHP runs on the server and output html to the browser but whatever is enclosed in the
+                <code>&lt;?php ?&gt;</code> tag does not appear on the browser except we display/output it. This
+                includes:</p>
+        </li>
+        <li>
+            <p><code>echo</code>: outputs values but has no return value</p>
+            <pre><code class="lang-php"><span class="php"><span class="hljs-meta">&lt;?php</span>
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">"Hello World ---"</span>;
+    
+    <span class="hljs-keyword">echo</span> (<span class="hljs-string">"Hello World 2"</span>);
+    
+    $username = <span class="hljs-string">"Ilodigwe Chinaza"</span>;
+    
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">"Hello and Welcome "</span>.$username;
+    
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">"Hello and Welcome $username"</span>;
+    
+    <span class="hljs-meta">?&gt;</span></span>
+    </code></pre>
+        </li>
+        <li>
+            <p><code>print</code>: outputs values and has a return value of 1 so it can be used in expressions. e.g</p>
+            <pre><code class="lang-php"><span class="php"><span class="hljs-meta">&lt;?php</span>
+    <span class="hljs-keyword">print</span> <span class="hljs-string">"Hello World -----"</span>;
+    $our_variable = <span class="hljs-keyword">print</span>(<span class="hljs-string">"Hello World 2 ------"</span>);
+    <span class="hljs-keyword">echo</span> $our_variable;
+    <span class="hljs-meta">?&gt;</span></span>
+    </code></pre>
+        </li>
+        <li>
+            <p><code>printf(format,arg1,arg2,arg++)</code>:
+                Outputs a formatted string. This function works &quot;step-by-step&quot;. At the first % sign, arg1 is
+                inserted, at the second % sign, arg2 is inserted, etc.</p>
+            <pre><code class="lang-php">&lt;?php
+    $number = <span class="hljs-number">9</span>;
+    $str = <span class="hljs-string">"Beijing"</span>;
+    <span class="hljs-keyword">printf</span>(<span class="hljs-string">"There are %u million bicycles in %s."</span>,$number,$str);
+    </code></pre>
+            <p>related functions include
+                <code>sprintf()</code>, <code>vprintf()</code>, <code>vsprintf()</code>, <code>fprintf()</code> and
+                <code>vfprintf()</code>
+            </p>
+        </li>
+        <li>
+            <p><code>print_r</code>: Print the information about some <strong>variables</strong> in a more
+                human-readable way:</p>
+            <pre><code class="lang-php"><span class="php"><span class="hljs-meta">&lt;?php</span>
+    $b = <span class="hljs-keyword">array</span>(<span class="hljs-string">"Peter"</span>=&gt;<span class="hljs-string">"35"</span>, <span class="hljs-string">"Ben"</span>=&gt;<span class="hljs-string">"37"</span>, <span class="hljs-string">"Joe"</span>=&gt;<span class="hljs-string">"43"</span>);
+    print_r($b);
+    <span class="hljs-meta">?&gt;</span></span>
+    </code></pre>
+        </li>
+        <li>
+            <p><code>var_dump</code>: Dump information about different variables. but not as human readable as
+                <code>print_r</code></p>
+            <pre><code class="lang-php"><span class="php"><span class="hljs-meta">&lt;?php</span>
+    $b = <span class="hljs-string">"Hello world!"</span>;
+    $e = <span class="hljs-keyword">array</span>(<span class="hljs-number">32</span>, <span class="hljs-string">"Hello world!"</span>, <span class="hljs-number">32.5</span>, <span class="hljs-keyword">array</span>(<span class="hljs-string">"red"</span>, <span class="hljs-string">"green"</span>, <span class="hljs-string">"blue"</span>));
+    
+    var_dump($e);
+    
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">"&lt;br&gt;"</span>;
+    
+    <span class="hljs-comment">// Dump two variables</span>
+    var_dump($e, $b);
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">"&lt;br&gt;"</span>;
+    <span class="hljs-meta">?&gt;</span></span>
+    </code></pre>
+            <p><code>print</code> and <code>echo</code> statements can be used with or without parentheses</p>
+        </li>
+    </ul>
+    <h2 id="3-php-variables">3. PHP Variables</h2>
+    <h3 id="3-1-creating-declaring-variables">3.1 Creating (Declaring) Variables</h3>
+    <p>Variables are like containers for storing data.</p>
+    <p>Unlike other programming languages, PHP has no command for declaring a variable. It is created the moment you
+        first assign a value to it. </p>
+    <p>A variable starts with the $ sign, followed by the name of the variable:</p>
+    <pre><code class="lang-php"><span class="php"><span class="hljs-meta">&lt;?php</span>
+    $txt = <span class="hljs-string">"Hello world!"</span>;
+    $x = <span class="hljs-number">5</span>;
+    <span class="hljs-meta">?&gt;</span></span>
+    </code></pre>
+    <p><strong>Rules for PHP variables</strong>:</p>
+    <ul>
+        <li>A variable starts with the $ sign, followed by the name of the variable</li>
+        <li>A variable name must start with a letter or the underscore character <code>_</code></li>
+        <li>A variable name cannot start with a number</li>
+        <li>A variable name can only contain alpha-numeric characters and underscores (A-z, 0-9, and _ )</li>
+        <li>Variable names are case-sensitive (<code>$age</code> and <code>$AGE</code> are two different variables)
+            <pre><code class="lang-php"><span class="php"><span class="hljs-meta">&lt;?php</span>
+    $username = <span class="hljs-string">"Ilodigwe Chinaza"</span>;
+    $num1 = <span class="hljs-number">2</span>;
+    $num2 = <span class="hljs-number">8</span>;
+    $sum = $num1 + $num2;
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">"Hello and Welcome "</span>.$username;
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">"&lt;br&gt;"</span>;
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">"The sum of $num1 and $num2 is $sum"</span>;
+    <span class="hljs-meta">?&gt;</span></span>
+    </code></pre>
+        </li>
+    </ul>
+    <p><strong>PHP is a Loosely Typed Language:</strong></p>
+    <p>In the example above, notice that we did not have to tell PHP which data type the variable is.</p>
+    <p>PHP automatically associates a data type to the variable, depending on its value. Since the data types are not
+        set in a strict sense, you can do things like adding a string to an integer without causing an error.</p>
+    <p>In PHP 7, type declarations were added. This gives an option to specify the data type expected when declaring a
+        function, and by enabling the strict requirement, it will throw a &quot;Fatal Error&quot; on a type mismatch.
+    </p>
+    <p>You will learn more about strict and non-strict requirements, and data type declarations in the PHP Functions
+        chapter.</p>
+    <h3 id="3-2-constants">3.2 Constants</h3>
+    <p>Constants are like variables except that once they are defined they cannot be changed or undefined. Unlike
+        variables, constants are automatically <strong>global</strong> across the entire script.</p>
+    <p>A valid constant name starts with a letter or underscore (no <code>$</code> sign before the constant name).</p>
+    <p>To create a constant, use the <code>define()</code> function.</p>
+    <p><strong>Syntax</strong>: <code>define(name, value)</code></p>
+    <p><strong>Parameters</strong>:</p>
+    <ul>
+        <li><code>name</code>: Specifies the name of the constant</li>
+        <li><code>value</code>: Specifies the value of the constant</li>
+    </ul>
+    <pre><code class="lang-php"><span class="php"><span class="hljs-meta">&lt;?php</span>
+    define(<span class="hljs-string">"GREETING"</span>, <span class="hljs-string">"Welcome to W3Schools.com!"</span>);
+    <span class="hljs-keyword">echo</span> GREETING;
+    <span class="hljs-meta">?&gt;</span></span>
+    </code></pre>
+    <h3 id="3-3-variable-scope">3.3 Variable Scope</h3>
+    <p>The scope of a variable is the part of the script where the variable can be referenced/used.
+        PHP has three different variable scopes:</p>
+    <ul>
+        <li>local</li>
+        <li>global</li>
+        <li>static</li>
+    </ul>
+    <h4 id="local-scope">Local Scope</h4>
+    <p>A variable declared within a function has a LOCAL SCOPE and can only be accessed within that function:</p>
+    <pre><code class="lang-php"><span class="php"><span class="hljs-meta">&lt;?php</span>
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myTest</span><span class="hljs-params">()</span> </span>{
+      $x = <span class="hljs-number">5</span>; <span class="hljs-comment">// local scope</span>
+      <span class="hljs-keyword">echo</span> <span class="hljs-string">"&lt;p&gt;Variable x inside function is: $x&lt;/p&gt;"</span>;
+    }
+    myTest();
+    
+    <span class="hljs-comment">// using x outside the function will generate an error</span>
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">"&lt;p&gt;Variable x outside function is: $x&lt;/p&gt;"</span>;
+    <span class="hljs-meta">?&gt;</span></span>
+    </code></pre>
+    <h4 id="global-scope">Global Scope</h4>
+    <p>A variable declared outside a function has a GLOBAL SCOPE and can only be accessed outside a function:</p>
+    <pre><code class="lang-php"><span class="php"><span class="hljs-meta">&lt;?php</span>
+    $x = <span class="hljs-number">5</span>; <span class="hljs-comment">// global scope</span>
+    
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myTest</span><span class="hljs-params">()</span> </span>{
+      <span class="hljs-comment">// using x inside this function will generate an error</span>
+      <span class="hljs-keyword">echo</span> <span class="hljs-string">"&lt;p&gt;Variable x inside function is: $x&lt;/p&gt;"</span>;
+    }
+    myTest();
+    
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">"&lt;p&gt;Variable x outside function is: $x&lt;/p&gt;"</span>;
+    <span class="hljs-meta">?&gt;</span></span>
+    </code></pre>
+    <h4 id="the-global-keyword">The <code>global</code> Keyword</h4>
+    <p>The global keyword is used to access a global variable from within a function.</p>
+    <p>To do this, use the global keyword before the variables (inside the function):</p>
+    <pre><code class="lang-php"><span class="php"><span class="hljs-meta">&lt;?php</span>
+    $x = <span class="hljs-number">5</span>;
+    $y = <span class="hljs-number">10</span>;
+    
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myTest</span><span class="hljs-params">()</span> </span>{
+      <span class="hljs-keyword">global</span> $x, $y;
+      $y = $x + $y;
+    }
+    
+    myTest();
+    <span class="hljs-keyword">echo</span> $y; <span class="hljs-comment">// outputs 15</span>
+    <span class="hljs-meta">?&gt;</span></span>
+    </code></pre>
+    <p>PHP also stores all global variables in an array called <code>$GLOBALS[index]</code>. The index holds the name of
+        the variable. This array is also accessible from within functions and can be used to update global variables
+        directly.</p>
+    <p>The example above can be rewritten like this:</p>
+    <pre><code class="lang-php"><span class="php"><span class="hljs-meta">&lt;?php</span>
+    $x = <span class="hljs-number">5</span>;
+    $y = <span class="hljs-number">10</span>;
+    
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myTest</span><span class="hljs-params">()</span> </span>{
+      $GLOBALS[<span class="hljs-string">'y'</span>] = $GLOBALS[<span class="hljs-string">'x'</span>] + $GLOBALS[<span class="hljs-string">'y'</span>];
+    }
+    
+    myTest();
+    <span class="hljs-keyword">echo</span> $y; <span class="hljs-comment">// outputs 15</span>
+    <span class="hljs-keyword">echo</span> $GLOBALS[<span class="hljs-string">'y'</span>]; <span class="hljs-comment">// outputs 15</span>
+    <span class="hljs-meta">?&gt;</span></span>
+    </code></pre>
+    <h4 id="the-static-keyword-">The <code>static</code> Keyword:</h4>
+    <p>Normally, when a function is completed/executed, all of its variables are deleted. However, sometimes we want a
+        local variable NOT to be deleted. We need it for a further job.</p>
+    <p>To do this, use the static keyword when you first declare the variable:</p>
+    <p><strong>With the <code>static</code> keyword</strong></p>
+    <pre><code class="lang-php"><span class="php"><span class="hljs-meta">&lt;?php</span>
+    
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myTest</span><span class="hljs-params">()</span> </span>{
+      <span class="hljs-keyword">static</span> $x = <span class="hljs-number">0</span>;
+      <span class="hljs-keyword">echo</span> $x;
+      $x++;
+    }
+    
+    myTest();
+    myTest();
+    myTest();
+    
+    <span class="hljs-meta">?&gt;</span></span>
+    </code></pre>
+    <h3 id="3-4-global-variables-superglobals">3.4 Global Variables - Superglobals</h3>
+    <p>Some predefined variables in PHP are &quot;superglobals&quot;, which means that they are always accessible,
+        regardless of scope - and you can access them from any function, class or file without having to do anything
+        special.</p>
+    <p>The PHP superglobal variables are:</p>
+    <ul>
+        <li>$GLOBALS</li>
+        <li>$_SERVER</li>
+        <li>$_REQUEST</li>
+        <li>$_POST</li>
+        <li>$_GET</li>
+        <li>$_FILES</li>
+        <li>$_ENV</li>
+        <li>$_COOKIE</li>
+        <li>$_SESSION</li>
+    </ul>
+    <h4 id="-globals-"><code>$GLOBALS</code></h4>
+    <p>$GLOBALS is a PHP super global variable which is used to access global variables from anywhere in the PHP script
+        (also from within functions or methods).</p>
+    <p>PHP stores all global variables in an array called $GLOBALS[index]. The index holds the name of the variable.
+        Like in the previous example.</p>
+    <h4 id="-_server-"><code>$_SERVER</code></h4>
+    <p>This is a PHP super global variable which holds information about headers, paths, and script locations.</p>
+    <pre><code class="lang-php"><span class="php"><span class="hljs-meta">&lt;?php</span>
+    <span class="hljs-keyword">echo</span> $_SERVER[<span class="hljs-string">'PHP_SELF'</span>];
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">"&lt;br&gt;"</span>;
+    <span class="hljs-keyword">echo</span> $_SERVER[<span class="hljs-string">'SERVER_NAME'</span>];
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">"&lt;br&gt;"</span>;
+    <span class="hljs-keyword">echo</span> $_SERVER[<span class="hljs-string">'HTTP_HOST'</span>];
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">"&lt;br&gt;"</span>;
+    <span class="hljs-keyword">echo</span> $_SERVER[<span class="hljs-string">'HTTP_REFERER'</span>];
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">"&lt;br&gt;"</span>;
+    <span class="hljs-keyword">echo</span> $_SERVER[<span class="hljs-string">'HTTP_USER_AGENT'</span>];
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">"&lt;br&gt;"</span>;
+    <span class="hljs-keyword">echo</span> $_SERVER[<span class="hljs-string">'SCRIPT_NAME'</span>];
+    <span class="hljs-keyword">echo</span> $_SERVER[<span class="hljs-string">'REQUEST_METHOD'</span>];
+    <span class="hljs-meta">?&gt;</span></span>
+    </code></pre>
+    <p>The full reference can be found <a href="https://www.w3schools.com/php/php_superglobals_server.asp">here</a></p>
+    <h4 id="-_request-"><code>$_REQUEST</code></h4>
+    <p>This is a PHP super global variable which is used to collect data after submitting an HTML form.</p>
+    <pre><code class="lang-php"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    
+    <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">method</span>=<span class="hljs-string">"post"</span> <span class="hljs-attr">action</span>=<span class="hljs-string">"&lt;?php echo $_SERVER['PHP_SELF'];?&gt;"</span>&gt;</span>
+      Name: <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"fname"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+    
+    <span class="php"><span class="hljs-meta">&lt;?php</span>
+    <span class="hljs-keyword">if</span> ($_SERVER[<span class="hljs-string">"REQUEST_METHOD"</span>] == <span class="hljs-string">"POST"</span>) {
+      <span class="hljs-comment">// collect value of input field</span>
+      $name = $_REQUEST[<span class="hljs-string">'fname'</span>];
+      <span class="hljs-keyword">if</span> (<span class="hljs-keyword">empty</span>($name)) {
+        <span class="hljs-keyword">echo</span> <span class="hljs-string">"Name is empty"</span>;
+      } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">echo</span> $name;
+      }
+    }
+    <span class="hljs-meta">?&gt;</span></span>
+    
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+    </code></pre>
+</body>
+
+</html>
