@@ -232,7 +232,7 @@ PHP runs on the server and output html to the browser but whatever is enclosed i
     ?>
     ```
 
-  - `var_dump`: Dump information about different variables. but not as human readable as `print_r`
+  - `var_dump`: Dumps information about different variables (i.e data type and value). but not as human readable as `print_r`
     ```php
     <?php
     $b = "Hello world!";
@@ -287,6 +287,12 @@ In the example above, notice that we did not have to tell PHP which data type th
 
 PHP automatically associates a data type to the variable, depending on its value. Since the data types are not set in a strict sense, you can do things like adding a string to an integer without causing an error.
 
+PHP also provides automatic data type conversion.
+
+So, if you assign an integer value to a variable, the type of that variable will automatically be an integer. Then, if you assign a string to the same variable, the type will change to a string.
+
+This automatic conversion can sometimes break your code.
+
 In PHP 7, type declarations were added. This gives an option to specify the data type expected when declaring a function, and by enabling the strict requirement, it will throw a "Fatal Error" on a type mismatch.
 
 You will learn more about strict and non-strict requirements, and data type declarations in the PHP Functions chapter.
@@ -294,7 +300,7 @@ You will learn more about strict and non-strict requirements, and data type decl
 ### 3.2 Constants
 Constants are like variables except that once they are defined they cannot be changed or undefined. Unlike variables, constants are automatically **global** across the entire script.
 
-A valid constant name starts with a letter or underscore (no `$` sign before the constant name).
+A valid constant name starts with a letter or underscore (no `$` sign before the constant name, **very important**).
 
 To create a constant, use the `define()` function.
 
@@ -425,7 +431,7 @@ $GLOBALS is a PHP super global variable which is used to access global variables
 
 PHP stores all global variables in an array called $GLOBALS[index]. The index holds the name of the variable. Like in the previous example.
 #### `$_SERVER`
-This is a PHP super global variable which holds information about headers, paths, and script locations.
+This is a PHP super global **variable** which holds information about headers, paths, and script locations.
 
 ```php
 <?php
@@ -580,4 +586,369 @@ To set or access an environment variable:
 ```
 
 
-### Data Types
+### 4. Data Types
+Variables can store data of different types, and different data types can do different things.
+
+PHP supports the following data types:
+  - String
+  - Integer
+  - Float (floating point numbers - also called double)
+  - Boolean
+  - Array
+  - Object
+  - NULL
+  - Resource
+
+#### PHP String
+A string can be any text inside quotes. You can use single `''` or double quotes `""`:
+```php
+<?php
+$x = "Hello world!";
+echo $x;
+?>
+```
+#### PHP Integer
+An integer data type is a non-decimal number between `-2,147,483,648` and `2,147,483,647`.
+
+Rules for integers:
+  - An integer must have at least one digit
+  - An integer must not have a decimal point
+  - An integer can be either positive or negative
+  - Integers can be specified in: decimal (base 10), hexadecimal (base 16), octal (base 8), or binary (base 2) notation
+:
+```php
+<?php
+$x = 5985;
+var_dump($x);
+?>
+```
+#### PHP Float
+A float (floating point number) is a number with a decimal point or a number in exponential form.
+
+In the following example $x is a float:
+```php
+<?php
+$x = 10.365;
+var_dump($x);
+?>
+```
+#### PHP Boolean
+A Boolean represents two possible states: `true` or `false`.
+Booleans are often used in conditional testing. You will learn more about conditional testing in a later chapter of this tutorial.
+:
+```php
+<?php
+$x = true;
+$y = false;
+var_dump($x,$y);
+?>
+```
+#### PHP Array
+An array stores multiple values in one single variable.
+
+You can declare an array using the the `array()` function.
+:
+```php
+<?php
+$cars = array("Volvo","BMW","Toyota");
+var_dump($cars);
+?>
+```
+#### PHP Object
+Classes and objects are the two main aspects of object-oriented programming.
+
+A class is a template for objects, and an object is an instance of a class.
+
+When the individual objects are created, they inherit all the properties and behaviors from the class, but each object will have different values for the properties.
+
+Let's assume we have a class named Car. A Car can have properties like model, color, etc. We can define variables like $model, $color, and so on, to hold the values of these properties.
+
+When the individual objects (Volvo, BMW, Toyota, etc.) are created, they inherit all the properties and behaviors from the class, but each object will have different values for the properties.
+
+If you create a __construct() function, PHP will automatically call this function when you create an object from a class.
+```php
+<?php
+class Car {
+  public $color;
+  public $model;
+  public function __construct($color, $model) {
+    $this->color = $color;
+    $this->model = $model;
+  }
+  public function message() {
+    return "My car is a " . $this->color . " " . $this->model . "!";
+  }
+}
+
+$myCar = new Car("black", "Volvo");
+echo $myCar -> message();
+echo "<br>";
+$myCar = new Car("red", "Toyota");
+echo $myCar -> message();
+?>
+```
+#### PHP NULL Value
+Null is a special data type which can have only one value: NULL.
+
+A variable of data type NULL is a variable that has no value assigned to it.
+
+Tip: If a variable is created without a value, it is automatically assigned a value of NULL.
+
+Variables can also be emptied by setting the value to NULL:
+```php
+<?php
+$x = "Hello world!";
+$x = null;
+var_dump($x);
+?>
+```
+#### PHP Resource
+The special resource type is not an actual data type. It is the storing of a reference to functions and resources external to PHP.
+
+A common example of using the resource data type is a database call.
+
+We will not talk about the resource type here, since it is an advanced topic.
+
+### 5. Strings and String Methods
+A string is a sequence of characters, i.e it's characters can be accessed like an numeric array.
+
+```php
+    <?php
+    $my_string = "Hello world!";
+    echo $my_string[4]; // outputs 'o'
+    echo $my_string[5]; // outputs ' ' i.e white space character
+    ?>
+```
+
+#### String Methods
+Here are some methods/functions used for string-related operations. The full list can be seen [here](https://www.w3schools.com/php/php_ref_string.asp)
+
+1. `strlen(string)` - returns the length of a String
+    ```php
+    <?php
+    echo strlen("Hello world!"); // outputs 12
+    ?>
+    ```
+2. `str_word_count(string,return,char)` - counts and returns the number of words in a String
+    ```php
+    <?php
+    echo str_word_count("Hello world!"); // outputs 2
+    ?>
+    ```
+3. `strrev(string)` - returns the reversed version of a String
+    ```php
+    <?php
+    echo strrev("Hello world!"); // outputs !dlrow olleH
+    ?>
+    ```
+4. `strpos(string,find,start)` - searches for a text in the string and returns the character position of the first match
+    ```php
+    <?php
+    echo strpos("I love php, I love php too!","php"); // outputs 7
+    ?>
+    ```
+5. `str_replace(find,replace,string,count)` - replaces some characters with some other characters in a string and returns the new string.
+    ```php
+    <?php
+    echo strlen("Hello world!"); // outputs 12
+    ?>
+    ```
+6. `explode(separator,string)` - breaks the words in a string into an array and returns the array
+    ```php
+    <?php
+    $str = "Hello world. It's a beautiful day.";
+    print_r (explode(" ",$str)); // Array ( [0] => Hello [1] => world. [2] => It's [3] => a [4] => beautiful [5] => day. )
+    ?>
+    ```
+7. `implode(separator,string)` or `join(separator,string)` - returns a string from the elements of an array
+    ```php
+    <?php
+    $arr = array('Hello','World!','Beautiful','Day!');
+    echo join(" ",$arr); // outputs Hello World! Beautiful Day!
+    ?>
+    ```
+8. `str_split(string,length)` - splits a string into an array, returns the array
+    ```php
+    <?php
+    print_r(str_split("Hello",3));// outputs Array ( [0] => Hel [1] => lo )
+    ?>
+    ```
+9. `strtolower(string)` - converts a string to lowercase, returns the string
+    ```php
+    <?php
+    echo strtolower("Hello WORLD!"); // outputs hello world!
+    ?>
+    ```
+10. `strtoupper(string)` - converts a string to uppercase, returns the string
+    ```php
+    <?php
+    echo strtoupper("Hello WORLD!"); // outputs HELLO WORLD!
+    ?>
+    ```
+11. `trim(string,charlist)` - removes characters in the `charlist`(or whitespace if not specified )from both sides of a string.
+Related functions:
+
+    - `ltrim(string,charlist)` - Removes whitespace or other predefined characters from the left side of a string
+    - `rtrim(string,charlist)` - Removes whitespace or other predefined characters from the right side of a string
+
+    ```php
+    <?php
+    $str = "Hello World!";
+    echo $str . "<br>";
+    echo trim($str,"Hed!"); // outputs llo Worl
+    ?>
+    ```
+12. `ucfirst(string)` - converts the first character of a string to uppercase.
+Related functions:
+
+    - `lcfirst(string)` - converts the first character of a string to lowercase
+    - `ucwords(string)` - converts the first character of each word in a string to uppercase
+    - `strtoupper(string)` - converts a string to uppercase
+    - `strtolower(string)` - converts a string to lowercase
+    ```php
+    <?php
+    $arr = array('Hello','World!','Beautiful','Day!');
+    echo join(" ",$arr); // outputs Hello World! Beautiful Day!
+    ?>
+    ```
+13. `ucwords(string)` - converts the first character of each word in a string to uppercase.
+Related functions:
+
+    - `ucfirst(string)` - converts the first character of a string to uppercase
+    - `lcfirst(string)` - converts the first character of a string to lowercase
+    ```php
+    <?php
+    $arr = array('Hello','World!','Beautiful','Day!');
+    echo join(" ",$arr); // outputs Hello World! Beautiful Day!
+    ?>
+    ```
+
+### 5. Numbers and Number Methods
+
+#### Integers
+2, 256, -256, 10358, -179567 are all integers.
+
+An integer is a number without any decimal part.
+
+An integer data type is a non-decimal number between -2147483648 and 2147483647 in 32 bit systems, and between -9223372036854775808 and 9223372036854775807 in 64 bit systems. A value greater (or lower) than this, will be stored as float, because it exceeds the limit of an integer.
+
+**Note**: Another important thing to know is that even if 4 * 2.5 is 10, the result is stored as float, because one of the operands is a float (2.5).
+
+Here are some rules for integers:
+
+  - An integer must have at least one digit
+  - An integer must NOT have a decimal point
+  - An integer can be either positive or negative
+  - Integers can be specified in three formats: decimal (10-based), hexadecimal (16-based - prefixed with 0x) or octal (8-based - prefixed with 0)
+
+PHP has the following predefined constants for integers:
+
+  - `PHP_INT_MAX` - The largest integer supported
+  - `PHP_INT_MIN` - The smallest integer supported
+  - `PHP_INT_SIZE` -  The size of an integer in bytes
+
+PHP has the following functions to check if the type of a variable is integer:
+
+  - `is_int(number)`
+  - `is_integer(number)` - alias of is_int()
+  - `is_long(number)` - alias of is_int()
+
+
+#### Floats
+A float is a number with a decimal point or a number in exponential form.
+
+2.0, 256.4, 10.358, 7.64E+5, 5.56E-5 are all floats.
+
+The float data type can commonly store a value up to 1.7976931348623E+308 (platform dependent), and have a maximum precision of 14 digits.
+
+PHP has the following predefined constants for floats (from PHP 7.2):
+
+  - PHP_FLOAT_MAX - The largest representable floating point number
+  - PHP_FLOAT_MIN - The smallest representable positive floating point number
+  - PHP_FLOAT_MAX - The smallest representable negative floating point number
+  - PHP_FLOAT_DIG - The number of decimal digits that can be rounded into a float and back without precision loss
+  - PHP_FLOAT_EPSILON - The smallest representable positive number x, so that x + 1.0 != 1.0
+
+PHP has the following functions to check if the type of a variable is float:
+
+  - is_float()
+  - is_double() - alias of is_float()
+
+```php
+<?php
+$x = 10.365;
+var_dump(is_float($x));
+echo "<br>";
+echo(PHP_FLOAT_MAX);
+?>
+```
+#### PHP Infinity
+A numeric value that is larger than PHP_FLOAT_MAX is considered infinite.
+
+PHP has the following functions to check if a numeric value is finite or infinite:
+
+  - `is_finite(number)`
+  - `is_infinite(number)`
+
+```php
+<?php
+$x = 1.9e411;
+var_dump($x);
+?>
+```
+
+#### PHP NaN
+NaN stands for Not a Number.
+
+PHP has the following functions to check if a value is not a number:
+  - `is_nan(number)`
+
+NaN is used for impossible mathematical operations. Invalid calculation will return a NaN value:
+```php
+<?php
+$x = acos(8);
+var_dump($x);
+echo (is_nan($x));
+?>
+```
+
+#### Numerical Strings
+The PHP is_numeric() function can be used to find whether a variable is numeric. The function returns true if the variable is a number or a numeric string, false otherwise.
+```php
+<?php
+$x = 5985;
+var_dump(is_numeric($x));
+
+$x = "5985";
+var_dump(is_numeric($x));
+
+$x = "59.85" + 100;
+var_dump(is_numeric($x));
+
+$x = "Hello";
+var_dump(is_numeric($x));
+?>
+```
+
+#### Casting Strings and Floats to Integers
+Sometimes you need to cast a numerical value into another data type.
+
+The `(int)`, `(integer)`, or `intval()` function are often used to convert a value to an integer.
+
+```php
+<?php
+// Cast float to int
+$x = 23465.768;
+$int_cast = intval($x);
+var_dump($int_cast);
+
+echo "<br>";
+
+// Cast string to int
+$x = "23465.768";
+$int_cast = intval($x);
+var_dump($int_cast);
+?>
+```
+
+### 7. Arrays and Array Methods
