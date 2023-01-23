@@ -36,13 +36,14 @@
   - Comparison Operators
   - Logical Operators
   - Assignment Operators
-  - Ternary Operator
-  - Nullish Coalescing Operator
-  - Operator Precedence
+  - Increment / Decrement Operators
+  - String Operators
+  - Array Operators
+  - Conditional Assignment Operators
 9. Conditional Statements
   - if, else, and else if
   - Switch Statement
-10. For Loop
+10. For Loops
   - for 
   - for/in
   - for/of
