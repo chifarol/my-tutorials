@@ -297,6 +297,33 @@ In PHP 7, type declarations were added. This gives an option to specify the data
 
 You will learn more about strict and non-strict requirements, and data type declarations in the PHP Functions chapter.
 
+#### `isset(variable)`:
+This is a very useful function used to check whether a variable is empty. Also check whether the variable is set/declared *without throwing an error*:
+**Syntax**
+```
+isset(variable, another variable, ...);
+```
+**Note**: A variable can be unset with the `unset()` function.
+```php
+<?php
+$a = 0;
+// True because $a is set
+if (isset($a)) {
+  echo "Variable 'a' is set.<br>";
+}
+$array = ["name"=>"chinaza"];
+// True because $array["gender"] is set
+if (isset($array["gender"])) {
+  echo "Variable 'a' is set.<br>";
+}
+
+$b = null;
+// False because $b is NULL
+if (isset($b)) {
+  echo "Variable 'b' is set.";
+}
+?>
+```
 ### 3.2 Constants
 Constants are like variables except that once they are defined they cannot be changed or undefined. Unlike variables, constants are automatically **global** across the entire script.
 
@@ -1857,4 +1884,1298 @@ printFormatted("Hello world", "exclaim");
 printFormatted("Hello world", "ask");
 ?>
 ```
+### 12. PHP Math Object
+PHP has a set of math functions that allows you to perform mathematical tasks on **numbers**.
+Get the complete list [here](https://www.w3schools.com/php/php_ref_math.asp)
+
+  - `pi()`: returns the value of PI
+
+    ```php
+    <?php
+    echo(pi()); // returns 3.1415926535898
+    ?>
+    ```
+  - `min() and max()`: used to find the lowest or highest value in a list of arguments
+
+    ```php
+    <?php
+    echo(min(0, 150, 30, 20, -8, -200));  // returns -200
+    echo(max(0, 150, 30, 20, -8, -200));  // returns 150
+    ?>
+    ```
+  - `abs()`: returns the absolute (positive) value of a number:
+
+    ```php
+    <?php
+    echo(abs(-6.7));  // returns 6.7
+    ?>
+    ```
+  - `round()`: rounds a floating-point number to its nearest integer:
+
+    ```php
+    <?php
+    echo(round(0.60));  // returns 1
+    echo(round(0.49));  // returns 0
+    ?>
+    ```
+  - `rand()`: generates a random number:
+
+    ```php
+    <?php
+    echo(rand());
+    // To get more control over the random number, you can add the optional min and max parameters to specify the lowest integer and the highest integer to be returned.
+    echo(rand(10, 100));
+    ?>
+    ```
+
+### 13. Date and Time
+
+The PHP `date()` function formats a timestamp to a more readable date and time.
+
+**Syntax**:
+```php
+<?php
+date(format,timestamp);
+
+```
+  - `format` - Required
+  - `timestamp` - (optional, default is the current `time()`). A timestamp is a **numeric** value in **seconds** between the current `time()` and value as at 1st January, 1970 00:00:00 Greenwich Mean Time (GMT)
+
+#### 13.1 Get a date
+The required format parameter of the date() function specifies how to format the date (or time).
+
+The `format` parameter of the `date()` function specifies how to format the date (or time).
+
+Here are some characters that are commonly used for dates:
+  - d - Represents the day of the month (01 to 31)
+  - m - Represents a month (01 to 12)
+  - Y - Represents a year (in four digits)
+  - l (lowercase 'L') - Represents the day of the week
+
+Other characters, like"/", ".", or "-" can also be inserted between the characters to add additional formatting.
+
+The example below formats today's date in three different ways:
+
+```php
+<?php
+echo "Today is " . date("Y/m/d") . "<br>";
+echo "Today is " . date("Y.m.d") . "<br>";
+echo "Today is " . date("Y-m-d") . "<br>";
+echo "Today is " . date("l");
+
+```
+#### 13.2 Get a Time
+Here are some characters that are commonly used for times:
+
+  - H - 24-hour format of an hour (00 to 23)
+  - h - 12-hour format of an hour with leading zeros (01 to 12)
+  - i - Minutes with leading zeros (00 to 59)
+  - s - Seconds with leading zeros (00 to 59)
+  - a - Lowercase Ante meridiem and Post meridiem (am or pm)
+The example below outputs the current time in the specified format:
+
+```php
+<?php
+echo "The time is " . date("h:i:sa");
+
+```
+
+#### 13.3 Get Your Time Zone
+If the time you got back from the code is not correct, it's probably because your server is in another country or set up for a different timezone.
+
+So, if you need the time to be correct according to a specific location, you can set the timezone you want to use. See full list of valid timezones [here](http://www.php.net/manual/en/timezones.php).
+
+The example below sets the timezone to "America/New_York", then outputs the current time in the specified format:
+```php
+<?php
+date_default_timezone_set("America/New_York");
+echo "The time is " . date("h:i:sa");
+
+```
+
+#### 13.4 Get Timestamp
+The optional `timestamp` parameter in the `date()` function specifies a timestamp. If omitted, the current date and time will be used (as in the examples above).
+
+  - The PHP `mktime()` function returns the Unix timestamp for a date. The Unix timestamp contains the number of seconds between the Unix Epoch (January 1 1970 00:00:00 GMT) and the time specified.
+
+    **Syntax**:
+    ```
+    mktime(hour, minute, second, month, day, year)
+    ```
+    The example below creates a date and time with the date() function from a number of parameters in the mktime() function:
+
+    **Example**:
+    ```php
+    <?php
+    $our_timestamp=mktime(11, 14, 54, 8, 12, 2014);
+    echo "Created date is " . date("Y-m-d h:i:sa", $our_timestamp);
+    ```
+
+  - The PHP `strtotime()` function returns the Unix timestamp from a human readable date.
+
+    **Syntax**:
+    ```
+    strtotime(time, now)
+    ```
+    **Example**:
+    ```php
+    <?php
+    $our_timestamp = strtotime("10:30pm April 15 2014");
+    echo "Created date is " . date("Y-m-d h:i:sa", $our_timestamp) . "<br>";
+
+    $our_timestamp = strtotime("tomorrow");
+    echo "Created date is " . date("Y-m-d h:i:sa", $our_timestamp) . "<br>";
+
+    $our_timestamp = strtotime("+3 Months");
+    echo "Created date is " . date("Y-m-d h:i:sa", $our_timestamp) . "<br>";
+
+    // output the dates for the next six Saturdays:
+    $startdate = strtotime("Saturday");
+    $enddate = strtotime("+6 weeks", $startdate);
+
+    while ($startdate < $enddate) {
+      echo date("M d", $startdate) . "<br>";
+      $startdate = strtotime("+1 week", $startdate);
+    }
+    // output the number of days until 4th of July:
+    $july4_timestamp=strtotime("July 04");
+    // divide time in seconds by 60*60*24 and round up
+    $days=ceil(($july4_timestamp-time())/(60*60*24));
+    echo "There are " . $days ." days until 4th of July.";
+    ```
+    However, strtotime() is not perfect, so remember to check the strings you put in there.
+
+
+
+### 14. Regular Expressions  
+A regular expression is a sequence of characters that forms a search pattern. When you search for data in a text, you can use this search pattern to describe what you are searching for.
+
+A regular expression can be a single character, or a more complicated pattern.
+
+Regular expressions can be used to perform all types of text search and text replace operations.  
+
+In PHP, regular expressions are strings composed of `delimiters`, a `pattern` and optional `modifiers`.
+
+**Syntax**:
+```
+$exp = "/w3schools/i";
+```
+In the example above, / is the delimiter, w3schools is the pattern that is being searched for, and i is a modifier that makes the search case-insensitive.
+
+The delimiter can be any character that is not a letter, number, backslash or space. The most common delimiter is the forward slash (/), but when your pattern contains forward slashes it is convenient to choose other delimiters such as # or ~.
+
+```php
+$exp = "/w3schools/i";
+```
+| Function |	Description | 
+| -------- |	----------- |
+| preg_match() |	Returns 1 if the pattern was found in the string and 0 if not |
+| preg_match_all() |	Returns the number of times the pattern was found in the string, which may also be 0 |
+| preg_replace() |	Returns a new string where matched patterns have been replaced with another string |
+
+```php
+<?php
+$str = "Visit W3Schools";
+$pattern = "/w3schools/i";
+echo preg_match($pattern, $str) . "<br>"; // Outputs 1
+
+$str = "The rain in SPAIN falls mainly on the plains.";
+$pattern = "/ain/i";
+echo preg_match_all($pattern, $str); // Outputs 4
+
+$str = "Visit Microsoft!";
+$pattern = "/microsoft/i";
+echo preg_replace($pattern, "W3Schools", $str); // Outputs "Visit W3Schools!"
+?>
+```
+
+#### Regular Expression Modifiers
+Modifiers can change how a search is performed.
+| Modifier |	Description | 
+| -------- |	----------- | 
+| i |	Performs a case-insensitive search |
+| m |	Changes the behavior of ^ and $ to match against a newline boundary (i.e. start or end of each line within a multiline string), instead of a string boundary. |
+| g	| Perform a global match i.e. finds all occurrences. |
+| o	| Evaluates the expression only once. |
+| s	| Changes the behavior of . (dot) to match all characters, including newlines. |
+| x	| Allows you to use whitespace and comments within a regular expression for clarity. |
+```php
+<?php
+// how to match at the beginning of every line in a multi-line string using ^ anchor and m modifier
+$pattern = "/^color/im";
+$text = "Color red is more visible than \n color blue in daylight.";
+$matches = preg_match_all($pattern, $text, $array);
+echo $matches . " matches were found. <br>";
+
+```
+#### Character Classes
+Square brackets surrounding a pattern of characters are called a character class e.g. `[abc]`. A character class always matches a single character out of a list of specified characters that means the expression `[abc]` matches only a, b or c character.
+
+Negated character classes can also be defined that match any character except those contained within the brackets. A negated character class is defined by placing a caret (^) symbol immediately after the opening bracket, like this `[^abc]`.
+
+You can also define a range of characters by using the hyphen `-` character inside a character class, like `[0-9]`. Let's look at some examples of character classes:
+| Expression |	Description | 
+| -------- |	----------- | 
+| [abc] |	Find one character from the options between the brackets |
+|[^abc] |	Find any character NOT between the brackets |
+| [A-Z]	| Matches any one character from uppercase a to uppercase z. |
+| [a-Z]	| Matches any one character from lowercase a to uppercase Z. |
+| [0-9]	| Find one character from the range 0 to 9 |
+| [a-z0-9]	| Matches a single character between a and z or between 0 and 9. |
+```php
+<?php
+$pattern = "/ca[kf]e/";
+$text = "He was eating cake in the cafe.";
+if(preg_match($pattern, $text)){
+    echo "Match found!";
+} else{
+    echo "Match not found.";
+}
+
+```
+#### Predefined Character Classes
+Some character classes such as digits, letters, and whitespaces are used so frequently that there are shortcut names for them. The following table lists those predefined character classes:
+| Expression |	Description | 
+| -------- |	----------- | 
+| &#124;	| Find a match for any one of the patterns separated by &#124; as in: cat &#124; dog &#124; fish |
+| . |	Find just one instance of any character except newline `\n` |
+| ^	| Finds a match as the beginning of a string as in: `^Hello` |
+| $	| Finds a match at the end of the string as in: World$ |
+| \d | Find a digit character. Same as `[0-9]` |
+| \D	| Matches any non-digit character. Same as `[^0-9]` |
+| \s |	Find a whitespace character. Same as `[ \t\n\r]` |
+| \S	| Matches any non-whitespace character. Same as [^ \t\n\r] |
+| \w	| Matches any word character (definned as a to z, A to Z,0 to 9, and the underscore). Same as `[a-zA-Z_0-9]` |
+| \W	| Matches any non-word character. Same as `[^a-zA-Z_0-9]` |
+```php
+<?php
+// Replace spaces, newlines and tabs
+$pattern = "/\s/";
+$replacement = "-";
+$text = "Earth revolves around\nthe\tSun";
+
+echo preg_replace($pattern, $replacement, $text) . "<br>";
+
+```
+
+#### Position Anchors
+Use position anchors when you want to match at the beginning or end of a line, word, or string. To do this you can use anchors. Two common anchors are caret `^` which represent the start of the string, and the dollar `$` sign which represent the end of the string.
+| Expression |	Description | 
+| ---------- |	----------- |
+| ^p	| Matches the letter p at the beginning of a line. |
+| p$	| Matches the letter p at the end of a line. |
+```php
+<?php
+// Replace spaces, newlines and tabs
+$pattern = "/\s/";
+$replacement = "-";
+$text = "Earth revolves around\nthe\tSun";
+
+echo preg_replace($pattern, $replacement, $text) . "<br>";
+
+```
+#### Word Boundaries
+A word boundary character `\b` helps you search for the words that begins and/or ends with a pattern. For example, the regexp `/\bcar/` matches the words beginning with the pattern car, and would match cart, carrot, or cartoon, but would not match oscar.
+
+Similarly, the regexp `/car\b/` matches the words ending with the pattern car, and would match scar, oscar, or supercar, but would not match cart. Likewise, the `/\bcar\b/` matches the words beginning and ending with the pattern car, and would match only the word car.
+
+The following example will highlight the words beginning with car in bold:
+```php
+<?php
+$pattern = '/\bcar\w*/';
+$replacement = '<b>$0</b>';
+$text = 'Words begining with car: cart, carrot, cartoon. Words ending with car: scar, oscar, supercar.';
+echo preg_replace($pattern, $replacement, $text);
+?>
+```
+
+#### Repetition Quantifiers
+Quantifiers define quantities:
+| Expression |	Description | 
+| ---------- |	----------- | 
+| x+ | Matches one or more occurrences of the letter x |
+| x*	| Matches zero or more occurrences of the letter x |
+| x?	| Matches zero or one occurrences of the letter x |
+| x{n}	| Matches any string that contains a letter x, n times |
+| x{n,m}	| Matches any string that contains a sequence of n to m times |
+| x{n,}	| Matches any string that contains a sequence of x at `least` n times |
+| n{,3}	| Matches at `most` three occurrences of the letter p |
+#### Grouping
+You can use parentheses `( )` to apply quantifiers to entire patterns.
+```php
+<?php
+// Use grouping to search for the word "banana" by looking for ba followed by two instances of na:
+$str = "Apples and bananas.";
+$pattern = "/ba(na){2}/i";
+if (preg_match($pattern, $str)) {
+    echo "Match found!";
+} else {
+    echo "Match not found.";
+}
+// split the string at comma, sequence of commas, whitespace, or combination thereof using the PHP preg_split() function
+$pattern = "/[\s,]+/";
+$text = "My favourite colors are red, green and blue";
+$parts = preg_split($pattern, $text);
+
+// Loop through parts array and display substrings
+foreach ($parts as $part) {
+    echo $part . "<br>";
+}
+?>
+```
+
+### 15. Cookies and Sessions
+
+#### 15.1 Cookies
+A cookie is often used to identify a user. A cookie is a small file that the server embeds on the user's computer. Each time the same computer requests a page with a browser, it will send the cookie too. With PHP, you can both create and retrieve cookie values.
+
+##### Create Cookies With PHP
+A cookie is created with the setcookie() function.
+#### 15.2 Sessions
+##### What is a Cookie?
+A session is a way to store information (in variables) to be used across multiple pages even after refreshing.
+
+Although you can store data using cookies but it has some security issues. Since cookies are stored on user's computer it is possible for an attacker to easily modify a cookie content to insert potentially harmful data in your application that might break your application.
+
+Also every time the browser requests a URL to the server, all the cookie data for a website is automatically sent to the server within the request. It means if you have stored 5 cookies on user's system, each having 4KB in size, the browser needs to upload 20KB of data each time the user views a page, which can affect your site's performance.
+
+You can solve both of these issues by using the PHP session.
+
+##### Create/Retrieve/Modify Cookies With PHP
+A cookie is created with the `setcookie()` function which must appear BEFORE the <html> tag..
+**Syntax**:
+```
+setcookie(name, value, expire, path, domain, secure, httponly);
+```
+Only the `name` parameter is required. All other parameters are optional.
+
+The following example creates a cookie named "user" with the value "John Doe". The cookie will expire after 30 days (86400 * 30). The "/" means that the cookie is available in entire website (otherwise, select the directory you prefer).
+
+We then retrieve the value of the cookie "user" (using the global variable $_COOKIE). We also use the isset() function to find out if the cookie is set:
+```php
+<?php
+$cookie_name = "user";
+$cookie_value = "John Doe";
+setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
+?>
+<html>
+<body>
+
+<?php
+if(!isset($_COOKIE[$cookie_name])) {
+  echo "Cookie named '" . $cookie_name . "' is not set!";
+} else {
+  echo "Cookie '" . $cookie_name . "' is set!<br>";
+  echo "Value is: " . $_COOKIE[$cookie_name];
+}
+// To modify a cookie, just set (again) the cookie using the setcookie() function
+setcookie("user", "Alex Porter", time() + (86400 * 30), "/");
+?>
+
+</body>
+</html>
+```
+#####  Delete a Cookie
+To delete a cookie, use the setcookie() function with an expiration date in the past:
+```php
+<?php
+// set the expiration date to one hour ago
+setcookie("user", "", time() - 3600);
+?>
+<html>
+<body>
+
+<?php
+echo "Cookie 'user' is deleted.";
+?>
+
+</body>
+</html>
+```
+**Note**: Don't store sensitive data in cookies since it could potentially be manipulated by the malicious user. To store the sensitive data securely use sessions instead.
+
+
+
+##### What is a Session?
+When you work with an application, you open it, do some changes, and then you close it. This is much like a Session. The browser knows who you are. It knows when you start the application and when you end. But on the internet there is one problem: the web server does not know who you are or what you do, because the HTTP address doesn't maintain state.
+
+Session variables solve this problem by storing user information to be used across multiple pages (e.g. username, favorite color, etc). By default, session variables last until the user closes the browser (If you need a permanent storage, you may want to store the data in a database e.g MySQL.)
+
+Most sessions set a radomly generated user-key on the user's computer/browser that looks something like this: 765487cf34ert8dede5a562e4f3a7e12. Then, when a session is opened on another page, it scans the computer for a user-key. If there is a match, it accesses that session, if not, it starts a new session.
+
+So; Session variables hold information about **one single user**, and are available to all pages in one application.
+
+
+##### Start a PHP Session
+A session is started with the `session_start()` function, this must be the very first thing in your document. Before any HTML tags. It will create a new session and generate a unique session ID for the user.
+
+Session variables are set with the PHP global variable: `$_SESSION`.
+
+Now, let's create a new page called "demo_session1.php". In this page, we start a new PHP session and set some session variables:
+
+```php
+<?php
+// Starting session
+session_start();
+?>
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+// see all session variables
+print_r($_SESSION);
+echo "<br>";
+echo "<br>";
+// Storing session data
+$_SESSION["firstname"] = "Peter";
+$_SESSION["lastname"] = "Parker";
+// Accessing session data
+echo 'Hi, ' . $_SESSION["firstname"] . ' ' . $_SESSION["lastname"];
+?>
+
+</body>
+</html>
+```
+
+##### Destroy a PHP Session
+To remove all global session variables and destroy the session, use session_unset() and session_destroy():
+
+```php
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+// Removing a particular session data
+if(isset($_SESSION["lastname"])){
+    unset($_SESSION["lastname"]);
+}
+// remove all session variables
+session_unset();
+
+// destroy the session
+session_destroy();
+?>
+
+</body>
+</html>
+```
+
+### 16. JSON in PHP
+In this section you will learn how to encode and decode JSON data in PHP.
+
+JSON stands for JavaScript Object Notation. JSON is a standard lightweight data-interchange format which is quick and easy to parse and generate. 
+
+A data-interchange format is a text format which is used to interchange or exchange data between different platforms and operating systems. JSON is the most popular and lightweight data-interchange format for web applications.
+
+JSON, like XML, is a text-based format that's easy to write and easy to understand for both humans and computers, but unlike XML, JSON data structures occupy less bandwidth than their XML versions. JSON is based on two basic structures:
+
+  - Object: This is defined as a collection of key/value pairs (i.e. key:value). Each object begins with a left curly bracket { and ends with a right curly bracket }. Multiple key/value pairs are separated by a comma ,.
+  - Array: This is defined as an ordered list of values. An array begins with a left bracket `[` and ends with a right bracket `]`. Values are separated by a comma `,`.
+In JSON, keys are always `strings`, while the value can be a `string`, `number`, `true` or `false`, `null`, `object` or an `array`. Strings must be enclosed in double quotes `""` and can contain escape characters such as `\n`, `\t` and `\`. A JSON object may look like this:
+
+
+```json
+{
+    "book": {
+        "name": "Harry Potter and the Goblet of Fire",
+        "author": "J. K. Rowling",
+        "year": 2000,
+        "genre": "Fantasy Fiction",
+        "bestseller": true,
+        "fruits": [ "Apple", "Banana", "Strawberry", "Mango"
+    ]
+    }
+}
+```
+
+#### Encoding JSON Data in PHP with `json_encode()`
+
+```php
+<?php
+// An associative array
+$marks = array("Peter"=>65, "Harry"=>80, "John"=>78, "Clark"=>90);
+ 
+echo json_encode($marks); // outputs {"Peter":65,"Harry":80,"John":78,"Clark":90}
+
+// An indexed array
+$colors = array("Red", "Green", "Blue", "Orange", "Yellow");
+ 
+echo json_encode($colors); // ["Red","Green","Blue","Orange","Yellow"]
+
+// force json_encode() function to return an PHP indexed array as JSON object 
+$colors = array("Red", "Green", "Blue", "Orange");
+ 
+echo json_encode($colors, JSON_FORCE_OBJECT); // {"0":"Red","1":"Green","2":"Blue","3":"Orange"}
+
+?>
+```
+
+#### Decoding JSON Data in PHP
+Decoding JSON data is as simple as encoding it. You can use the PHP json_decode() function to convert the JSON encoded string into appropriate PHP data type. The following example demonstrates how to decode or convert a JSON object to PHP object.
+```php
+<?php
+// Store JSON data in a PHP variable
+$json = '{"Peter":65,"Harry":80,"John":78,"Clark":90}';
+ 
+var_dump(json_decode($json, true)); // outputs array(4) { ["Peter"]=> int(65) ["Harry"]=> int(80) ["John"]=> int(78) ["Clark"]=> int(90) }
+echo "<br>";
+echo $arr["Harry"];  // Output: 80
+?>
+```
+
+### 17. Include/Require Files
+The include (or require) statement takes all the text/code/markup that exists in the specified file and copies it into the file that uses the include statement.
+
+Including files is very useful when you want to include the same PHP, HTML, or text on multiple pages of a website.
+
+The `include` and `require` statements are identical, except upon failure:
+
+  - `require` will produce a fatal error (E_COMPILE_ERROR) and **stop** the script
+  - `include` will only produce a warning (E_WARNING) and the script will continue
+
+So, if you want the execution to go on and show users the output, even if the include file is missing, use the include statement. Otherwise, in case of FrameWork, CMS, or a complex PHP application coding, always use the require statement to include a key file to the flow of execution. This will help avoid compromising your application's security and integrity, just in-case one key file is accidentally missing.
+
+Including files saves a lot of work. This means that you can create a standard header, footer, or menu file for all your web pages. Then, when the header needs to be updated, you can only update the header include file.
+
+**Syntax**:
+```
+include 'filename';
+
+or
+
+require 'filename';
+```
+**Example 1**
+Assume we have a standard menu file called "menu.php", that looks like this:
+```php
+<?php
+echo '<a href="/default.asp">Home</a> -
+<a href="/html/default.asp">HTML Tutorial</a> -
+<a href="/css/default.asp">CSS Tutorial</a> -
+<a href="/js/default.asp">JavaScript Tutorial</a> -
+<a href="default.asp">PHP Tutorial</a>';
+?>
+```
+Assume we have a file called "vars.php", with some variables defined:
+
+```php
+<?php
+$color='red';
+$car='BMW';
+```
+
+To include the menu file in a page, use the include statement:
+```php
+<html>
+<body>
+
+<?php include 'menu.php';?>
+
+<h1>Welcome to my home page!</h1>
+<p>Some text.</p>
+
+<?php include 'vars.php';
+echo "I have a $color $car.";
+?>
+
+<p>Some more text.</p>
+
+</body>
+</html>
+```
+
+### 18. File Upload 
+With PHP, it is easy to upload files to the server.
+
+However, with ease comes danger, so always be careful when allowing file uploads!
+
+1. In your "php.ini" file, search for the file_uploads directive, and set it to On:
+
+    ```
+    file_uploads = On
+    ```
+
+2. Next, create an HTML form that allow users to choose the image file they want to upload:
+    ```php
+    <!DOCTYPE html>
+    <html>
+    <body>
+
+    <form action="upload.php" method="post" enctype="multipart/form-data">
+      Select image to upload:
+      <input type="file" name="fileToUpload" id="fileToUpload">
+      <input type="submit" value="Upload Image" name="submit">
+    </form>
+
+    </body>
+    </html>
+    ```
+
+3. The "upload.php" file contains the code for uploading a file:
+    ```php
+    <?php// check if the form's file input was set
+    if (isset($_POST["submit"]) && isset($_FILES["fileToUpload"])) {
+        // print file info
+        var_dump($_FILES["fileToUpload"]);
+         // directory to upload to
+        $target_dir = "uploads/";
+        // file path to use
+        $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+        $target_name = $_FILES["fileToUpload"]["name"];
+        $target_tmp_name = $_FILES["fileToUpload"]["tmp_name"];
+        $uploadOk = 1;
+        $imageFileSize = $_FILES["fileToUpload"]["size"];
+        $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+
+        // Check if image file is between 1KB and 1MB
+        $checkSize = $imageFileSize > 1000 && $imageFileSize < 1000000;
+        if (
+            $checkSize == false
+        ) {
+            echo "<br> file must be between 1KB and 1MB";
+            $uploadOk = 0;
+        }
+        // Check if image file is JPG, JPEG, PNG & GIF
+        else if (
+            $imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+            && $imageFileType != "gif"
+        ) {
+            echo "<br> Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+            $uploadOk = 0;
+        }
+        // check if file already exists
+        else if (file_exists($target_file)) {
+            echo " <br> Sorry, file already exists.";
+            $uploadOk = 0;
+        } else {
+            // upload to server
+            move_uploaded_file($target_tmp_name, $target_dir . $target_name);
+            echo "<br> File is an image - " . $imageFileType . ".";
+            $uploadOk = 1;
+        }
+    }
+    ?>
+    ```
+
+  - `file_exists($target_file)` - check if the file already exists in the server
+  - `move_uploaded_file(file, destination)` - moves an uploaded file to a new destination.
+  - `pathinfo(path, options)` - returns information about a file path. `options` (optional) include
+    - PATHINFO_DIRNAME - return only dirname
+    - PATHINFO_BASENAME - return only basename
+    - PATHINFO_EXTENSION - return only extension
+    - PATHINFO_FILENAME - return only filename
+
+
+
+### 19. Errors/Exceptions
+#### What is an Exception?
+An exception is an object that describes an error or unexpected behaviour of a PHP script.
+
+Exceptions are thrown by many PHP functions and classes.
+
+User defined functions and classes can also throw exceptions.
+
+Exceptions are a good way to stop a function when it comes across data that it cannot use.
+
+#### Throwing an Exception
+The throw statement allows a user defined function or method to throw an exception. When an exception is thrown, the code following it will not be executed.
+
+If an exception is not caught, a fatal error will occur with an "Uncaught Exception" message.
+
+Lets try to throw an exception without catching it:
+```php
+<?php
+function divide($dividend, $divisor) {
+  if($divisor == 0) {
+    throw new Exception("Division by zero");
+  }
+  return $dividend / $divisor;
+}
+
+echo divide(5, 0);
+?>
+```
+
+#### The Exception Object
+The Exception Object contains information about the error or unexpected behaviour that the function encountered. An  Exception Object is created when instance of the Exception Class is initialized via `new Exception()`
+
+**Syntax**:
+```
+new Exception(message, code, previous)
+```
+**Parameter Values**
+| Parameter |	Description |
+| --------- |	----------- |
+| message	| Optional. A string describing why the exception was thrown |
+| code	| Optional. An integer that can be used used to easily distinguish this exception from others of the same type |
+| previous	| Optional. If this exception was thrown in a catch block of another exception, it is recommended to pass that exception into this parameter |
+
+
+#### Catching An Exception
+To avoid the error from the example above, we can use the `try...catch` statement to catch exceptions and continue the process.
+**Syntax**:
+```
+try {
+  code that can throw exceptions
+} catch(Exception $e) {
+  code that runs when an exception is caught
+}
+```
+```php
+function divide($dividend, $divisor) {
+  if($divisor == 0) {
+    throw new Exception("Division by zero");
+  }
+  return $dividend / $divisor;
+}
+
+try {
+  echo divide(5, 0);
+} catch(Exception $e) {
+  echo $e->getMessage();
+  echo "<h3>Caught Exception!</h3>";
+  echo "<p>Error message: " . $e->getMessage() . "</p>";    
+  echo "<p>File: " . $e->getFile() . "</p>";
+  echo "<p>Line: " . $e->getLine() . "</p>";
+  echo "<p>Error code: " . $e->getCode() . "</p>";
+  echo "<p>Trace: " . $e->getTraceAsString() . "</p>";
+  echo "<br> Unable to divide.";
+}
+```
+The `catch` block typically catch the exception thrown within the try block and creates an instance of the `Exception` class called the `$e`object containing the exception information. 
+
+**Exception Methods**
+| Parameter |	Description |
+| --------- |	----------- |
+| getMessage()	| Returns a string describing why the exception was thrown |
+| getPrevious()	| If this exception was triggered by another one, this method returns the previous exception. If not, then it returns null |
+| getCode()	| Returns the exception code |
+| getFile()	| Returns the full path of the file in which the exception was thrown |
+| getLine()	| Returns the line number of the line of code which threw the exception |
+
+
+
+### 20. PHP OOP (Object Oriented Programming)
+**Procedural** programming is about writing procedures or functions that perform operations on the data, while **Object-Oriented Programming** is about creating objects that contain both data and functions.
+
+Object-oriented programming has several advantages over procedural programming:
+
+  - OOP is faster and easier to execute
+  - OOP provides a clear structure for the programs
+  - OOP helps to keep the PHP code DRY "Don't Repeat Yourself", and makes the code easier to maintain, modify and debug
+  - OOP makes it possible to create full reusable applications with less code and shorter development time
+
+
+**Tip:**
+The "Don't Repeat Yourself" (DRY) principle is about reducing the repetition of code. You should extract out the codes that are common for the application, and place them at a single place and reuse them instead of repeating it.
+
+#### PHP - What are Classes and Objects?
+Classes and objects are the two main aspects of object-oriented programming.
+
+**Example 1**
+  - Fruit - Class
+  - Apple, Banana, Mango - Objects (Instances of fruit)
+
+**Example 2**
+  - Car - Class
+  - Volvo, Audi, Toyota - Objects (Instances of fruit)
+
+So, a class is a template for objects, and an object is an instance of a class.
+
+When the individual objects are created, they inherit all the properties and behaviors from the class, but each object will have different values for the properties.
+
+#### An OOP Case
+Let's assume we have a class named Fruit. A Fruit can have properties like name, color, weight, etc. We can define variables like $name, $color, and $weight to hold the values of these properties.
+
+When the individual objects (apple, banana, etc.) are created, they inherit all the properties and behaviors from the class, but each object will have different values for the properties.
+
+#### Define a Class
+A class is defined by using the `class` keyword, followed by the name of the class and a pair of curly braces `{}`. All its properties and methods go inside the braces:
+
+**Example 20.1**
+```php
+<?php
+class Fruit {
+  // code goes here...
+}
+?>
+```
+In a class, variables are called properties and functions are called methods!
+
+Below we declare a class named Fruit consisting of two properties ($name and $color) and two methods set_name() and get_name() for setting and getting the $name property:
+
+**Example 20.2**
+```php
+<?php
+class Fruit {
+  // Properties
+  public $name;
+  public $color;
+
+  // Methods
+  function set_name($name) {
+    $this->name = $name;
+  }
+  function get_name() {
+    return $this->name;
+  }
+}
+?>
+```
+#### PHP - The $this Keyword
+The `$this` keyword refers to the current object (and is only available inside methods).
+
+#### Define Objects
+Classes are nothing without objects! We can create multiple objects from a class. Each object has all the properties and methods defined in the class, but they will have different property values.
+
+Objects of a class are created using the new keyword.
+
+In the example below, $apple and $banana are instances of the class Fruit:
+
+**Example 20.3**
+```php
+<?php
+class Fruit {
+  // Properties
+  public $name;
+  public $color;
+
+  // Methods
+  function set_name($name) {
+    $this->name = $name;
+  }
+  function get_name() {
+    return $this->name;
+  }
+}
+
+$apple = new Fruit();
+$banana = new Fruit();
+$apple->set_name('Apple');
+$banana->name = 'Banana';
+
+echo $apple->get_name();
+echo "<br>";
+echo $banana->get_name();
+```
+
+There are two ways of changing the $name property:
+
+1. Inside the class (by adding a set_name() method and use $this) like in the example 20.2
+2. Outside the class (by directly changing the property value) like in example 20.3
+
+#### PHP - `instanceof`
+You can use the `instanceof` keyword to check if an object belongs to a specific class:
+
+```php
+<?php
+$apple = new Fruit();
+var_dump($apple instanceof Fruit);
+?>
+```
+
+#### PHP - The `__construct` Function
+A constructor allows you to initialize an object's properties upon creation of the object.
+
+If you create a `__construct()` function, PHP will automatically call this function when you create an object from a class.
+
+Notice that the construct function starts with two underscores `__`
+
+We see in the example below, that using a constructor saves us from calling the set_name() method which reduces the amount of code:
+
+```php
+<?php
+class Fruit {
+  public $name;
+  public $color;
+
+  function __construct($name) {
+    $this->name = $name;
+  }
+  function get_name() {
+    return $this->name;
+  }
+}
+
+$apple = new Fruit("Apple");
+echo $apple->get_name();
+
+```
+#### The `__destruct` Function
+A destructor is called when the object is destructed or the script is stopped or exited.
+
+If you create a __destruct() function, PHP will automatically call this function at the end of the script.
+
+Notice that the destruct function starts with two underscores (__)!
+
+The example below has a __construct() function that is automatically called when you create an object from a class, and a __destruct() function that is automatically called at the end of the script:
+
+```php
+<?php
+class Fruit {
+  public $name;
+  public $color;
+
+  function __construct($name) {
+    $this->name = $name;
+  }
+  function __destruct($name) {
+    echo "The fruit is {$this->name}.";
+  }
+  function get_name() {
+    return $this->name;
+  }
+}
+
+$apple = new Fruit("Apple");
+echo $apple->get_name();
+
+```
+
+#### Access Modifiers
+Properties and methods can have access modifiers which control where they can be accessed.
+There are three access modifiers:
+
+  - `public` - the property or method can be accessed from everywhere. This is default
+  - `private` - the property or method can ONLY be accessed within the class
+  - `protected` - the property or method can be accessed within the class and by classes derived from that class
+
+In the following example we have added three different access modifiers to three properties (name, color, and weight). Here, if you try to set the name property it will work fine (because the name property is public, and can be accessed from everywhere). However, if you try to set the color or weight property it will result in a fatal error (because the color and weight property are protected and private):
+
+```php
+<?php
+class Fruit
+    {
+        public $name;
+        protected $color;
+        private $weight;
+        public function set_color($color_var)
+        {
+            $this->color = $color_var;
+            echo $this->color;
+        }
+        public function set_weight($color_var)
+        {
+            $this->weight = $color_var;
+            echo $this->weight;
+        }
+    }
+
+    $mango = new Fruit();
+    try {
+        $mango->name = 'Mango'; // OK
+        // $mango->color = 'Yellow'; // ERROR
+        // $mango->weight = '300'; // ERROR
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
+    $mango->set_color('Yellow'); // OK
+    $mango->set_weight('300'); // OK
+?>
+```
+#### PHP OOP - Inheritance
+Inheritance in OOP = When a class derives from another class.
+
+The child class will inherit all the public and protected properties and methods from the parent class. In addition, it can have its own properties and methods.
+
+An inherited class is defined by using the `extends` keyword.
+
+Let's look at an example:
+```php
+<?php
+class Fruit {
+  public $name;
+  public $color;
+  public function __construct($name, $color) {
+    $this->name = $name;
+    $this->color = $color;
+  }
+  public function intro() {
+    echo "The fruit is {$this->name} and the color is {$this->color}.";
+  }
+}
+
+// Strawberry is inherited from Fruit
+class Strawberry extends Fruit {
+  public function message() {
+    echo "Am I a fruit or a berry? ";
+  }
+}
+$strawberry = new Strawberry("Strawberry", "red");
+$strawberry->message();
+$strawberry->intro();
+?>
+```
+**Example Explained**
+
+The Strawberry class is inherited from the Fruit class.
+
+This means that the Strawberry class can use the public $name and $color properties as well as the public __construct() and intro() methods from the Fruit class because of inheritance.
+
+The Strawberry class also has its own method: message().
+#### Inheritance and the `protected` Access Modifier
+In the previous chapter we learned that `protected` properties or methods can be accessed within the class and by classes derived from that class. What does that mean?
+
+Let's look at an example:
+```php
+<?php
+class Fruit {
+  public $name;
+  public $color;
+  public function __construct($name, $color) {
+    $this->name = $name;
+    $this->color = $color;
+  }
+  protected function intro() {
+    echo "The fruit is {$this->name} and the color is {$this->color}.";
+  }
+}
+
+class Strawberry extends Fruit {
+  public function message() {
+    echo "Am I a fruit or a berry? ";
+  }
+}
+
+// Try to call all three methods from outside class
+$strawberry = new Strawberry("Strawberry", "red");  // OK. __construct() is public
+$strawberry->message(); // OK. message() is public
+$strawberry->intro(); // ERROR. intro() is protected and can't be called from outside the class even though inherited
+?>
+```
+#### Overriding Inherited Methods
+Inherited methods can be overridden by redefining the methods (use the same name) in the child class.
+
+Look at the example below. The __construct() and intro() methods in the child class (Strawberry) will override the __construct() and intro() methods in the parent class (Fruit):
+```php
+<?php
+class Fruit {
+  public $name;
+  public $color;
+  public function __construct($name, $color) {
+    $this->name = $name;
+    $this->color = $color;
+  }
+  public function intro() {
+    echo "The fruit is {$this->name} and the color is {$this->color}.";
+  }
+}
+
+class Strawberry extends Fruit {
+  public $weight;
+  public function __construct($name, $color, $weight) {
+    $this->name = $name;
+    $this->color = $color;
+    $this->weight = $weight;
+  }
+  public function intro() {
+    echo "The fruit is {$this->name}, the color is {$this->color}, and the weight is {$this->weight} gram.";
+  }
+}
+
+$strawberry = new Strawberry("Strawberry", "red", 50);
+$strawberry->intro();
+?>
+```
+
+#### The `final` Keyword
+The final keyword can be used to prevent class inheritance or to prevent method overriding.
+
+The following example shows how to prevent class inheritance:
+
+```php
+<?php
+final class Fruit {
+  // some code
+}
+
+// will result in error
+class Strawberry extends Fruit {
+  // some code
+}
+```
+The following example shows how to prevent method overriding:
+```php
+<?php
+class Fruit {
+  final public function intro() {
+    // some code
+  }
+}
+
+class Strawberry extends Fruit {
+  // will result in error
+  public function intro() {
+    // some code
+  }
+}
+```
+
+#### PHP - Class Constants
+Constants cannot be changed once it is declared.
+
+Class constants can be useful if you need to define some constant data within a class.
+
+A class constant is declared inside a class with the `const` keyword.
+
+Class constants are case-sensitive. However, it is recommended to name the constants in all uppercase letters.
+
+We can access a constant from outside the class by **directly** using the class name followed by the scope resolution operator `::` followed by the constant name, like here:
+```php
+<?php
+class Goodbye {
+  const LEAVING_MESSAGE = "Thank you for visiting W3Schools.com!";
+}
+
+echo Goodbye::LEAVING_MESSAGE;
+?>
+
+```
+
+Or, we can access a constant from inside the class by using the `self` keyword followed by the scope resolution operator `::` followed by the constant name, like here:
+
+```php
+<?php
+class Goodbye {
+  const LEAVING_MESSAGE = "Thank you for visiting W3Schools.com!";
+}
+
+echo Goodbye::LEAVING_MESSAGE;
+?>
+
+```
+#### Static Properties Methods
+Static methods can be called directly - without creating an instance of the class first, they are similar to class constants (but constants are of course properties not methods).
+
+Static methods are declared with the `static` keyword. To access a static method use the class name, double colon `::`, and the method name.
+
+```php
+<?php
+class greeting
+{
+  public static $value = 3.14159;
+  public static function welcome()
+  {
+      echo "Hello ";
+  } 
+  public function greeting($name)
+  {
+      echo greeting::welcome() . $name;
+  }
+}
+
+// Call static method
+echo greeting::$value;
+greeting::welcome();
+$greet = new greeting();
+$greet->greeting("Chinaza");
+?>
+```
+
+
+
+
+#### Multiple Inheritance with `trait`
+PHP only supports single inheritance: a child class can inherit only from one single parent.
+
+So, what if a class needs to inherit multiple behaviors? OOP traits solve this problem.
+
+Traits are used to declare methods that can be used in multiple classes. Traits can have methods and abstract methods that can be used in multiple classes, and the methods can have any access modifier (public, private, or protected).
+
+Traits are declared with the `trait` keyword. To use a trait in a class, `use` the use keyword:
+
+```php
+<?php
+trait message1
+    {
+        public function msg1()
+        {
+            echo "OOP is fun! ";
+        }
+    }
+
+trait message2 {
+  public function msg2() {
+    echo "OOP reduces code duplication!";
+  }
+}
+class Greeting
+{
+    public function greet()
+    {
+        echo "Good Morning <br>";
+    }
+}
+class Welcome extends Greeting
+{
+    use message1, message2;
+}
+
+$obj = new Welcome();
+$obj->greet();
+$obj->msg2();
+$obj->msg1();
+?>
+```
+
+
+
+### 21. Send Email using PHP `mail()` Function
+
+ending email messages are very common for a web application, for example, sending welcome email when a user create an account on your website, sending newsletters to your registered users, or getting user feedback or comment through website's contact form, and so on.
+
+You can use the PHP built-in mail() function for creating and sending email messages to one or more recipients dynamically from your PHP application either in a plain-text form or formatted HTML. The basic syntax of this function can be given with:
+
+**Syntax**:
+```
+mail(to, subject, message, headers, parameters)
+```
+  - `to` - (required) The recipient's email address.
+  - `subject` - (required)	Subject of the email to be sent. This parameter i.e. the subject line cannot contain any newline character `\n`.
+  - `message` -	(required) Defines the message to be sent. Each line should be separated with a line feed-LF `\n`. Lines should not exceed 70 characters. It can be plain text or HTML.
+  - `headers` - (optional) This is typically used to add extra headers such as "From", "Cc", "Bcc". The additional headers should be separated with a carriage return plus a line feed-CRLF `\r\n`.
+  - `parameters` - (optional) Used to pass additional parameters.
+
+```php
+$to = 'maryjane@email.com';
+$subject = 'Marriage Proposal';
+$from = 'peterparker@email.com';
+ 
+// To send HTML mail, the Content-type header must be set
+$headers  = 'MIME-Version: 1.0' . "\r\n";
+$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+ 
+// Create email headers
+$headers .= 'From: '.$from."\r\n".
+    'Reply-To: '.$from."\r\n" .
+    'X-Mailer: PHP/' . phpversion();
+ 
+// Compose a simple HTML email message
+$message = '<html><body>';
+$message .= '<h1 style="color:#f40;">Hi Jane!</h1>';
+$message .= '<p style="color:#080;font-size:18px;">Will you marry me?</p>';
+$message .= '</body></html>';
+ 
+// Sending email
+if(mail($to, $subject, $message, $headers)){
+    echo 'Your mail has been sent successfully.';
+} else{
+    echo 'Unable to send email. Please try again.';
+}
+```
+
+
+
+
+
+
+
+
+
+
 

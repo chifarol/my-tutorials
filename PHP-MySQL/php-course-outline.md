@@ -54,20 +54,17 @@
   - Function Declaration
   - Callback Functions
 12. PHP Math Object
-12. Regular Expressions
-13. Form Handling
-  - GET vs. POST
-  - Validation and Filtering and Sanitization
-14. Date and Time
+13. Date and Time
   - Date() Function
   - mktime() Function
   - Date From a String With strtotime()
   - Get Date or Time
   - Date() Function
-15. Include/Require Files
-16. File Upload
-17. Cookies ans Sessions
-18. JSON in PHP
+14. Regular Expressions
+15. Sessions and Cookies
+16. JSON in PHP
+17. Include/Require Files
+18. File Upload
 19. Errors/Exceptions
   - Throw
   - Try...Catch...Finally
@@ -81,14 +78,13 @@
   -  Access Modifiers
   -  Inheritance
   -  Constants
-  -  Abstract Classes
-  -  Interfaces
   -  Traits
-  -  Static Methods
-  -  Static Properties
-  -  Namespaces
-  -  Iterables
-21. MySQL Database MySQL Database
+  -  Static Properties and Methods
+21. Send Email
+22. Form Handling
+  - GET vs. POST
+  - Validation and Filtering and Sanitization
+23. MySQL Database MySQL Database
   - MySQL Database
   - MySQL Connect
   - MySQL Create DB
