@@ -2,7 +2,7 @@
 
 ## 1. PHP Introduction
 ### 1.1 How the Web Works?
-![How the Web Works](../assets/images/how-the-web-works.png "How the Web Works")
+![How the Web Works](./assets/images/how-the-web-works.png "How the Web Works")
 
 ### 1.2 What is PHP?
   - PHP is originally derived from **Personal Home Page Tools**, now stands for **PHP: Hypertext Preprocessor**
@@ -189,20 +189,19 @@ Comments can be used to:
 ### 2.3 Displaying or outputting values
 PHP runs on the server and output html to the browser but whatever is enclosed in the `<?php ?>` tag does not appear on the browser except we display/output it. This includes:
   - `echo`: outputs values but has no return value
-    ```php
-    <?php
-    echo "Hello World ---";
 
-    echo ("Hello World 2");
+      ```php
+      <?php
+      echo "Hello World ---";
 
-    $username = "Ilodigwe Chinaza";
+      echo ("Hello World 2");
 
-    echo "Hello and Welcome ".$username;
+      $username = "Ilodigwe Chinaza";
 
-    echo "Hello and Welcome $username";
+      echo "Hello and Welcome ".$username;
 
-    
-    ```
+      echo "Hello and Welcome $username";
+      ```
 
   - `print`: outputs values and has a return value of 1 so it can be used in expressions. e.g
     ```php
@@ -269,6 +268,7 @@ $x = 5;
   - A variable name cannot start with a number
   - A variable name can only contain alpha-numeric characters and underscores (A-z, 0-9, and _ )
   - Variable names are case-sensitive (`$age` and `$AGE` are two different variables)
+
 ```php
 <?php
 $username = "Ilodigwe Chinaza";
@@ -1290,6 +1290,7 @@ echo $x;
 
 #### 8.3 Logical Operators
 The PHP logical operators are used to combine conditional statements.
+
 | Operator | Name |	Example	|Result |
 | --------- | ----------- | ----------- | ----------- |
 | and	| And | $x and $y | Returns true if both $x and $y are true |
@@ -1334,6 +1335,7 @@ echo $x;
 ```
 #### 8.5 Increment / Decrement Operators
 These increases or decreases a value by 1
+
 | Operator | Name |	Result	|
 | ---------- | ---------- |	-----------	|
 | ++$x | Pre-increment |	Increments $x by one, then returns $x	|
@@ -1369,6 +1371,7 @@ echo $txt2;
 ```
 #### 8.7 Array Operators
 The PHP array operators are used to compare arrays.
+
 | Operator | Name |	Example	|Result |
 | --------- | ----------- | ----------- | ----------- |
 | +	| Union | $array1 + $array2 | Union of $array1 and $array2 |
@@ -1398,6 +1401,7 @@ var_dump($array1 !== $array3);
 #### 8.8 Conditional Assignment Operators
 The PHP conditional assignment operators are used to set a value depending on conditions:
 The PHP array operators are used to compare arrays.
+
 | Operator | Name |	Example	|Result |
 | --------- | ----------- | ----------- | ----------- |
 | ?  :	| Ternary | $x = (expr1) ? (expr2) : (expr3) | The value of $x is expr2 if expr1 = TRUE. The value of $x is expr3 if expr1 = FALSE |
@@ -2091,6 +2095,7 @@ echo preg_replace($pattern, "W3Schools", $str); // Outputs "Visit W3Schools!"
 
 #### Regular Expression Modifiers
 Modifiers can change how a search is performed.
+
 | Modifier |	Description | 
 | -------- |	----------- | 
 | i |	Performs a case-insensitive search |
@@ -2114,6 +2119,7 @@ Square brackets surrounding a pattern of characters are called a character class
 Negated character classes can also be defined that match any character except those contained within the brackets. A negated character class is defined by placing a caret (^) symbol immediately after the opening bracket, like this `[^abc]`.
 
 You can also define a range of characters by using the hyphen `-` character inside a character class, like `[0-9]`. Let's look at some examples of character classes:
+
 | Expression |	Description | 
 | -------- |	----------- | 
 | [abc] |	Find one character from the options between the brackets |
@@ -2135,6 +2141,7 @@ if(preg_match($pattern, $text)){
 ```
 #### Predefined Character Classes
 Some character classes such as digits, letters, and whitespaces are used so frequently that there are shortcut names for them. The following table lists those predefined character classes:
+
 | Expression |	Description | 
 | -------- |	----------- | 
 | &#124;	| Find a match for any one of the patterns separated by &#124; as in: cat &#124; dog &#124; fish |
@@ -2160,6 +2167,7 @@ echo preg_replace($pattern, $replacement, $text) . "<br>";
 
 #### Position Anchors
 Use position anchors when you want to match at the beginning or end of a line, word, or string. To do this you can use anchors. Two common anchors are caret `^` which represent the start of the string, and the dollar `$` sign which represent the end of the string.
+
 | Expression |	Description | 
 | ---------- |	----------- |
 | ^p	| Matches the letter p at the beginning of a line. |
@@ -2191,6 +2199,7 @@ echo preg_replace($pattern, $replacement, $text);
 
 #### Repetition Quantifiers
 Quantifiers define quantities:
+
 | Expression |	Description | 
 | ---------- |	----------- | 
 | x+ | Matches one or more occurrences of the letter x |
@@ -2609,6 +2618,7 @@ The Exception Object contains information about the error or unexpected behaviou
 new Exception(message, code, previous)
 ```
 **Parameter Values**
+
 | Parameter |	Description |
 | --------- |	----------- |
 | message	| Optional. A string describing why the exception was thrown |
@@ -2650,6 +2660,7 @@ try {
 The `catch` block typically catch the exception thrown within the try block and creates an instance of the `Exception` class called the `$e`object containing the exception information. 
 
 **Exception Methods**
+
 | Parameter |	Description |
 | --------- |	----------- |
 | getMessage()	| Returns a string describing why the exception was thrown |
