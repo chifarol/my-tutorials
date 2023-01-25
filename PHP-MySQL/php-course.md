@@ -3077,9 +3077,6 @@ $greet->greeting("Chinaza");
 ?>
 ```
 
-
-
-
 #### Multiple Inheritance with `trait`
 PHP only supports single inheritance: a child class can inherit only from one single parent.
 
@@ -3167,6 +3164,472 @@ if(mail($to, $subject, $message, $headers)){
 } else{
     echo 'Unable to send email. Please try again.';
 }
+```
+
+### 22. Form Handling
+The PHP superglobals `$_GET` and ``$_POST`` are used to collect form-data.
+
+#### When to use GET?
+Information sent from a form with the GET method is visible to everyone (all variable names and values are displayed in the URL). GET also has limits on the amount of information to send. The limitation is about 2000 characters. However, because the variables are displayed in the URL, it is possible to bookmark the page. This can be useful in some cases.
+
+GET may be used for sending non-sensitive data.
+
+**Note**: GET should NEVER be used for sending passwords or other sensitive information!
+
+#### When to use POST?
+Information sent from a form with the POST method is invisible to others (all names/values are embedded within the body of the HTTP request) and has no limits on the amount of information to send.
+
+Moreover POST supports advanced functionality such as support for multi-part binary input while uploading files to server.
+
+However, because the variables are not displayed in the URL, it is not possible to bookmark the page.
+
+Developers prefer POST for sending form data.
+
+
+#### PHP Form Validation
+Proper validation of form data is important to protect your form from hackers and spammers!
+
+The HTML form we will be working at in these chapters, contains various input fields: required and optional text fields, radio buttons, and a submit button:
+
+
+```php
+<html>
+
+<body>
+    <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+        Name: <input type="text" name="name">
+        <br>
+        E-mail: <input type="text" name="email">
+        <br>
+        Website: <input type="text" name="website">
+        <br>
+        Comment: <textarea name="comment" rows="5" cols="40"></textarea>
+        <br>
+        Gender:
+        <input type="radio" name="gender" value="female">Female
+        <input type="radio" name="gender" value="male">Male
+
+</body>
+
+</html>
+```
+When the form is submitted, the form data is sent with method="post".
+
+### What is the `$_SERVER["PHP_SELF"]` variable?
+
+The `$_SERVER["PHP_SELF"]` is a super global variable that returns the filename of the currently executing script.
+
+So, the $_SERVER["PHP_SELF"] sends the submitted form data to the page itself, instead of jumping to a different page. This way, the user will get error messages on the same page as the form.
+
+### Beware !!
+The `$_SERVER["PHP_SELF"]` variable can be used by hackers!
+
+If `PHP_SELF` is used in your page then a user can enter a slash (/) and then some Cross Site Scripting (XSS) commands to execute.
+
+Cross-site scripting (XSS) is a type of computer security vulnerability typically found in Web applications. XSS enables attackers to inject client-side script into Web pages viewed by other users.
+
+Assume we have the following form in a page named "test_form.php":
+
+Now, if a user enters the normal URL in the address bar like 
+```
+"http://www.example.com/test_form.php"
+```
+
+`PHP_SELF` becomes `test_form.php` and the form's `action` will be translated to:
+
+```php
+<form method="post" action="test_form.php">
+```
+So far, so good.
+
+However, consider that a user enters the following URL in the address bar:
+```
+http://www.example.com/test_form.php/%22%3E%3Cscript%3Ealert('hacked')%3C/script%3E
+```
+In this case, `PHP_SELF` becomes `test_form.php/"><script>alert('hacked')</script>` and the form's `action` will be translated to:
+```php
+<form method="post" action="test_form.php/"><script>alert('hacked')</script>
+```
+This code adds a script tag and an alert command. And when the page loads, the JavaScript code will be executed (the user will see an alert box). This is just a simple and harmless example how the PHP_SELF variable can be exploited.
+
+Be aware of that any JavaScript code can be added inside the `<script>` tag! A hacker can redirect the user to a file on another server, and that file can hold malicious code that can alter the global variables or submit the form to another address to save the user data.
+
+```php
+<form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
+```
+
+#### How To Avoid `$_SERVER["PHP_SELF"]` Exploits?
+`$_SERVER["PHP_SELF"]` exploits can be avoided by using the htmlspecialchars() function.
+
+The form code should look like this:
+#### What is the `htmlspecialchars()` function?
+
+The `htmlspecialchars()` function converts special characters to HTML entities. This means that it will replace HTML characters like `<` and `>` with &lt; and &gt;. This prevents attackers from exploiting the code by injecting HTML or Javascript code (Cross-site Scripting attacks) in forms.
+
+```php
+<form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
+```
+Now if the user tries to exploit the PHP_SELF variable, it will result in the following output:
+```php
+<form method="post" action="test_form.php/&quot;&gt;&lt;script&gt;alert('hacked')&lt;/script&gt;">
+```
+The exploit attempt fails, and no harm is done!
+
+#### Validate Form Data With PHP
+1. The first thing we will do is to pass all variables through PHP's htmlspecialchars() function.
+
+When we use the htmlspecialchars() function; then if a user tries to submit the following in a text field:
+```
+<script>location.href('http://www.hacked.com')</script>
+```
+
+this would not be executed, because it would be saved as HTML escaped code, like this:
+```
+&lt;script&gt;location.href('http://www.hacked.com')&lt;/script&gt;
+```
+
+The code is now safe to be displayed on a page or inside an e-mail.
+
+We will also do two more things when the user submits the form:
+
+2. Strip unnecessary characters (extra space, tab, newline) from the user input data (with the PHP `trim()` function)
+3. Remove backslashes (\) from the user input data (with the PHP stripslashes() function)
+The next step is to create a function that will do all the checking for us (which is much more convenient than writing the same code over and over again).
+
+We will name the function `test_input()`.
+
+Now, we can check/validate each `$_POST` variable with the `test_input()` function, and the script looks like this:
+
+```php
+<?php
+// define variables and set to empty values
+$name = $email = $gender = $comment = $website = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $name = test_input($_POST["name"]);
+  $email = test_input($_POST["email"]);
+  $website = test_input($_POST["website"]);
+  $comment = test_input($_POST["comment"]);
+  $gender = test_input($_POST["gender"]);
+}
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+?>
+```
+Notice that at the start of the script, we check whether the form has been submitted using $_SERVER["REQUEST_METHOD"]. If the REQUEST_METHOD is POST, then the form has been submitted - and it should be validated. If it has not been submitted, skip the validation and display a blank form.
+
+However, in the example above, all input fields are optional. The script works fine even if the user does not enter any data.
+
+The next step is to make input fields required and create error messages if needed.
+
+#### Enforcing Required Fields
+Asssuming we are to make the "Name", "E-mail", and "Gender" fields required/compulsory i.e these fields cannot be empty and must be filled out in the HTML form.
+
+In the following code we have added some new variables: `$nameErr`, `$emailErr`, `$genderErr`, and $websiteErr. These error variables will hold error messages for the required fields. We have also added an if else statement for each `$_POST` variable. This checks if the `$_POST` variable is empty (with the PHP `empty()` function). If it is empty, an error message is stored in the different error variables, and if it is not empty, it sends the user input data through the `test_input()` function:
+
+```php
+<?php
+// define variables and set to empty values
+$nameErr = $emailErr = $genderErr = $websiteErr = "";
+$name = $email = $gender = $comment = $website = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (empty($_POST["name"])) {
+    $nameErr = "Name is required";
+  } else {
+    $name = test_input($_POST["name"]);
+  }
+
+  if (empty($_POST["email"])) {
+    $emailErr = "Email is required";
+  } else {
+    $email = test_input($_POST["email"]);
+  }
+
+  if (empty($_POST["website"])) {
+    $website = "";
+  } else {
+    $website = test_input($_POST["website"]);
+  }
+
+  if (empty($_POST["comment"])) {
+    $comment = "";
+  } else {
+    $comment = test_input($_POST["comment"]);
+  }
+
+  if (empty($_POST["gender"])) {
+    $genderErr = "Gender is required";
+  } else {
+    $gender = test_input($_POST["gender"]);
+  }
+}
+?>
+```
+
+#### PHP - Display The Error Messages
+Then in the HTML form, we add a little script after each required field, which generates the correct error message if needed (that is if the user tries to submit the form without filling out the required fields):
+
+```php
+<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+
+Name: <input type="text" name="name">
+<span class="error">* <?php echo $nameErr;?></span>
+<br><br>
+E-mail:
+<input type="text" name="email">
+<span class="error">* <?php echo $emailErr;?></span>
+<br><br>
+Website:
+<input type="text" name="website">
+<span class="error"><?php echo $websiteErr;?></span>
+<br><br>
+Comment: <textarea name="comment" rows="5" cols="40"></textarea>
+<br><br>
+Gender:
+<input type="radio" name="gender" value="female">Female
+<input type="radio" name="gender" value="male">Male
+<input type="radio" name="gender" value="other">Other
+<span class="error">* <?php echo $genderErr;?></span>
+<br><br>
+<input type="submit" name="submit" value="Submit">
+
+</form>
+```
+
+#### More Custom Validations
+The next step is to validate the input data, that is "Does the Name field contain only letters and whitespace?", and "Does the E-mail field contain a valid e-mail address syntax?", and if filled out, "Does the Website field contain a valid URL?".
+
+
+**PHP - Validate Name**
+The code below shows a simple way to check if the name field only contains letters, dashes, apostrophes and whitespaces. If the value of the name field is not valid, then store an error message:
+
+```php
+$name = test_input($_POST["name"]);
+if (!preg_match("/^[a-zA-Z-' ]*$/",$name)) {
+  $nameErr = "Only letters and white space allowed";
+}
+```
+**PHP - Validate URL**
+
+The code below shows a way to check if a URL address syntax is valid (this regular expression also allows dashes in the URL). If the URL address syntax is not valid, then store an error message:
+```php
+$website = test_input($_POST["website"]);
+if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$website)) {
+  $websiteErr = "Invalid URL";
+}
+```
+
+**Altogether - Validate Name, E-mail, and URL**
+Now, the script looks like this:
+
+```php
+<?php
+// define variables and set to empty values
+$nameErr = $emailErr = $genderErr = $websiteErr = "";
+$name = $email = $gender = $comment = $website = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (empty($_POST["name"])) {
+    $nameErr = "Name is required";
+  } else {
+    $name = test_input($_POST["name"]);
+    // check if name only contains letters and whitespace
+    if (!preg_match("/^[a-zA-Z-' ]*$/",$name)) {
+      $nameErr = "Only letters and white space allowed";
+    }
+  }
+
+  if (empty($_POST["email"])) {
+    $emailErr = "Email is required";
+  } else {
+    $email = test_input($_POST["email"]);
+    // check if e-mail address is well-formed
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      $emailErr = "Invalid email format";
+    }
+  }
+
+  if (empty($_POST["website"])) {
+    $website = "";
+  } else {
+    $website = test_input($_POST["website"]);
+    // check if URL address syntax is valid (this regular expression also allows dashes in the URL)
+    if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$website)) {
+      $websiteErr = "Invalid URL";
+    }
+  }
+
+  if (empty($_POST["comment"])) {
+    $comment = "";
+  } else {
+    $comment = test_input($_POST["comment"]);
+  }
+
+  if (empty($_POST["gender"])) {
+    $genderErr = "Gender is required";
+  } else {
+    $gender = test_input($_POST["gender"]);
+  }
+}
+?>
+```
+
+#### PHP - Keep The Values in The Form
+To show the values in the input fields after the user hits the submit button, we add a little PHP script inside the value attribute of the following input fields: name, email, and website. In the comment textarea field, we put the script between the `<textarea>` and `</textarea>` tags. The little script outputs the value of the $name, $email, $website, and $comment variables. 
+
+Then, we also need to show which radio button that was checked. For this, we must manipulate the checked attribute (not the value attribute for radio buttons):
+
+```php
+Name: <input type="text" name="name" value="<?php echo $name;?>">
+
+E-mail: <input type="text" name="email" value="<?php echo $email;?>">
+
+Website: <input type="text" name="website" value="<?php echo $website;?>">
+
+Comment: <textarea name="comment" rows="5" cols="40"><?php echo $comment;?></textarea>
+
+Gender:
+<input type="radio" name="gender"
+<?php if (isset($gender) && $gender=="female") echo "checked";?>
+value="female">Female
+<input type="radio" name="gender"
+<?php if (isset($gender) && $gender=="male") echo "checked";?>
+value="male">Male
+<input type="radio" name="gender"
+<?php if (isset($gender) && $gender=="other") echo "checked";?>
+value="other">Other
+```
+
+### 23. MySQL Database
+With PHP, you can connect to and manipulate databases.
+
+MySQL is the most popular database system used with PHP.
+
+#### 23.1 What is MySQL?
+  - MySQL is a database system used on the web
+  - MySQL is a database system that runs on a server
+  - MySQL is ideal for both small and large applications
+  - MySQL is very fast, reliable, and easy to use
+  - MySQL uses standard SQL
+  - MySQL compiles on a number of platforms
+  - MySQL is free to download and use
+  - MySQL is developed, distributed, and supported by Oracle Corporation
+  - MySQL is named after co-founder Monty Widenius's daughter called 'My'
+
+The data in a MySQL database are stored in tables. A table is a collection of related data, and it consists of columns and rows (think of html tables).
+
+Databases are useful for storing information categorically. A company may have a database with the following tables:
+
+  - Employees
+  - Products
+  - Customers
+  - Orders
+
+MySQL is the de-facto standard database system for web sites with HUGE volumes of both data and end-users (like Facebook, Twitter, and Wikipedia).
+
+Another great thing about MySQL is that it can be scaled down to support embedded database applications.
+
+Look at http://www.mysql.com/customers/ for an overview of companies using MySQL.
+
+#### 23.2 PHP Connect to MySQL
+PHP 5 and later can work with a MySQL database using:
+
+  - MySQLi extension (the "i" stands for improved)
+  - PDO (PHP Data Objects)
+
+Earlier versions of PHP used the MySQL extension. However, this extension was deprecated in 2012.
+
+**Should I Use MySQLi or PDO?**
+If you need a short answer, it would be "Whatever you like".
+
+Both MySQLi and PDO have their advantages:
+
+PDO will work on 12 different database systems, whereas MySQLi will only work with MySQL databases.
+
+So, if you have to switch your project to use another database, PDO makes the process easy. You only have to change the connection string and a few queries. With MySQLi, you will need to rewrite the entire code - queries included.
+
+Both are object-oriented, but MySQLi also offers a procedural API.
+
+Both support Prepared Statements. Prepared Statements protect from SQL injection, and are very important for web application security.
+
+**MySQL Examples in Both MySQLi and PDO Syntax**
+In this, and in the following chapters we demonstrate three ways of working with PHP and MySQL:
+
+  - MySQLi (object-oriented)
+  - MySQLi (procedural)
+  - PDO
+
+#### 23.3 Open a Connection to MySQL
+Before we can access data in the MySQL database, we need to be able to connect to the server:
+
+Example (MySQLi Object-Oriented)
+```php
+<?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password);
+
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+echo "Connected successfully";
+?>
+```
+
+**Note on the object-oriented example above:**
+
+`$connect_error` was broken until PHP 5.2.9 and 5.3.0. If you need to ensure compatibility with PHP versions prior to 5.2.9 and 5.3.0, use the following code instead:
+
+```
+// Check connection
+if (mysqli_connect_error()) {
+  die("Database connection failed: " . mysqli_connect_error());
+}
+```
+Example (MySQLi Procedural)
+```php
+<?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password);
+
+// Check connection
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+echo "Connected successfully";
+?>
+```
+
+Example (PDO)
+```php
+<?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+
+try {
+  $conn = new PDO("mysql:host=$servername;dbname=myDB", $username, $password);
+  // set the PDO error mode to exception
+  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  echo "Connected successfully";
+} catch(PDOException $e) {
+  echo "Connection failed: " . $e->getMessage();
+}
+?>
 ```
 
 

@@ -84,7 +84,7 @@
 22. Form Handling
   - GET vs. POST
   - Validation and Filtering and Sanitization
-23. MySQL Database MySQL Database
+23. MySQL Database
   - MySQL Database
   - MySQL Connect
   - MySQL Create DB
