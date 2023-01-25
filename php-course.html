@@ -87,8 +87,7 @@
     <li>For XAMPP to serve php files, the files must be located in <code>C:\xampp\htdocs</code> directory</li>
     <li>Create a new folder called &quot;webcapz&quot; in <code>C:\xampp\htdocs</code> directory</li>
     <li>Open the folder in VSCode and create a new file called <code>index.php</code> in
-      <code>C:\xampp\htdocs\webcapz</code>
-    </li>
+      <code>C:\xampp\htdocs\webcapz</code></li>
     <li>Inside the file, paste the following:</li>
   </ol>
   <pre><code class="lang-php"><span class="php"><span class="hljs-meta">&lt;?php</span>
@@ -229,23 +228,22 @@ lines
 </code></pre>
       <h3 id="2-3-displaying-or-outputting-values">2.3 Displaying or outputting values</h3>
       <p>PHP runs on the server and output html to the browser but whatever is enclosed in the
-        <code>&lt;?php ?&gt;</code> tag does not appear on the browser except we display/output it. This includes:
-      </p>
+        <code>&lt;?php ?&gt;</code> tag does not appear on the browser except we display/output it. This includes:</p>
     </li>
     <li>
-      <p><code>echo</code>: outputs values but has no return value
-        ```php
-        &lt;?php
-        echo &quot;Hello World ---&quot;;</p>
-      <p>echo (&quot;Hello World 2&quot;);</p>
-      <p>$username = &quot;Ilodigwe Chinaza&quot;;</p>
-      <p>echo &quot;Hello and Welcome &quot;.$username;</p>
-      <p>echo &quot;Hello and Welcome $username&quot;;</p>
-    </li>
-  </ul>
-  <pre><code>```
+      <p><code>echo</code>: outputs values but has no return value</p>
+      <pre><code class="lang-php">  <span class="php"><span class="hljs-meta">&lt;?php</span>
+  <span class="hljs-keyword">echo</span> <span class="hljs-string">"Hello World ---"</span>;
+
+  <span class="hljs-keyword">echo</span> (<span class="hljs-string">"Hello World 2"</span>);
+
+  $username = <span class="hljs-string">"Ilodigwe Chinaza"</span>;
+
+  <span class="hljs-keyword">echo</span> <span class="hljs-string">"Hello and Welcome "</span>.$username;
+
+  <span class="hljs-keyword">echo</span> <span class="hljs-string">"Hello and Welcome $username"</span>;</span>
 </code></pre>
-  <ul>
+    </li>
     <li>
       <p><code>print</code>: outputs values and has a return value of 1 so it can be used in expressions. e.g</p>
       <pre><code class="lang-php"><span class="php"><span class="hljs-meta">&lt;?php</span>
@@ -310,42 +308,38 @@ $x = <span class="hljs-number">5</span>;</span>
     <li>A variable name must start with a letter or the underscore character <code>_</code></li>
     <li>A variable name cannot start with a number</li>
     <li>A variable name can only contain alpha-numeric characters and underscores (A-z, 0-9, and _ )</li>
-    <li>Variable names are case-sensitive (<code>$age</code> and <code>$AGE</code> are two different variables)
-      ```php
-      &lt;?php
-      $username = &quot;Ilodigwe Chinaza&quot;;
-      $num1 = 2;
-      $num2 = 8;
-      $sum = $num1 + $num2;
-      echo &quot;Hello and Welcome &quot;.$username;
-      echo &quot;<br>&quot;;
-      echo &quot;The sum of $num1 and $num2 is $sum&quot;;</li>
+    <li>Variable names are case-sensitive (<code>$age</code> and <code>$AGE</code> are two different variables)</li>
   </ul>
-  <pre><code>
-**PHP <span class="hljs-keyword">is</span> a Loosely Typed Language:**
-
-<span class="hljs-keyword">In</span> the example above, notice that we did <span class="hljs-keyword">not</span> have <span class="hljs-keyword">to</span> tell PHP which data <span class="hljs-keyword">type</span> the <span class="hljs-keyword">variable</span> <span class="hljs-keyword">is</span>.
-
-PHP automatically associates a data <span class="hljs-keyword">type</span> <span class="hljs-keyword">to</span> the <span class="hljs-keyword">variable</span>, depending <span class="hljs-keyword">on</span> its value. Since the data types are <span class="hljs-keyword">not</span> set <span class="hljs-keyword">in</span> a strict sense, you can do things like adding a <span class="hljs-built_in">string</span> <span class="hljs-keyword">to</span> an <span class="hljs-built_in">integer</span> without causing an <span class="hljs-literal">error</span>.
-
-PHP also provides automatic data <span class="hljs-keyword">type</span> conversion.
-
-So, <span class="hljs-keyword">if</span> you assign an <span class="hljs-built_in">integer</span> value <span class="hljs-keyword">to</span> a <span class="hljs-keyword">variable</span>, the <span class="hljs-keyword">type</span> <span class="hljs-keyword">of</span> that <span class="hljs-keyword">variable</span> will automatically be an <span class="hljs-built_in">integer</span>. <span class="hljs-keyword">Then</span>, <span class="hljs-keyword">if</span> you assign a <span class="hljs-built_in">string</span> <span class="hljs-keyword">to</span> the same <span class="hljs-keyword">variable</span>, the <span class="hljs-keyword">type</span> will change <span class="hljs-keyword">to</span> a <span class="hljs-built_in">string</span>.
-
-This automatic conversion can sometimes break your code.
-
-<span class="hljs-keyword">In</span> PHP <span class="hljs-number">7</span>, <span class="hljs-keyword">type</span> declarations were added. This gives an option <span class="hljs-keyword">to</span> specify the data <span class="hljs-keyword">type</span> expected <span class="hljs-keyword">when</span> declaring a <span class="hljs-keyword">function</span>, <span class="hljs-keyword">and</span> by enabling the strict requirement, it will throw a <span class="hljs-string">"Fatal Error"</span> <span class="hljs-keyword">on</span> a <span class="hljs-keyword">type</span> mismatch.
-
-You will learn more about strict <span class="hljs-keyword">and</span> non-strict requirements, <span class="hljs-keyword">and</span> data <span class="hljs-keyword">type</span> declarations <span class="hljs-keyword">in</span> the PHP Functions chapter.
-
-#### `isset(<span class="hljs-keyword">variable</span>)`:
-This <span class="hljs-keyword">is</span> a very useful <span class="hljs-keyword">function</span> used <span class="hljs-keyword">to</span> check whether a <span class="hljs-keyword">variable</span> <span class="hljs-keyword">is</span> empty. Also check whether the <span class="hljs-keyword">variable</span> <span class="hljs-keyword">is</span> set/declared *without throwing an <span class="hljs-literal">error</span>*:
-**Syntax**
+  <pre><code class="lang-php">&lt;?php
+<span class="hljs-variable">$username</span> = <span class="hljs-string">"Ilodigwe Chinaza"</span>;
+<span class="hljs-variable">$num1</span> = 2;
+<span class="hljs-variable">$num2</span> = 8;
+<span class="hljs-variable">$sum</span> = <span class="hljs-variable">$num1</span> + <span class="hljs-variable">$num2</span>;
+<span class="hljs-built_in">echo</span> <span class="hljs-string">"Hello and Welcome "</span>.<span class="hljs-variable">$username</span>;
+<span class="hljs-built_in">echo</span> <span class="hljs-string">"&lt;br&gt;"</span>;
+<span class="hljs-built_in">echo</span> <span class="hljs-string">"The sum of <span class="hljs-variable">$num1</span> and <span class="hljs-variable">$num2</span> is <span class="hljs-variable">$sum</span>"</span>;
 </code></pre>
-  <p>isset(variable, another variable, ...);</p>
-  <pre><code>**Note**: A variable can be unset with the `unset()` function.
-```php
-<span class="php"><span class="hljs-meta">&lt;?php</span>
+  <p><strong>PHP is a Loosely Typed Language:</strong></p>
+  <p>In the example above, notice that we did not have to tell PHP which data type the variable is.</p>
+  <p>PHP automatically associates a data type to the variable, depending on its value. Since the data types are not set
+    in a strict sense, you can do things like adding a string to an integer without causing an error.</p>
+  <p>PHP also provides automatic data type conversion.</p>
+  <p>So, if you assign an integer value to a variable, the type of that variable will automatically be an integer. Then,
+    if you assign a string to the same variable, the type will change to a string.</p>
+  <p>This automatic conversion can sometimes break your code.</p>
+  <p>In PHP 7, type declarations were added. This gives an option to specify the data type expected when declaring a
+    function, and by enabling the strict requirement, it will throw a &quot;Fatal Error&quot; on a type mismatch.</p>
+  <p>You will learn more about strict and non-strict requirements, and data type declarations in the PHP Functions
+    chapter.</p>
+  <h4 id="-isset-variable-"><code>isset(variable)</code>:</h4>
+  <p>This is a very useful function used to check whether a variable is empty. Also check whether the variable is
+    set/declared <em>without throwing an error</em>:
+    <strong>Syntax</strong>
+  </p>
+  <pre><code><span class="hljs-function"><span class="hljs-title">isset</span>(<span class="hljs-params">variable, another variable, ...</span>)</span>;
+</code></pre>
+  <p><strong>Note</strong>: A variable can be unset with the <code>unset()</code> function.</p>
+  <pre><code class="lang-php"><span class="php"><span class="hljs-meta">&lt;?php</span>
 $a = <span class="hljs-number">0</span>;
 <span class="hljs-comment">// True because $a is set</span>
 <span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>($a)) {
@@ -368,8 +362,7 @@ $b = <span class="hljs-keyword">null</span>;
   <p>Constants are like variables except that once they are defined they cannot be changed or undefined. Unlike
     variables, constants are automatically <strong>global</strong> across the entire script.</p>
   <p>A valid constant name starts with a letter or underscore (no <code>$</code> sign before the constant name,
-    <strong>very important</strong>).
-  </p>
+    <strong>very important</strong>).</p>
   <p>To create a constant, use the <code>define()</code> function.</p>
   <p><strong>Syntax</strong>: <code>define(name, value)</code></p>
   <p><strong>Parameters</strong>:</p>
@@ -529,8 +522,7 @@ myTest();</span>
 </code></pre>
   <h4 id="-_post-"><code>$_POST</code></h4>
   <p>A PHP super global variable which is used to collect form data after submitting an HTML form with
-    <code>method=&quot;post&quot;</code>. $_POST is also widely used to pass variables.
-  </p>
+    <code>method=&quot;post&quot;</code>. $_POST is also widely used to pass variables.</p>
   <pre><code class="lang-php"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
 
@@ -556,8 +548,7 @@ myTest();</span>
 </code></pre>
   <h4 id="-_get-"><code>$_GET</code></h4>
   <p>PHP $_GET is a PHP super global variable which is used to collect form data after submitting an HTML form with
-    <code>method=&quot;get&quot;</code>.
-  </p>
+    <code>method=&quot;get&quot;</code>.</p>
   <p><code>$_GET</code> can also collect data sent in the URL.</p>
   <p>Assume we have an HTML page that contains a hyperlink with parameters:</p>
   <pre><code class="lang-php"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
@@ -577,8 +568,7 @@ myTest();</span>
   <h4 id="-_files-"><code>$_FILES</code></h4>
   <p>PHP $_FILES is a PHP super global variable which is used to collect form data for
     <code>&lt;input type=&quot;file&quot;&gt;</code> after submitting an HTML form with
-    <code>method=&quot;post&quot;</code> and <code>enctype=&quot;multipart/form-data</code>.
-  </p>
+    <code>method=&quot;post&quot;</code> and <code>enctype=&quot;multipart/form-data</code>.</p>
   <p>Assume we have an HTML page that contains a hyperlink with parameters:</p>
   <pre><code class="lang-php"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
@@ -642,8 +632,7 @@ print_r($_SESSION);
   </ul>
   <h4 id="php-string">PHP String</h4>
   <p>A string can be any text inside quotes. You can use single <code>&#39;&#39;</code> or double quotes
-    <code>&quot;&quot;</code>:
-  </p>
+    <code>&quot;&quot;</code>:</p>
   <pre><code class="lang-php"><span class="php"><span class="hljs-meta">&lt;?php</span>
 $x = <span class="hljs-string">"Hello world!"</span>;
 <span class="hljs-keyword">echo</span> $x;</span>
@@ -980,8 +969,7 @@ $cars = <span class="hljs-keyword">array</span>(<span class="hljs-string">"Volvo
 <span class="hljs-keyword">echo</span> <span class="hljs-string">"My favorite car is "</span> . $cars[<span class="hljs-number">2</span>];</span>
 </code></pre>
   <p>The <code>array()</code> function is used to create an array. They can also be created with square brackets
-    <code>[]</code>
-  </p>
+    <code>[]</code></p>
   <p>In PHP, there are three types of arrays:</p>
   <ul>
     <li>
@@ -1365,15 +1353,59 @@ $x = <span class="hljs-number">4</span>&lt;=&gt;<span class="hljs-number">4</spa
 <span class="hljs-keyword">echo</span> $x;</span>
 </code></pre>
   <h4 id="8-3-logical-operators">8.3 Logical Operators</h4>
-  <p>The PHP logical operators are used to combine conditional statements.
-    | Operator | Name | Example |Result |
-    | --------- | ----------- | ----------- | ----------- |
-    | and | And | $x and $y | Returns true if both $x and $y are true |
-    | &amp;&amp; | And | $x &amp;&amp; $y | Returns true if both $x and $y are true |
-    | or | Or | $x or $y | Returns true if either $x or $y are true |
-    | || | Or | $x || $y | Returns true if either $x or $y are true |
-    | xor | Xor | $x xor $y | Returns true if either $x or $y is true, but not both |
-    | ! | Not | $x ! $y | Returns true if $x is not true |</p>
+  <p>The PHP logical operators are used to combine conditional statements.</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Operator</th>
+        <th>Name</th>
+        <th>Example</th>
+        <th>Result</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>and</td>
+        <td>And</td>
+        <td>$x and $y</td>
+        <td>Returns true if both $x and $y are true</td>
+      </tr>
+      <tr>
+        <td>&amp;&amp;</td>
+        <td>And</td>
+        <td>$x &amp;&amp; $y</td>
+        <td>Returns true if both $x and $y are true</td>
+      </tr>
+      <tr>
+        <td>or</td>
+        <td>Or</td>
+        <td>$x or $y</td>
+        <td>Returns true if either $x or $y are true</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Or</td>
+        <td>$x</td>
+        <td></td>
+        <td>$y</td>
+        <td>Returns true if either $x or $y are true</td>
+      </tr>
+      <tr>
+        <td>xor</td>
+        <td>Xor</td>
+        <td>$x xor $y</td>
+        <td>Returns true if either $x or $y is true, but not both</td>
+      </tr>
+      <tr>
+        <td>!</td>
+        <td>Not</td>
+        <td>$x ! $y</td>
+        <td>Returns true if $x is not true</td>
+      </tr>
+    </tbody>
+  </table>
   <pre><code class="lang-php"><span class="php"><span class="hljs-meta">&lt;?php</span>
 $x = <span class="hljs-string">"3"</span>&lt;<span class="hljs-number">4</span>;
 $y = <span class="hljs-number">3</span>&gt;<span class="hljs-number">4</span>;
@@ -1439,13 +1471,38 @@ $x += <span class="hljs-number">1</span>;
 <span class="hljs-keyword">echo</span> $x;</span>
 </code></pre>
   <h4 id="8-5-increment-decrement-operators">8.5 Increment / Decrement Operators</h4>
-  <p>These increases or decreases a value by 1
-    | Operator | Name | Result |
-    | ---------- | ---------- | ----------- |
-    | ++$x | Pre-increment | Increments $x by one, then returns $x |
-    | $x++ | Post-increment | Returns $x, then increments $x by one |
-    | --$x | Pre-decrement | Decrements $x by one, then returns $x |
-    | $x-- | Post-decrement | Returns $x, then decrements $x by one |</p>
+  <p>These increases or decreases a value by 1</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Operator</th>
+        <th>Name</th>
+        <th>Result</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>++$x</td>
+        <td>Pre-increment</td>
+        <td>Increments $x by one, then returns $x</td>
+      </tr>
+      <tr>
+        <td>$x++</td>
+        <td>Post-increment</td>
+        <td>Returns $x, then increments $x by one</td>
+      </tr>
+      <tr>
+        <td>--$x</td>
+        <td>Pre-decrement</td>
+        <td>Decrements $x by one, then returns $x</td>
+      </tr>
+      <tr>
+        <td>$x--</td>
+        <td>Post-decrement</td>
+        <td>Returns $x, then decrements $x by one</td>
+      </tr>
+    </tbody>
+  </table>
   <pre><code class="lang-php"><span class="php"><span class="hljs-meta">&lt;?php</span>
 $x = <span class="hljs-number">2</span>;
     <span class="hljs-keyword">echo</span> $x++;
@@ -1489,19 +1546,57 @@ $txt1 .= $txt2;
 <span class="hljs-keyword">echo</span> $txt2;</span>
 </code></pre>
   <h4 id="8-7-array-operators">8.7 Array Operators</h4>
-  <p>The PHP array operators are used to compare arrays.
-    | Operator | Name | Example |Result |
-    | --------- | ----------- | ----------- | ----------- |
-    | + | Union | $array1 + $array2 | Union of $array1 and $array2 |
-    | == | Equality | $array1 == $array2 | Returns true if $array1 and $array2 have the same key/value pairs |
-    | === | Identical | $array1 === $array2 | Returns true if $array1 and $array2 have the same key/value pairs in the
-    same order and of the same types |
-    | != | Inequality | $array1 != $array2 | Returns true if $array1 and $array2 doesn&#39;t have the same key/value
-    pairs |
-    | &lt;&gt; | Inequality | $array1 &lt;&gt; $array2 | Returns true if $array1 and $array2 doesn&#39;t have the same
-    key/value pairs |
-    | !== | Non-Identical | $array1 !== $array2 | Returns true if $array1 and $array2 doesn&#39;t have the same
-    key/value pairs in the same order or are not of the same types |</p>
+  <p>The PHP array operators are used to compare arrays.</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Operator</th>
+        <th>Name</th>
+        <th>Example</th>
+        <th>Result</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>+</td>
+        <td>Union</td>
+        <td>$array1 + $array2</td>
+        <td>Union of $array1 and $array2</td>
+      </tr>
+      <tr>
+        <td>==</td>
+        <td>Equality</td>
+        <td>$array1 == $array2</td>
+        <td>Returns true if $array1 and $array2 have the same key/value pairs</td>
+      </tr>
+      <tr>
+        <td>===</td>
+        <td>Identical</td>
+        <td>$array1 === $array2</td>
+        <td>Returns true if $array1 and $array2 have the same key/value pairs in the same order and of the same types
+        </td>
+      </tr>
+      <tr>
+        <td>!=</td>
+        <td>Inequality</td>
+        <td>$array1 != $array2</td>
+        <td>Returns true if $array1 and $array2 doesn&#39;t have the same key/value pairs</td>
+      </tr>
+      <tr>
+        <td>&lt;&gt;</td>
+        <td>Inequality</td>
+        <td>$array1 &lt;&gt; $array2</td>
+        <td>Returns true if $array1 and $array2 doesn&#39;t have the same key/value pairs</td>
+      </tr>
+      <tr>
+        <td>!==</td>
+        <td>Non-Identical</td>
+        <td>$array1 !== $array2</td>
+        <td>Returns true if $array1 and $array2 doesn&#39;t have the same key/value pairs in the same order or are not
+          of the same types</td>
+      </tr>
+    </tbody>
+  </table>
   <pre><code class="lang-php"><span class="php"><span class="hljs-meta">&lt;?php</span>
 $array1 = [<span class="hljs-string">"name"</span> =&gt; <span class="hljs-string">"chinaza"</span>, <span class="hljs-string">"gender"</span> =&gt; <span class="hljs-string">"male"</span>];
 $array2 = [<span class="hljs-string">"name"</span> =&gt; <span class="hljs-string">"chinaza"</span>, <span class="hljs-string">"gender"</span> =&gt; <span class="hljs-string">"male"</span>];
@@ -1520,13 +1615,32 @@ var_dump($array1 !== $array3);</span>
 </code></pre>
   <h4 id="8-8-conditional-assignment-operators">8.8 Conditional Assignment Operators</h4>
   <p>The PHP conditional assignment operators are used to set a value depending on conditions:
-    The PHP array operators are used to compare arrays.
-    | Operator | Name | Example |Result |
-    | --------- | ----------- | ----------- | ----------- |
-    | ? : | Ternary | $x = (expr1) ? (expr2) : (expr3) | The value of $x is expr2 if expr1 = TRUE. The value of $x is
-    expr3 if expr1 = FALSE |
-    | ?? | Null coalescing | $x = (expr1) ?? (expr2) | The value of $x is expr1 if expr1 exists, and is not NULL. If
-    expr1 does not exist, or is NULL, the value of $x is expr2. Introduced in PHP 7 |</p>
+    The PHP array operators are used to compare arrays.</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Operator</th>
+        <th>Name</th>
+        <th>Example</th>
+        <th>Result</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>? :</td>
+        <td>Ternary</td>
+        <td>$x = (expr1) ? (expr2) : (expr3)</td>
+        <td>The value of $x is expr2 if expr1 = TRUE. The value of $x is expr3 if expr1 = FALSE</td>
+      </tr>
+      <tr>
+        <td>??</td>
+        <td>Null coalescing</td>
+        <td>$x = (expr1) ?? (expr2)</td>
+        <td>The value of $x is expr1 if expr1 exists, and is not NULL. If expr1 does not exist, or is NULL, the value of
+          $x is expr2. Introduced in PHP 7</td>
+      </tr>
+    </tbody>
+  </table>
   <pre><code class="lang-php"><span class="php"><span class="hljs-meta">&lt;?php</span>
 $status = <span class="hljs-string">"successful"</span>;
 $counter = <span class="hljs-keyword">null</span>;
@@ -1791,8 +1905,7 @@ $age = <span class="hljs-keyword">array</span>(<span class="hljs-string">"Peter"
   <ul>
     <li>A function is a block of statements that can be used repeatedly in a program.</li>
     <li>A function declaration is not execute automatically. A function is only executed by calling the function (i.e
-      <code>function_name(parameters_if_any)</code>).
-    </li>
+      <code>function_name(parameters_if_any)</code>).</li>
     <li>A <em>function name</em> must start with a letter or an underscore. Function names are NOT case-sensitive.</li>
   </ul>
   <p>In the example below, we create a function named &quot;writeMsg()&quot;. The opening curly brace ( { ) indicates
@@ -1832,8 +1945,7 @@ familyName(<span class="hljs-string">"Borge"</span>);</span>
     function, and by adding the strict declaration, it will throw a &quot;Fatal Error&quot; if the data type mismatches.
   </p>
   <p>In the following example we try to send both a number and a string to the function without using
-    <code>strict</code>
-  </p>
+    <code>strict</code></p>
   <pre><code class="lang-php">&lt;?php
 function addNumbers(<span class="hljs-built_in">int</span> $a, <span class="hljs-built_in">int</span> $b) {
   <span class="hljs-keyword">return</span> $a + $b<span class="hljs-comment">;</span>
@@ -1873,8 +1985,7 @@ setHeight(<span class="hljs-number">80</span>);</span>
   <p>PHP 7 also supports Type Declarations for the return statement. Like with the type declaration for function
     arguments, by enabling the strict requirement, it will throw a &quot;Fatal Error&quot; on a type mismatch.</p>
   <p>To declare a type for the function return, add a colon <code>:</code> and the type right before the opening curly
-    <code>{</code> bracket when declaring the function.
-  </p>
+    <code>{</code> bracket when declaring the function.</p>
   <p>In the following example we specify the return type for the function:</p>
   <pre><code class="lang-php"><span class="php"><span class="hljs-meta">&lt;?php</span> 
 <span class="hljs-keyword">declare</span>(strict_types=<span class="hljs-number">1</span>); <span class="hljs-comment">// strict requirement</span>
@@ -2011,8 +2122,7 @@ echo(max(<span class="hljs-number">0</span>, <span class="hljs-number">150</span
     <li><code>format</code> - Required</li>
     <li><code>timestamp</code> - (optional, default is the current <code>time()</code>). A timestamp is a
       <strong>numeric</strong> value in <strong>seconds</strong> between the current <code>time()</code> and value as at
-      1st January, 1970 00:00:00 Greenwich Mean Time (GMT)
-    </li>
+      1st January, 1970 00:00:00 Greenwich Mean Time (GMT)</li>
   </ul>
   <h4 id="13-1-get-a-date">13.1 Get a date</h4>
   <p>The required format parameter of the date() function specifies how to format the date (or time).</p>
@@ -2115,8 +2225,7 @@ $days=ceil(($july4_timestamp-time())/(<span class="hljs-number">60</span>*<span 
   <p>A regular expression can be a single character, or a more complicated pattern.</p>
   <p>Regular expressions can be used to perform all types of text search and text replace operations. </p>
   <p>In PHP, regular expressions are strings composed of <code>delimiters</code>, a <code>pattern</code> and optional
-    <code>modifiers</code>.
-  </p>
+    <code>modifiers</code>.</p>
   <p><strong>Syntax</strong>:</p>
   <pre><code>$<span class="hljs-built_in">exp</span> = <span class="hljs-string">"/w3schools/i"</span>;
 </code></pre>
@@ -2164,16 +2273,42 @@ $pattern = <span class="hljs-string">"/microsoft/i"</span>;
 <span class="hljs-meta">?&gt;</span></span>
 </code></pre>
   <h4 id="regular-expression-modifiers">Regular Expression Modifiers</h4>
-  <p>Modifiers can change how a search is performed.
-    | Modifier | Description |
-    | -------- | ----------- |
-    | i | Performs a case-insensitive search |
-    | m | Changes the behavior of ^ and $ to match against a newline boundary (i.e. start or end of each line within a
-    multiline string), instead of a string boundary. |
-    | g | Perform a global match i.e. finds all occurrences. |
-    | o | Evaluates the expression only once. |
-    | s | Changes the behavior of . (dot) to match all characters, including newlines. |
-    | x | Allows you to use whitespace and comments within a regular expression for clarity. |</p>
+  <p>Modifiers can change how a search is performed.</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Modifier</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>i</td>
+        <td>Performs a case-insensitive search</td>
+      </tr>
+      <tr>
+        <td>m</td>
+        <td>Changes the behavior of ^ and $ to match against a newline boundary (i.e. start or end of each line within a
+          multiline string), instead of a string boundary.</td>
+      </tr>
+      <tr>
+        <td>g</td>
+        <td>Perform a global match i.e. finds all occurrences.</td>
+      </tr>
+      <tr>
+        <td>o</td>
+        <td>Evaluates the expression only once.</td>
+      </tr>
+      <tr>
+        <td>s</td>
+        <td>Changes the behavior of . (dot) to match all characters, including newlines.</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Allows you to use whitespace and comments within a regular expression for clarity.</td>
+      </tr>
+    </tbody>
+  </table>
   <pre><code class="lang-php"><span class="php"><span class="hljs-meta">&lt;?php</span>
 <span class="hljs-comment">// how to match at the beginning of every line in a multi-line string using ^ anchor and m modifier</span>
 $pattern = <span class="hljs-string">"/^color/im"</span>;
@@ -2184,22 +2319,46 @@ $matches = preg_match_all($pattern, $text, $array);
   <h4 id="character-classes">Character Classes</h4>
   <p>Square brackets surrounding a pattern of characters are called a character class e.g. <code>[abc]</code>. A
     character class always matches a single character out of a list of specified characters that means the expression
-    <code>[abc]</code> matches only a, b or c character.
-  </p>
+    <code>[abc]</code> matches only a, b or c character.</p>
   <p>Negated character classes can also be defined that match any character except those contained within the brackets.
     A negated character class is defined by placing a caret (^) symbol immediately after the opening bracket, like this
-    <code>[^abc]</code>.
-  </p>
+    <code>[^abc]</code>.</p>
   <p>You can also define a range of characters by using the hyphen <code>-</code> character inside a character class,
-    like <code>[0-9]</code>. Let&#39;s look at some examples of character classes:
-    | Expression | Description |
-    | -------- | ----------- |
-    | [abc] | Find one character from the options between the brackets |
-    |[^abc] | Find any character NOT between the brackets |
-    | [A-Z] | Matches any one character from uppercase a to uppercase z. |
-    | [a-Z] | Matches any one character from lowercase a to uppercase Z. |
-    | [0-9] | Find one character from the range 0 to 9 |
-    | [a-z0-9] | Matches a single character between a and z or between 0 and 9. |</p>
+    like <code>[0-9]</code>. Let&#39;s look at some examples of character classes:</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Expression</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>[abc]</td>
+        <td>Find one character from the options between the brackets</td>
+      </tr>
+      <tr>
+        <td>[^abc]</td>
+        <td>Find any character NOT between the brackets</td>
+      </tr>
+      <tr>
+        <td>[A-Z]</td>
+        <td>Matches any one character from uppercase a to uppercase z.</td>
+      </tr>
+      <tr>
+        <td>[a-Z]</td>
+        <td>Matches any one character from lowercase a to uppercase Z.</td>
+      </tr>
+      <tr>
+        <td>[0-9]</td>
+        <td>Find one character from the range 0 to 9</td>
+      </tr>
+      <tr>
+        <td>[a-z0-9]</td>
+        <td>Matches a single character between a and z or between 0 and 9.</td>
+      </tr>
+    </tbody>
+  </table>
   <pre><code class="lang-php"><span class="php"><span class="hljs-meta">&lt;?php</span>
 $pattern = <span class="hljs-string">"/ca[kf]e/"</span>;
 $text = <span class="hljs-string">"He was eating cake in the cafe."</span>;
@@ -2211,21 +2370,58 @@ $text = <span class="hljs-string">"He was eating cake in the cafe."</span>;
 </code></pre>
   <h4 id="predefined-character-classes">Predefined Character Classes</h4>
   <p>Some character classes such as digits, letters, and whitespaces are used so frequently that there are shortcut
-    names for them. The following table lists those predefined character classes:
-    | Expression | Description |
-    | -------- | ----------- |
-    | &#124; | Find a match for any one of the patterns separated by &#124; as in: cat &#124; dog &#124; fish |
-    | . | Find just one instance of any character except newline <code>\n</code> |
-    | ^ | Finds a match as the beginning of a string as in: <code>^Hello</code> |
-    | $ | Finds a match at the end of the string as in: World$ |
-    | \d | Find a digit character. Same as <code>[0-9]</code> |
-    | \D | Matches any non-digit character. Same as <code>[^0-9]</code> |
-    | \s | Find a whitespace character. Same as <code>[ \t\n\r]</code> |
-    | \S | Matches any non-whitespace character. Same as [^ \t\n\r] |
-    | \w | Matches any word character (definned as a to z, A to Z,0 to 9, and the underscore). Same as
-    <code>[a-zA-Z_0-9]</code> |
-    | \W | Matches any non-word character. Same as <code>[^a-zA-Z_0-9]</code> |
-  </p>
+    names for them. The following table lists those predefined character classes:</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Expression</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>&#124;</td>
+        <td>Find a match for any one of the patterns separated by &#124; as in: cat &#124; dog &#124; fish</td>
+      </tr>
+      <tr>
+        <td>.</td>
+        <td>Find just one instance of any character except newline <code>\n</code></td>
+      </tr>
+      <tr>
+        <td>^</td>
+        <td>Finds a match as the beginning of a string as in: <code>^Hello</code></td>
+      </tr>
+      <tr>
+        <td>$</td>
+        <td>Finds a match at the end of the string as in: World$</td>
+      </tr>
+      <tr>
+        <td>\d</td>
+        <td>Find a digit character. Same as <code>[0-9]</code></td>
+      </tr>
+      <tr>
+        <td>\D</td>
+        <td>Matches any non-digit character. Same as <code>[^0-9]</code></td>
+      </tr>
+      <tr>
+        <td>\s</td>
+        <td>Find a whitespace character. Same as <code>[ \t\n\r]</code></td>
+      </tr>
+      <tr>
+        <td>\S</td>
+        <td>Matches any non-whitespace character. Same as [^ \t\n\r]</td>
+      </tr>
+      <tr>
+        <td>\w</td>
+        <td>Matches any word character (definned as a to z, A to Z,0 to 9, and the underscore). Same as
+          <code>[a-zA-Z_0-9]</code></td>
+      </tr>
+      <tr>
+        <td>\W</td>
+        <td>Matches any non-word character. Same as <code>[^a-zA-Z_0-9]</code></td>
+      </tr>
+    </tbody>
+  </table>
   <pre><code class="lang-php"><span class="php"><span class="hljs-meta">&lt;?php</span>
 <span class="hljs-comment">// Replace spaces, newlines and tabs</span>
 $pattern = <span class="hljs-string">"/\s/"</span>;
@@ -2237,12 +2433,25 @@ $text = <span class="hljs-string">"Earth revolves around\nthe\tSun"</span>;
   <h4 id="position-anchors">Position Anchors</h4>
   <p>Use position anchors when you want to match at the beginning or end of a line, word, or string. To do this you can
     use anchors. Two common anchors are caret <code>^</code> which represent the start of the string, and the dollar
-    <code>$</code> sign which represent the end of the string.
-    | Expression | Description |
-    | ---------- | ----------- |
-    | ^p | Matches the letter p at the beginning of a line. |
-    | p$ | Matches the letter p at the end of a line. |
-  </p>
+    <code>$</code> sign which represent the end of the string.</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Expression</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>^p</td>
+        <td>Matches the letter p at the beginning of a line.</td>
+      </tr>
+      <tr>
+        <td>p$</td>
+        <td>Matches the letter p at the end of a line.</td>
+      </tr>
+    </tbody>
+  </table>
   <pre><code class="lang-php"><span class="php"><span class="hljs-meta">&lt;?php</span>
 <span class="hljs-comment">// Replace spaces, newlines and tabs</span>
 $pattern = <span class="hljs-string">"/\s/"</span>;
@@ -2267,16 +2476,45 @@ $text = <span class="hljs-string">'Words begining with car: cart, carrot, cartoo
 <span class="hljs-meta">?&gt;</span></span>
 </code></pre>
   <h4 id="repetition-quantifiers">Repetition Quantifiers</h4>
-  <p>Quantifiers define quantities:
-    | Expression | Description |
-    | ---------- | ----------- |
-    | x+ | Matches one or more occurrences of the letter x |
-    | x* | Matches zero or more occurrences of the letter x |
-    | x? | Matches zero or one occurrences of the letter x |
-    | x{n} | Matches any string that contains a letter x, n times |
-    | x{n,m} | Matches any string that contains a sequence of n to m times |
-    | x{n,} | Matches any string that contains a sequence of x at <code>least</code> n times |
-    | n{,3} | Matches at <code>most</code> three occurrences of the letter p |</p>
+  <p>Quantifiers define quantities:</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Expression</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>x+</td>
+        <td>Matches one or more occurrences of the letter x</td>
+      </tr>
+      <tr>
+        <td>x*</td>
+        <td>Matches zero or more occurrences of the letter x</td>
+      </tr>
+      <tr>
+        <td>x?</td>
+        <td>Matches zero or one occurrences of the letter x</td>
+      </tr>
+      <tr>
+        <td>x{n}</td>
+        <td>Matches any string that contains a letter x, n times</td>
+      </tr>
+      <tr>
+        <td>x{n,m}</td>
+        <td>Matches any string that contains a sequence of n to m times</td>
+      </tr>
+      <tr>
+        <td>x{n,}</td>
+        <td>Matches any string that contains a sequence of x at <code>least</code> n times</td>
+      </tr>
+      <tr>
+        <td>n{,3}</td>
+        <td>Matches at <code>most</code> three occurrences of the letter p</td>
+      </tr>
+    </tbody>
+  </table>
   <h4 id="grouping">Grouping</h4>
   <p>You can use parentheses <code>( )</code> to apply quantifiers to entire patterns.</p>
   <pre><code class="lang-php"><span class="php"><span class="hljs-meta">&lt;?php</span>
@@ -2452,8 +2690,7 @@ session_destroy();
       In JSON, keys are always <code>strings</code>, while the value can be a <code>string</code>, <code>number</code>,
       <code>true</code> or <code>false</code>, <code>null</code>, <code>object</code> or an <code>array</code>. Strings
       must be enclosed in double quotes <code>&quot;&quot;</code> and can contain escape characters such as
-      <code>\n</code>, <code>\t</code> and <code>\</code>. A JSON object may look like this:
-    </li>
+      <code>\n</code>, <code>\t</code> and <code>\</code>. A JSON object may look like this:</li>
   </ul>
   <pre><code class="lang-json">{
     <span class="hljs-attr">"book"</span>: {
@@ -2667,14 +2904,31 @@ $car=<span class="hljs-string">'BMW'</span>;</span>
   <p><strong>Syntax</strong>:</p>
   <pre><code><span class="hljs-keyword">new</span> <span class="hljs-keyword">Exception</span>(message, code, previous)
 </code></pre>
-  <p><strong>Parameter Values</strong>
-    | Parameter | Description |
-    | --------- | ----------- |
-    | message | Optional. A string describing why the exception was thrown |
-    | code | Optional. An integer that can be used used to easily distinguish this exception from others of the same
-    type |
-    | previous | Optional. If this exception was thrown in a catch block of another exception, it is recommended to pass
-    that exception into this parameter |</p>
+  <p><strong>Parameter Values</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>message</td>
+        <td>Optional. A string describing why the exception was thrown</td>
+      </tr>
+      <tr>
+        <td>code</td>
+        <td>Optional. An integer that can be used used to easily distinguish this exception from others of the same type
+        </td>
+      </tr>
+      <tr>
+        <td>previous</td>
+        <td>Optional. If this exception was thrown in a catch block of another exception, it is recommended to pass that
+          exception into this parameter</td>
+      </tr>
+    </tbody>
+  </table>
   <h4 id="catching-an-exception">Catching An Exception</h4>
   <p>To avoid the error from the example above, we can use the <code>try...catch</code> statement to catch exceptions
     and continue the process.
@@ -2708,15 +2962,38 @@ $car=<span class="hljs-string">'BMW'</span>;</span>
 </code></pre>
   <p>The <code>catch</code> block typically catch the exception thrown within the try block and creates an instance of
     the <code>Exception</code> class called the <code>$e</code>object containing the exception information. </p>
-  <p><strong>Exception Methods</strong>
-    | Parameter | Description |
-    | --------- | ----------- |
-    | getMessage() | Returns a string describing why the exception was thrown |
-    | getPrevious() | If this exception was triggered by another one, this method returns the previous exception. If
-    not, then it returns null |
-    | getCode() | Returns the exception code |
-    | getFile() | Returns the full path of the file in which the exception was thrown |
-    | getLine() | Returns the line number of the line of code which threw the exception |</p>
+  <p><strong>Exception Methods</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>getMessage()</td>
+        <td>Returns a string describing why the exception was thrown</td>
+      </tr>
+      <tr>
+        <td>getPrevious()</td>
+        <td>If this exception was triggered by another one, this method returns the previous exception. If not, then it
+          returns null</td>
+      </tr>
+      <tr>
+        <td>getCode()</td>
+        <td>Returns the exception code</td>
+      </tr>
+      <tr>
+        <td>getFile()</td>
+        <td>Returns the full path of the file in which the exception was thrown</td>
+      </tr>
+      <tr>
+        <td>getLine()</td>
+        <td>Returns the line number of the line of code which threw the exception</td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="20-php-oop-object-oriented-programming-">20. PHP OOP (Object Oriented Programming)</h3>
   <p><strong>Procedural</strong> programming is about writing procedures or functions that perform operations on the
     data, while <strong>Object-Oriented Programming</strong> is about creating objects that contain both data and
@@ -3247,8 +3524,7 @@ $message .= <span class="hljs-string">'&lt;/body&gt;&lt;/html&gt;'</span>;
 </code></pre>
   <p>In this case, <code>PHP_SELF</code> becomes
     <code>test_form.php/&quot;&gt;&lt;script&gt;alert(&#39;hacked&#39;)&lt;/script&gt;</code> and the form&#39;s
-    <code>action</code> will be translated to:
-  </p>
+    <code>action</code> will be translated to:</p>
   <pre><code class="lang-php">&lt;form <span class="hljs-function"><span class="hljs-keyword">method</span>="<span class="hljs-title">post</span>" <span class="hljs-title">action</span>="<span class="hljs-title">test_form</span>.<span class="hljs-title">php</span>/"&gt;&lt;<span class="hljs-title">script</span>&gt;<span class="hljs-title">alert</span><span class="hljs-params">(<span class="hljs-string">'hacked'</span>)</span>&lt;/<span class="hljs-title">script</span>&gt;</span>
 </code></pre>
   <p>This code adds a script tag and an alert command. And when the page loads, the JavaScript code will be executed
@@ -3287,8 +3563,7 @@ $message .= <span class="hljs-string">'&lt;/body&gt;&lt;/html&gt;'</span>;
   <p>We will also do two more things when the user submits the form:</p>
   <ol>
     <li>Strip unnecessary characters (extra space, tab, newline) from the user input data (with the PHP
-      <code>trim()</code> function)
-    </li>
+      <code>trim()</code> function)</li>
     <li>Remove backslashes () from the user input data (with the PHP stripslashes() function)
       The next step is to create a function that will do all the checking for us (which is much more convenient than
       writing the same code over and over again).</li>
@@ -3330,8 +3605,7 @@ $name = $email = $gender = $comment = $website = <span class="hljs-string">""</s
     have also added an if else statement for each <code>$_POST</code> variable. This checks if the <code>$_POST</code>
     variable is empty (with the PHP <code>empty()</code> function). If it is empty, an error message is stored in the
     different error variables, and if it is not empty, it sends the user input data through the
-    <code>test_input()</code> function:
-  </p>
+    <code>test_input()</code> function:</p>
   <pre><code class="lang-php"><span class="php"><span class="hljs-meta">&lt;?php</span>
 <span class="hljs-comment">// define variables and set to empty values</span>
 $nameErr = $emailErr = $genderErr = $websiteErr = <span class="hljs-string">""</span>;
