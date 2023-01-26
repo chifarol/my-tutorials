@@ -3642,13 +3642,565 @@ try {
 }
 ?>
 ```
+**Note**: In the PDO example above we have also specified a database (myDB). PDO require a valid database to connect to. If no database is specified, an exception is thrown.
+
+**Tip**: A great benefit of PDO is that it has an exception class to handle any problems that may occur in our database queries. If an exception is thrown within the `try{ }` block, the script stops executing and flows directly to the first `catch(){ }` block.
+
+#### 23.4 Close the Connection
+The connection will be closed automatically when the script ends. To close the connection before that, use the following:
+
+```php
+// MySQLi Object-Oriented:
+$conn->close();
+// MySQLi Procedural:
+mysqli_close($conn);
+//PDO:
+$conn = null;
+```
+
+#### 23.5 PHP Create a MySQL Database
+A database consists of one or more tables.
+
+You will need special `CREATE` privileges to create or to delete a MySQL database.
+
+**Syntax**
+```
+CREATE DATABASE <databasename>;
+```
+
+**Note**:
+From here onwards i'll be sticking to the procedural approach.
+
+```php
+// Example (MySQLi Procedural)
+<?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password);
+// Check connection
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+
+// Create database
+$sql = "CREATE DATABASE myDB";
+if (mysqli_query($conn, $sql)) {
+  echo "Database created successfully";
+} else {
+  echo "Error creating database: " . mysqli_error($conn);
+}
+
+mysqli_close($conn);
+?>
+```
+
+#### 23.6 Create a MySQL Table 
+The `CREATE TABLE` statement is used to create a table in MySQL.
+
+**Syntax**
+```
+CREATE TABLE table_name (
+    column1_name data_type constraints,
+    column2_name data_type constraints,
+    ....
+);
+```
+The column parameters specify the names of the columns of the table.
+
+The datatype parameter specifies the type of data the column can hold (e.g. varchar, integer, date, etc.).
+
+| Data Type | Description |
+| --------- | ----------- |
+| INT	| Stores numeric values in the range of -2147483648 to 2147483647 |
+| DECIMAL	| Stores decimal values with exact precision. |
+| CHAR	| Stores fixed-length strings with a maximum size of 255 characters. |
+| VARCHAR	| Stores variable-length strings with a maximum size of 65,535 characters. |
+| TEXT | Stores strings with a maximum size of 65,535 characters. |
+| DATE | Stores date values in the YYYY-MM-DD format. |
+| DATETIME	| Stores combined date/time values in the YYYY-MM-DD HH:MM:SS format. |
+| TIMESTAMP	| Stores timestamp values |
+
+For an overview of the available data types, go to our complete Data Types [reference](https://www.w3schools.com/sql/sql_datatypes.asp).
+
+For constraints you can specify any of the following:
+  - `NOT NULL` - Each row must contain a value for that column, null values are not allowed
+  - `DEFAULT <value>` - Set a default value that is added when no other value is passed
+  - `UNSIGNED` - Used for number types, limits the stored data to positive numbers and zero
+  - `AUTO INCREMENT` - MySQL automatically increases the value of the field by 1 each time a new record is added
+  - `PRIMARY KEY` - Used to uniquely identify the rows in a table. The column with PRIMARY KEY setting is often an ID number, and is often used with AUTO_INCREMENT
+
+Each table should have a primary key column (in this case: the "id" column). Its value must be unique for each record in the table.
+
+The following example creates a table called "Persons" that contains five columns: PersonID, LastName, FirstName, Address, and City:
+
+Example
+```
+CREATE TABLE Persons (
+    PersonID int,
+    LastName varchar(255),
+    FirstName varchar(255),
+    Address varchar(255),
+    City varchar(255)
+);;
+```
+The PersonID column is of type int and will hold an integer.
+
+The LastName, FirstName, Address, and City columns are of type varchar and will hold characters, and the maximum length for these fields is 255 characters.
+
+The empty "Persons" table will now look like this:
+
+| PersonID	| LastName	| FirstName	| Address	| City |
+| ------	| ------	| ------	| ------ | ------ |
+|  	|  	|  	|   |   |
 
 
+The following examples shows how to create the table in PHP:
+
+```php
+<?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDB";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+
+// sql to create table
+$sql = "CREATE TABLE MyGuests (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+firstname VARCHAR(30) NOT NULL,
+lastname VARCHAR(30) NOT NULL,
+email VARCHAR(50),
+reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+)";
+
+if (mysqli_query($conn, $sql)) {
+  echo "Table MyGuests created successfully";
+} else {
+  echo "Error creating table: " . mysqli_error($conn);
+}
+
+mysqli_close($conn);
+?>
+```
+Here are some syntax rules to follow:
+
+  - The SQL query must be quoted in PHP
+  - String values inside the SQL query must be quoted
+  - Numeric values must not be quoted
+  - The word `NULL` must not be quoted
+
+#### 23.7 Insert Data Into Table
+The `INSERT INTO` statement is used to add new records to a MySQL table:
+**Syntax** 
+```
+INSERT INTO table_name (column1, column2, column3,...)
+VALUES (value1, value2, value3,...)
+```
+
+Example
+```php
+<?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDB";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+
+$sql = "INSERT INTO MyGuests (firstname, lastname, email)
+VALUES ('John', 'Doe', 'john@example.com')";
+
+if (mysqli_query($conn, $sql)) {
+  // get last Id
+  $last_id = mysqli_insert_id($conn);
+  echo "New record created successfully. Last inserted ID is: " . $last_id;
+} else {
+  echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
+
+mysqli_close($conn);
+?>
+```
+
+**Get ID of The Last Inserted Record**
+
+If we perform an `INSERT` or `UPDATE` on a table that has an `AUTO_INCREMENT` field, we can get the ID of the last inserted/updated record immediately with the `mysqli_insert_id($conn)` (for MySQLi procedural).
 
 
+#### 23.9 Insert Multiple Records  
+
+Multiple SQL statements must be executed with the `mysqli_multi_query()` function.
+
+```php
+<?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDB";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+
+$sql = "INSERT INTO MyGuests (firstname, lastname, email)
+VALUES ('John', 'Doe', 'john@example.com');";
+$sql .= "INSERT INTO MyGuests (firstname, lastname, email)
+VALUES ('Mary', 'Moe', 'mary@example.com');";
+$sql .= "INSERT INTO MyGuests (firstname, lastname, email)
+VALUES ('Julie', 'Dooley', 'julie@example.com')";
+
+if (mysqli_multi_query($conn, $sql)) {
+  echo "New records created successfully";
+} else {
+  echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
+
+mysqli_close($conn);
+?>
+```
+
+#### 23.10 Prepared Statements and Bound Parameters
+Prepared statements are very useful against SQL injections.
+
+A prepared statement is a feature used to execute the same (or similar) SQL statements repeatedly with high efficiency.
+
+Prepared statements basically work like this:
+
+1. Prepare: An SQL statement template is created and sent to the database. Certain values are left unspecified, called parameters (labeled "?"). Example: INSERT INTO MyGuests VALUES(?, ?, ?)
+2. The database parses, compiles, and performs query optimization on the SQL statement template, and stores the result without executing it
+3. Execute: At a later time, the application binds the values to the parameters, and the database executes the statement. The application may execute the statement as many times as it wants with different values
+
+Compared to executing SQL statements directly, prepared statements have three main advantages:
+
+  - Prepared statements reduce parsing time as the preparation on the query is done only once (although the statement is executed multiple times)
+  - Bound parameters minimize bandwidth to the server as you need send only the parameters each time, and not the whole query
+  - Prepared statements are very useful against SQL injections, because parameter values, which are transmitted later using a different protocol, need not be correctly escaped. If the original statement template is not derived from external input, SQL injection cannot occur.
+
+```php
+<?php
+/* Attempt MySQL server connection. Assuming you are running MySQL
+server with default setting (user 'root' with no password) */
+$conn  = mysqli_connect("localhost", "root", "", "demo");
+ 
+// Check connection
+if($conn === false){
+    die("ERROR: Could not connect. " . mysqli_connect_error());
+}
+ 
+// Prepare an insert statement
+$sql = "INSERT INTO MyGuests (firstname, lastname, email) VALUES (?, ?, ?)";
+ 
+if($stmt = mysqli_prepare($conn , $sql)){
+    // Bind variables to the prepared statement as parameters
+    mysqli_stmt_bind_param($stmt, "sss", $firstname, $lastname, $email);
+    
+    /* Set the parameters values and execute
+    the statement again to insert another row */
+    $firstname = "Hermione";
+    $lastname = "Granger";
+    $email = "hermionegranger@mail.com";
+    mysqli_stmt_execute($stmt);
+    
+    /* Set the parameters values and execute
+    the statement to insert a row */
+    $firstname = "Ron";
+    $lastname = "Weasley";
+    $email = "ronweasley@mail.com";
+    mysqli_stmt_execute($stmt);
+    
+    echo "Records inserted successfully.";
+} else{
+    echo "ERROR: Could not prepare query: $sql. " . mysqli_error($conn );
+}
+ 
+// Close statement
+mysqli_stmt_close($stmt);
+ 
+// Close connection
+mysqli_close($conn );
+?>
+```
+**Code lines to explain from the example above:**
+
+```
+"INSERT INTO MyGuests (firstname, lastname, email) VALUES (?, ?, ?)"
+```
+In our SQL, we insert a question mark (?) where we want to substitute in an integer, string, double or blob value.
+
+Then, have a look at the `bind_param()` function:
+
+```
+mysqli_stmt_bind_param($stmt, "sss", $firstname, $lastname, $email);
+```
+This function binds the parameters to the SQL query and tells the database what the parameters are. The "sss" argument lists the types of data that the parameters are. The s character tells mysql that the parameter is a string.
+
+The argument may be one of four types:
+  - i - integer
+  - d - double
+  - s - string
+  - b - BLOB
+
+By telling mysql what type of data to expect, we minimize the risk of SQL injections.
+
+**Note**
+If we want to insert any data from external sources (like user input), it is very important that the data is sanitized and validated.
+
+#### 23.11 Select Data
+The SELECT statement is used to select data from one or more tables:
+
+```
+SELECT column1, column2 FROM table_name
+```
+or we can use the * character to select ALL columns from a table:
+
+```
+SELECT * FROM table_name
+```
+
+The following example shows the same as the example above, in the MySQLi procedural way:
+
+```php
+<?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDB";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+
+$sql = "SELECT id, firstname, lastname FROM MyGuests";
+$result = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($result) > 0) {
+  // output data of each row
+  while($row = mysqli_fetch_assoc($result)) {
+    echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+  }
+} else {
+  echo "0 results";
+}
+
+mysqli_close($conn);
+?>
+```
+
+Code lines to explain from the example above:
+
+First, we set up an SQL query that selects the id, firstname and lastname columns from the MyGuests table. The next line of code runs the query and puts the resulting data into a variable called $result.
+
+Then, the function `mysqli_num_rows()` checks if there are more than zero rows returned.
+
+If there are more than zero rows returned, the function `mysqli_fetch_assoc()` puts all the results into an associative array that we can loop through. The `while()` loop loops through the result set and outputs the data from the id, firstname and lastname columns.
 
 
+#### Select and Filter Data With the `WHERE` clause
+The `WHERE` clause is used to filter records.
 
+The `WHERE` clause is used to extract only those records that fulfill a specified condition.
+
+**Syntax**
+```
+SELECT column_name(s) FROM table_name WHERE column_name operator value 
+```
+The following example selects the id, firstname and lastname columns from the MyGuests table where the lastname is "Doe", and displays it on the page:
+
+```php
+<?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDB";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+
+$sql = "SELECT id, firstname, lastname FROM MyGuests WHERE lastname='Doe'";
+$result = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($result) > 0) {
+  // output data of each row
+  while($row = mysqli_fetch_assoc($result)) {
+    echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+  }
+} else {
+  echo "0 results";
+}
+
+mysqli_close($conn);
+?>
+```
+
+#### 23.13 Sorrt Selected Data Using the `ORDER BY` Clause
+The `ORDER BY` clause is used to sort the result-set in ascending or descending order.
+
+The `ORDER BY` clause sorts the records in ascending order by default. To sort the records in descending order, use the DESC keyword.
+
+```
+SELECT column_name(s) FROM table_name ORDER BY column_name(s) ASC|DESC 
+```
+The following example selects the id, firstname and lastname columns from the MyGuests table. The records will be ordered by the lastname column:
+
+```php
+<?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDB";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+
+$sql = "SELECT id, firstname, lastname FROM MyGuests ORDER BY lastname";
+$result = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($result) > 0) {
+  // output data of each row
+  while($row = mysqli_fetch_assoc($result)) {
+    echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+  }
+} else {
+  echo "0 results";
+}
+
+mysqli_close($conn);
+?>
+```
+
+#### 23.14 Delete Data/Row From Table with the `DELETE` keyword
+
+The `DELETE` statement is used to delete records from a table:
+
+```
+DELETE FROM table_name
+WHERE some_column = some_value
+```
+
+**BE CAREFUL !!!**
+
+Notice the `WHERE` clause in the `DELETE` syntax: The `WHERE` clause specifies which record or records that should be deleted. If you omit the WHERE clause, all records will be deleted!
+
+The following examples delete the record with id=3 in the "MyGuests" table:
+
+```php
+<?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDB";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+
+// sql to delete a record
+$sql = "DELETE FROM MyGuests WHERE id=3";
+
+if (mysqli_query($conn, $sql)) {
+  echo "Record deleted successfully";
+} else {
+  echo "Error deleting record: " . mysqli_error($conn);
+}
+
+mysqli_close($conn);
+?>
+```
+
+#### 23.15 Update Data using the `UPDATE` clause
+
+```
+UPDATE table_name
+SET column1=value, column2=value2,...
+WHERE some_column=some_value 
+```
+
+The following examples update the record with id=2 in the "MyGuests" table:
+
+```php
+<?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDB";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+
+$sql = "UPDATE MyGuests SET lastname='Doe' WHERE id=2";
+
+if (mysqli_query($conn, $sql)) {
+  echo "Record updated successfully";
+} else {
+  echo "Error updating record: " . mysqli_error($conn);
+}
+
+mysqli_close($conn);
+?>
+```
+
+#### 23.16 Limit Amount of Data Fetched
+
+MySQL provides a `LIMIT` clause that is used to specify the number of records to return.
+
+The `LIMIT` clause makes it easy to code multi page results or pagination with SQL, and is very useful on large tables. Returning a large number of records can impact on performance.
+
+Assume we wish to select all records from 1 - 30 (inclusive) from a table called "Orders". The SQL query would then look like this:
+
+```
+$sql = "SELECT * FROM Orders LIMIT 30";
+```
+When the SQL query above is run, it will return the first 30 records.
+
+What if we want to select records 16 - 25 (inclusive)?
+
+Mysql also provides a way to handle this: by using `OFFSET`.
+
+The SQL query below says "return only 10 records, start on record 16 (`OFFSET 15`)":
+
+```
+$sql = "SELECT * FROM Orders LIMIT 10 OFFSET 15";
+```
+You could also use a shorter syntax to achieve the same result (Notice that the numbers should be reversed when you use a comma)
+
+```
+$sql = "SELECT * FROM Orders LIMIT 30";
+```
 
 
 
