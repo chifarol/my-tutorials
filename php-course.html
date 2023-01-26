@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- favicon -->
+  <link rel='icon' type='image/x-icon' href='./assets/images/memoji.png'>
   <!-- for dark background -->
   <link rel="stylesheet" href="./assets/css/markdown.css" />
   <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.7.0/styles/night-owl.min.css">
@@ -87,7 +89,8 @@
     <li>For XAMPP to serve php files, the files must be located in <code>C:\xampp\htdocs</code> directory</li>
     <li>Create a new folder called &quot;webcapz&quot; in <code>C:\xampp\htdocs</code> directory</li>
     <li>Open the folder in VSCode and create a new file called <code>index.php</code> in
-      <code>C:\xampp\htdocs\webcapz</code></li>
+      <code>C:\xampp\htdocs\webcapz</code>
+    </li>
     <li>Inside the file, paste the following:</li>
   </ol>
   <pre><code class="lang-php"><span class="php"><span class="hljs-meta">&lt;?php</span>
@@ -228,7 +231,8 @@ lines
 </code></pre>
       <h3 id="2-3-displaying-or-outputting-values">2.3 Displaying or outputting values</h3>
       <p>PHP runs on the server and output html to the browser but whatever is enclosed in the
-        <code>&lt;?php ?&gt;</code> tag does not appear on the browser except we display/output it. This includes:</p>
+        <code>&lt;?php ?&gt;</code> tag does not appear on the browser except we display/output it. This includes:
+      </p>
     </li>
     <li>
       <p><code>echo</code>: outputs values but has no return value</p>
@@ -362,7 +366,8 @@ $b = <span class="hljs-keyword">null</span>;
   <p>Constants are like variables except that once they are defined they cannot be changed or undefined. Unlike
     variables, constants are automatically <strong>global</strong> across the entire script.</p>
   <p>A valid constant name starts with a letter or underscore (no <code>$</code> sign before the constant name,
-    <strong>very important</strong>).</p>
+    <strong>very important</strong>).
+  </p>
   <p>To create a constant, use the <code>define()</code> function.</p>
   <p><strong>Syntax</strong>: <code>define(name, value)</code></p>
   <p><strong>Parameters</strong>:</p>
@@ -522,7 +527,8 @@ myTest();</span>
 </code></pre>
   <h4 id="-_post-"><code>$_POST</code></h4>
   <p>A PHP super global variable which is used to collect form data after submitting an HTML form with
-    <code>method=&quot;post&quot;</code>. $_POST is also widely used to pass variables.</p>
+    <code>method=&quot;post&quot;</code>. $_POST is also widely used to pass variables.
+  </p>
   <pre><code class="lang-php"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
 
@@ -548,7 +554,8 @@ myTest();</span>
 </code></pre>
   <h4 id="-_get-"><code>$_GET</code></h4>
   <p>PHP $_GET is a PHP super global variable which is used to collect form data after submitting an HTML form with
-    <code>method=&quot;get&quot;</code>.</p>
+    <code>method=&quot;get&quot;</code>.
+  </p>
   <p><code>$_GET</code> can also collect data sent in the URL.</p>
   <p>Assume we have an HTML page that contains a hyperlink with parameters:</p>
   <pre><code class="lang-php"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
@@ -568,7 +575,8 @@ myTest();</span>
   <h4 id="-_files-"><code>$_FILES</code></h4>
   <p>PHP $_FILES is a PHP super global variable which is used to collect form data for
     <code>&lt;input type=&quot;file&quot;&gt;</code> after submitting an HTML form with
-    <code>method=&quot;post&quot;</code> and <code>enctype=&quot;multipart/form-data</code>.</p>
+    <code>method=&quot;post&quot;</code> and <code>enctype=&quot;multipart/form-data</code>.
+  </p>
   <p>Assume we have an HTML page that contains a hyperlink with parameters:</p>
   <pre><code class="lang-php"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
@@ -632,7 +640,8 @@ print_r($_SESSION);
   </ul>
   <h4 id="php-string">PHP String</h4>
   <p>A string can be any text inside quotes. You can use single <code>&#39;&#39;</code> or double quotes
-    <code>&quot;&quot;</code>:</p>
+    <code>&quot;&quot;</code>:
+  </p>
   <pre><code class="lang-php"><span class="php"><span class="hljs-meta">&lt;?php</span>
 $x = <span class="hljs-string">"Hello world!"</span>;
 <span class="hljs-keyword">echo</span> $x;</span>
@@ -969,7 +978,8 @@ $cars = <span class="hljs-keyword">array</span>(<span class="hljs-string">"Volvo
 <span class="hljs-keyword">echo</span> <span class="hljs-string">"My favorite car is "</span> . $cars[<span class="hljs-number">2</span>];</span>
 </code></pre>
   <p>The <code>array()</code> function is used to create an array. They can also be created with square brackets
-    <code>[]</code></p>
+    <code>[]</code>
+  </p>
   <p>In PHP, there are three types of arrays:</p>
   <ul>
     <li>
@@ -1905,7 +1915,8 @@ $age = <span class="hljs-keyword">array</span>(<span class="hljs-string">"Peter"
   <ul>
     <li>A function is a block of statements that can be used repeatedly in a program.</li>
     <li>A function declaration is not execute automatically. A function is only executed by calling the function (i.e
-      <code>function_name(parameters_if_any)</code>).</li>
+      <code>function_name(parameters_if_any)</code>).
+    </li>
     <li>A <em>function name</em> must start with a letter or an underscore. Function names are NOT case-sensitive.</li>
   </ul>
   <p>In the example below, we create a function named &quot;writeMsg()&quot;. The opening curly brace ( { ) indicates
@@ -1945,7 +1956,8 @@ familyName(<span class="hljs-string">"Borge"</span>);</span>
     function, and by adding the strict declaration, it will throw a &quot;Fatal Error&quot; if the data type mismatches.
   </p>
   <p>In the following example we try to send both a number and a string to the function without using
-    <code>strict</code></p>
+    <code>strict</code>
+  </p>
   <pre><code class="lang-php">&lt;?php
 function addNumbers(<span class="hljs-built_in">int</span> $a, <span class="hljs-built_in">int</span> $b) {
   <span class="hljs-keyword">return</span> $a + $b<span class="hljs-comment">;</span>
@@ -1985,7 +1997,8 @@ setHeight(<span class="hljs-number">80</span>);</span>
   <p>PHP 7 also supports Type Declarations for the return statement. Like with the type declaration for function
     arguments, by enabling the strict requirement, it will throw a &quot;Fatal Error&quot; on a type mismatch.</p>
   <p>To declare a type for the function return, add a colon <code>:</code> and the type right before the opening curly
-    <code>{</code> bracket when declaring the function.</p>
+    <code>{</code> bracket when declaring the function.
+  </p>
   <p>In the following example we specify the return type for the function:</p>
   <pre><code class="lang-php"><span class="php"><span class="hljs-meta">&lt;?php</span> 
 <span class="hljs-keyword">declare</span>(strict_types=<span class="hljs-number">1</span>); <span class="hljs-comment">// strict requirement</span>
@@ -2122,7 +2135,8 @@ echo(max(<span class="hljs-number">0</span>, <span class="hljs-number">150</span
     <li><code>format</code> - Required</li>
     <li><code>timestamp</code> - (optional, default is the current <code>time()</code>). A timestamp is a
       <strong>numeric</strong> value in <strong>seconds</strong> between the current <code>time()</code> and value as at
-      1st January, 1970 00:00:00 Greenwich Mean Time (GMT)</li>
+      1st January, 1970 00:00:00 Greenwich Mean Time (GMT)
+    </li>
   </ul>
   <h4 id="13-1-get-a-date">13.1 Get a date</h4>
   <p>The required format parameter of the date() function specifies how to format the date (or time).</p>
@@ -2225,7 +2239,8 @@ $days=ceil(($july4_timestamp-time())/(<span class="hljs-number">60</span>*<span 
   <p>A regular expression can be a single character, or a more complicated pattern.</p>
   <p>Regular expressions can be used to perform all types of text search and text replace operations. </p>
   <p>In PHP, regular expressions are strings composed of <code>delimiters</code>, a <code>pattern</code> and optional
-    <code>modifiers</code>.</p>
+    <code>modifiers</code>.
+  </p>
   <p><strong>Syntax</strong>:</p>
   <pre><code>$<span class="hljs-built_in">exp</span> = <span class="hljs-string">"/w3schools/i"</span>;
 </code></pre>
@@ -2319,10 +2334,12 @@ $matches = preg_match_all($pattern, $text, $array);
   <h4 id="character-classes">Character Classes</h4>
   <p>Square brackets surrounding a pattern of characters are called a character class e.g. <code>[abc]</code>. A
     character class always matches a single character out of a list of specified characters that means the expression
-    <code>[abc]</code> matches only a, b or c character.</p>
+    <code>[abc]</code> matches only a, b or c character.
+  </p>
   <p>Negated character classes can also be defined that match any character except those contained within the brackets.
     A negated character class is defined by placing a caret (^) symbol immediately after the opening bracket, like this
-    <code>[^abc]</code>.</p>
+    <code>[^abc]</code>.
+  </p>
   <p>You can also define a range of characters by using the hyphen <code>-</code> character inside a character class,
     like <code>[0-9]</code>. Let&#39;s look at some examples of character classes:</p>
   <table>
@@ -2414,7 +2431,8 @@ $text = <span class="hljs-string">"He was eating cake in the cafe."</span>;
       <tr>
         <td>\w</td>
         <td>Matches any word character (definned as a to z, A to Z,0 to 9, and the underscore). Same as
-          <code>[a-zA-Z_0-9]</code></td>
+          <code>[a-zA-Z_0-9]</code>
+        </td>
       </tr>
       <tr>
         <td>\W</td>
@@ -2433,7 +2451,8 @@ $text = <span class="hljs-string">"Earth revolves around\nthe\tSun"</span>;
   <h4 id="position-anchors">Position Anchors</h4>
   <p>Use position anchors when you want to match at the beginning or end of a line, word, or string. To do this you can
     use anchors. Two common anchors are caret <code>^</code> which represent the start of the string, and the dollar
-    <code>$</code> sign which represent the end of the string.</p>
+    <code>$</code> sign which represent the end of the string.
+  </p>
   <table>
     <thead>
       <tr>
@@ -2690,7 +2709,8 @@ session_destroy();
       In JSON, keys are always <code>strings</code>, while the value can be a <code>string</code>, <code>number</code>,
       <code>true</code> or <code>false</code>, <code>null</code>, <code>object</code> or an <code>array</code>. Strings
       must be enclosed in double quotes <code>&quot;&quot;</code> and can contain escape characters such as
-      <code>\n</code>, <code>\t</code> and <code>\</code>. A JSON object may look like this:</li>
+      <code>\n</code>, <code>\t</code> and <code>\</code>. A JSON object may look like this:
+    </li>
   </ul>
   <pre><code class="lang-json">{
     <span class="hljs-attr">"book"</span>: {
@@ -3524,7 +3544,8 @@ $message .= <span class="hljs-string">'&lt;/body&gt;&lt;/html&gt;'</span>;
 </code></pre>
   <p>In this case, <code>PHP_SELF</code> becomes
     <code>test_form.php/&quot;&gt;&lt;script&gt;alert(&#39;hacked&#39;)&lt;/script&gt;</code> and the form&#39;s
-    <code>action</code> will be translated to:</p>
+    <code>action</code> will be translated to:
+  </p>
   <pre><code class="lang-php">&lt;form <span class="hljs-function"><span class="hljs-keyword">method</span>="<span class="hljs-title">post</span>" <span class="hljs-title">action</span>="<span class="hljs-title">test_form</span>.<span class="hljs-title">php</span>/"&gt;&lt;<span class="hljs-title">script</span>&gt;<span class="hljs-title">alert</span><span class="hljs-params">(<span class="hljs-string">'hacked'</span>)</span>&lt;/<span class="hljs-title">script</span>&gt;</span>
 </code></pre>
   <p>This code adds a script tag and an alert command. And when the page loads, the JavaScript code will be executed
@@ -3563,7 +3584,8 @@ $message .= <span class="hljs-string">'&lt;/body&gt;&lt;/html&gt;'</span>;
   <p>We will also do two more things when the user submits the form:</p>
   <ol>
     <li>Strip unnecessary characters (extra space, tab, newline) from the user input data (with the PHP
-      <code>trim()</code> function)</li>
+      <code>trim()</code> function)
+    </li>
     <li>Remove backslashes () from the user input data (with the PHP stripslashes() function)
       The next step is to create a function that will do all the checking for us (which is much more convenient than
       writing the same code over and over again).</li>
@@ -3605,7 +3627,8 @@ $name = $email = $gender = $comment = $website = <span class="hljs-string">""</s
     have also added an if else statement for each <code>$_POST</code> variable. This checks if the <code>$_POST</code>
     variable is empty (with the PHP <code>empty()</code> function). If it is empty, an error message is stored in the
     different error variables, and if it is not empty, it sends the user input data through the
-    <code>test_input()</code> function:</p>
+    <code>test_input()</code> function:
+  </p>
   <pre><code class="lang-php"><span class="php"><span class="hljs-meta">&lt;?php</span>
 <span class="hljs-comment">// define variables and set to empty values</span>
 $nameErr = $emailErr = $genderErr = $websiteErr = <span class="hljs-string">""</span>;
@@ -4107,7 +4130,8 @@ mysqli_close($conn);
   <p><strong>Get ID of The Last Inserted Record</strong></p>
   <p>If we perform an <code>INSERT</code> or <code>UPDATE</code> on a table that has an <code>AUTO_INCREMENT</code>
     field, we can get the ID of the last inserted/updated record immediately with the
-    <code>mysqli_insert_id($conn)</code> (for MySQLi procedural).</p>
+    <code>mysqli_insert_id($conn)</code> (for MySQLi procedural).
+  </p>
   <h4 id="23-9-insert-multiple-records">23.9 Insert Multiple Records</h4>
   <p>Multiple SQL statements must be executed with the <code>mysqli_multi_query()</code> function.</p>
   <pre><code class="lang-php"><span class="php"><span class="hljs-meta">&lt;?php</span>
@@ -4344,7 +4368,8 @@ mysqli_close($conn);
 <span class="hljs-meta">?&gt;</span></span>
 </code></pre>
   <h4 id="23-14-delete-data-row-from-table-with-the-delete-keyword">23.14 Delete Data/Row From Table with the
-    <code>DELETE</code> keyword</h4>
+    <code>DELETE</code> keyword
+  </h4>
   <p>The <code>DELETE</code> statement is used to delete records from a table:</p>
   <pre><code><span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">FROM</span> table_name
 <span class="hljs-keyword">WHERE</span> some_column = some_value
