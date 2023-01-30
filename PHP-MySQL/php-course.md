@@ -613,7 +613,7 @@ To set or access an environment variable:
 ```
 
 
-### 4. Data Types
+## 4. Data Types
 Variables can store data of different types, and different data types can do different things.
 
 PHP supports the following data types:
@@ -626,7 +626,7 @@ PHP supports the following data types:
   - NULL
   - Resource
 
-#### PHP String
+### PHP String
 A string can be any text inside quotes. You can use single `''` or double quotes `""`:
 ```php
 <?php
@@ -634,7 +634,7 @@ $x = "Hello world!";
 echo $x;
 
 ```
-#### PHP Integer
+### PHP Integer
 An integer data type is a non-decimal number between `-2,147,483,648` and `2,147,483,647`.
 
 Rules for integers:
@@ -649,7 +649,7 @@ $x = 5985;
 var_dump($x);
 
 ```
-#### PHP Float
+### PHP Float
 A float (floating point number) is a number with a decimal point or a number in exponential form.
 
 In the following example $x is a float:
@@ -659,7 +659,7 @@ $x = 10.365;
 var_dump($x);
 
 ```
-#### PHP Boolean
+### PHP Boolean
 A Boolean represents two possible states: `true` or `false`.
 Booleans are often used in conditional testing. You will learn more about conditional testing in a later chapter of this tutorial.
 :
@@ -670,7 +670,7 @@ $y = false;
 var_dump($x,$y);
 
 ```
-#### PHP Array
+### PHP Array
 An array stores multiple values in one single variable.
 
 You can declare an array using the the `array()` function.
@@ -681,7 +681,7 @@ $cars = array("Volvo","BMW","Toyota");
 var_dump($cars);
 
 ```
-#### PHP Object
+### PHP Object
 Classes and objects are the two main aspects of object-oriented programming.
 
 A class is a template for objects, and an object is an instance of a class.
@@ -714,7 +714,7 @@ $myCar = new Car("red", "Toyota");
 echo $myCar -> message();
 
 ```
-#### PHP NULL Value
+### PHP NULL Value
 Null is a special data type which can have only one value: NULL.
 
 A variable of data type NULL is a variable that has no value assigned to it.
@@ -729,14 +729,14 @@ $x = null;
 var_dump($x);
 
 ```
-#### PHP Resource
+### PHP Resource
 The special resource type is not an actual data type. It is the storing of a reference to functions and resources external to PHP.
 
 A common example of using the resource data type is a database call.
 
 We will not talk about the resource type here, since it is an advanced topic.
 
-### 5. Strings and String Funnctions
+## 5. Strings and String Functions
 A string is a sequence of characters, i.e it's characters can be accessed like an numeric array.
 
 ```php
@@ -747,7 +747,7 @@ A string is a sequence of characters, i.e it's characters can be accessed like a
     
 ```
 
-#### String Funnctions
+### String Functions
 Here are some functions used for string-related operations. The full list can be seen [here](https://www.w3schools.com/php/php_ref_string.asp)
 
 1. `strlen(string)` - returns the length of a String
@@ -855,9 +855,9 @@ Related functions:
     
     ```
 
-### 5. Numbers and Number Funnctions
+## 5. Numbers and Number Functions
 
-#### Integers
+### Integers
 2, 256, -256, 10358, -179567 are all integers.
 
 An integer is a number without any decimal part.
@@ -886,7 +886,7 @@ PHP has the following functions to check if the type of a variable is integer:
   - `is_long(number)` - alias of is_int()
 
 
-#### Floats
+### Floats
 A float is a number with a decimal point or a number in exponential form.
 
 2.0, 256.4, 10.358, 7.64E+5, 5.56E-5 are all floats.
@@ -914,7 +914,7 @@ echo "<br>";
 echo(PHP_FLOAT_MAX);
 
 ```
-#### PHP Infinity
+### PHP Infinity
 A numeric value that is larger than PHP_FLOAT_MAX is considered infinite.
 
 PHP has the following functions to check if a numeric value is finite or infinite:
@@ -929,7 +929,7 @@ var_dump($x);
 
 ```
 
-#### PHP NaN
+### PHP NaN
 NaN stands for Not a Number.
 
 PHP has the following functions to check if a value is not a number:
@@ -983,7 +983,7 @@ var_dump($int_cast);
 
 ```
 
-### 7. Arrays and Array Funnctions
+## 7. Arrays and Array Functions
 An array stores multiple values in one single variable
 
 Instead of storing related variables separately like:
@@ -1248,7 +1248,7 @@ The full list can be found [here](https://www.w3schools.com/php/php_ref_array.as
       
       ```
 
-### 8. Operators
+## 8. Operators
 #### 8.1 Arithmetic Operators
 The PHP arithmetic operators are used with numeric values to perform common arithmetical operations, such as addition, subtraction, multiplication etc.
 
@@ -1420,7 +1420,7 @@ echo ($y);
 
 
 
-### 9. Conditional Statements
+## 9. Conditional Statements
 Conditional statements are used to perform different actions based on different conditions.
 In PHP we have the following conditional statements:
 
@@ -1533,7 +1533,7 @@ switch ($favcolor) {
 
 ```
 
-### 10. For Loops
+## 10. For Loops
 Often when you write code, you want the same block of code to run over and over again a certain number of times. So, instead of adding several almost equal code-lines in a script, we can use loops.
 
 Loops are used to execute the same block of code again and again, as long as a certain condition is true.
@@ -1545,7 +1545,7 @@ In PHP, we have the following loop types:
   - `for` - loops through a block of code a specified number of times
 foreach - loops through a block of code for each element in an array
 
-#### 10.1 The `while` loop
+### 10.1 The `while` loop
 The `while` loop - Loops through a block of code as long as the specified condition is true.
 **Syntax**:
 ```
@@ -1572,7 +1572,7 @@ while($x <= 5) {
   - $x++; - Increase the loop counter value by 1 for each iteration
 
 
-#### 10.2 The `do...while` loop
+### 10.2 The `do...while` loop
 The `do...while` loop will always execute the block of code at least once (even if the condition is false), it will then check the condition, and repeat the loop while the specified condition is true.
 **Syntax**:
 ```
@@ -1594,7 +1594,7 @@ do {
 **Example Explained:**
 The example below first sets a variable $x to 1 ($x = 1). Then, the do while loop will write some output, and then increment the variable $x with 1. Then the condition is checked (is $x less than, or equal to 5?), and the loop will continue to run as long as $x is less than, or equal to 5:
 
-#### 10.3 The `for` loop
+### 10.3 The `for` loop
 The `for` loop - Loops through a block of code a specified number of times.
 
 **Syntax**:
@@ -1622,7 +1622,7 @@ for ($x = 0; $x <= 10; $x++) {
   - $x <= 10; - Continue the loop as long as $x is less than or equal to 10
   - $x++ - Increase the loop counter value by 1 for each iteration
 
-#### 10.3 The `foreach` loop
+### 10.3 The `foreach` loop
 The `foreach` loop - Loops through a block of code a specified number of times.
 
 **Syntax for Indexed arrays**:
@@ -1657,7 +1657,7 @@ foreach($age as $x => $val) {
 
 ```
 
-#### 10.3 `break` & `continue`
+### 10.3 `break` & `continue`
 You have already seen the `break` statement used in an earlier chapter of this tutorial. It was used to "jump out" of a switch statement.
 
 The `break` statement can also be used to jump out of a loop.
@@ -1687,7 +1687,7 @@ for ($x = 0; $x < 10; $x++) {
 
 ```
 
-### 11. Functions
+## 11. Functions
 The real power of PHP comes from its functions.
 
 PHP has more than 1000 built-in functions, and in addition you can create your own custom functions.
@@ -1888,7 +1888,7 @@ printFormatted("Hello world", "exclaim");
 printFormatted("Hello world", "ask");
 ?>
 ```
-### 12. PHP Math Object
+## 12. PHP Math Object
 PHP has a set of math functions that allows you to perform mathematical tasks on **numbers**.
 Get the complete list [here](https://www.w3schools.com/php/php_ref_math.asp)
 
@@ -1932,7 +1932,7 @@ Get the complete list [here](https://www.w3schools.com/php/php_ref_math.asp)
     ?>
     ```
 
-### 13. Date and Time
+## 13. Date and Time
 
 The PHP `date()` function formats a timestamp to a more readable date and time.
 
@@ -2051,7 +2051,7 @@ The optional `timestamp` parameter in the `date()` function specifies a timestam
 
 
 
-### 14. Regular Expressions  
+## 14. Regular Expressions  
 A regular expression is a sequence of characters that forms a search pattern. When you search for data in a text, you can use this search pattern to describe what you are searching for.
 
 A regular expression can be a single character, or a more complicated pattern.
@@ -2233,7 +2233,7 @@ foreach ($parts as $part) {
 ?>
 ```
 
-### 15. Cookies and Sessions
+## 15. Cookies and Sessions
 
 #### 15.1 Cookies
 A cookie is often used to identify a user. A cookie is a small file that the server embeds on the user's computer. Each time the same computer requests a page with a browser, it will send the cookie too. With PHP, you can both create and retrieve cookie values.
@@ -2374,7 +2374,7 @@ session_destroy();
 </html>
 ```
 
-### 16. JSON in PHP
+## 16. JSON in PHP
 In this section you will learn how to encode and decode JSON data in PHP.
 
 JSON stands for JavaScript Object Notation. JSON is a standard lightweight data-interchange format which is quick and easy to parse and generate. 
@@ -2437,7 +2437,7 @@ echo $arr["Harry"];  // Output: 80
 ?>
 ```
 
-### 17. Include/Require Files
+## 17. Include/Require Files
 The include (or require) statement takes all the text/code/markup that exists in the specified file and copies it into the file that uses the include statement.
 
 Including files is very useful when you want to include the same PHP, HTML, or text on multiple pages of a website.
@@ -2498,7 +2498,7 @@ echo "I have a $color $car.";
 </html>
 ```
 
-### 18. File Upload 
+## 18. File Upload 
 With PHP, it is easy to upload files to the server.
 
 However, with ease comes danger, so always be careful when allowing file uploads!
@@ -2581,7 +2581,7 @@ However, with ease comes danger, so always be careful when allowing file uploads
 
 
 
-### 19. Errors/Exceptions
+## 19. Errors/Exceptions
 #### What is an Exception?
 An exception is an object that describes an error or unexpected behaviour of a PHP script.
 
@@ -2671,7 +2671,7 @@ The `catch` block typically catch the exception thrown within the try block and 
 
 
 
-### 20. PHP OOP (Object Oriented Programming)
+## 20. PHP OOP (Object Oriented Programming)
 **Procedural** programming is about writing procedures or functions that perform operations on the data, while **Object-Oriented Programming** is about creating objects that contain both data and functions.
 
 Object-oriented programming has several advantages over procedural programming:
@@ -3133,7 +3133,7 @@ $obj->msg1();
 
 
 
-### 21. Send Email using PHP `mail()` Function
+## 21. Send Email using PHP `mail()` Function
 
 ending email messages are very common for a web application, for example, sending welcome email when a user create an account on your website, sending newsletters to your registered users, or getting user feedback or comment through website's contact form, and so on.
 
@@ -3177,7 +3177,7 @@ if(mail($to, $subject, $message, $headers)){
 }
 ```
 
-### 22. Form Handling
+## 22. Form Handling
 The PHP superglobals `$_GET` and ``$_POST`` are used to collect form-data.
 
 #### When to use GET?
@@ -3517,7 +3517,7 @@ value="male">Male
 value="other">Other
 ```
 
-### 23. MySQL Database
+## 23. MySQL Database
 With PHP, you can connect to and manipulate databases.
 
 MySQL is the most popular database system used with PHP.
