@@ -10,7 +10,6 @@
   - HTML Page Structure
   - HTML History
   - Web Browsers
-  - Web Browsers
 
 2. HTML Editors
 
