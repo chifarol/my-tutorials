@@ -1,0 +1,2078 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- favicon -->
+    <link rel='icon' type='image/x-icon' href='./assets/images/memoji.png'>
+    <!-- for dark background -->
+    <link rel="stylesheet" href="./assets/css/markdown.css" />
+    <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.7.0/styles/night-owl.min.css">
+    <!-- language specific highlighting script -->
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.7.0/languages/html.min.js" defer></script>
+    <title>HTML Tutorial By Ilodigwe Chinaza</title>
+</head>
+
+<body class="markdown-body">
+    <h1 id="html-tutorial">HTML Tutorial</h1>
+    <hr>
+    <h2 id="1-html-introduction">1. HTML Introduction</h2>
+    <h4 id="what-is-html-">What is HTML?</h4>
+    <ul>
+        <li>HTML stands for Hyper Text Markup Language</li>
+        <li>HTML is the standard markup language for creating Web pages</li>
+        <li>HTML describes the structure of a Web page</li>
+        <li>HTML consists of a series of elements</li>
+        <li>HTML elements tell the browser how to display the content</li>
+        <li>HTML elements label pieces of content such as &quot;this is a heading&quot;, &quot;this is a button&quot;,
+            &quot;this is an image&quot;, &quot;this is a link&quot;, etc.</li>
+        <li>Typically, HTML files must end with a <code>.html</code> file extension before they can be displayed on the
+            browser.</li>
+    </ul>
+    <h4 id="what-is-an-html-element-">What is an HTML Element?</h4>
+    <p>An HTML element is defined by a start tag, some content, and an end tag:</p>
+    <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">tagname</span> <span class="hljs-attr">attribute1</span>=<span class="hljs-string">"value"</span> <span class="hljs-attr">attribute2</span>=<span class="hljs-string">"value"</span> &gt;</span> Content goes here... <span class="hljs-tag">&lt;/<span class="hljs-name">tagname</span>&gt;</span>
+    </code></pre>
+    <p>Or</p>
+    <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">tagname</span> <span class="hljs-attr">attribute1</span>=<span class="hljs-string">"value"</span> <span class="hljs-attr">attribute2</span>=<span class="hljs-string">"value"</span> &gt;</span> Content goes here... <span class="hljs-tag">&lt;/<span class="hljs-name">tagname</span>&gt;</span>
+    </code></pre>
+    <p>The HTML element is <strong>everything</strong> from the start tag to the end tag:</p>
+    <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>My First Heading<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>My first paragraph.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    </code></pre>
+    <table>
+        <thead>
+            <tr>
+                <th>Start tag</th>
+                <th>Element content</th>
+                <th>End tag</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>&lt;h1&gt;</code></td>
+                <td>My First Heading</td>
+                <td><code>&lt;/h1&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;p&gt;</code></td>
+                <td>My First Heading</td>
+                <td><code>&lt;/p&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;br&gt;</code></td>
+                <td>none</td>
+                <td>none</td>
+            </tr>
+        </tbody>
+    </table>
+    <pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Page Title<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- This is a comment --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>My First Heading<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">hr</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>My first paragraph.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+    </code></pre>
+    <p>Example Explained:</p>
+    <ul>
+        <li>The <code>&lt;!DOCTYPE html&gt;</code> declaration defines that this document is an HTML5 document</li>
+        <li>The <code>&lt;html&gt;</code> element is the root element of an HTML page</li>
+        <li>The <code>&lt;head&gt;</code> element contains meta information about the HTML page</li>
+        <li>The <code>&lt;title&gt;</code> element specifies a title for the HTML page (which is shown in the
+            browser&#39;s title bar or in the page&#39;s tab)</li>
+        <li>The <code>&lt;body&gt;</code> element defines the document&#39;s body, and is a container for all the
+            visible contents, such as headings, paragraphs, images, hyperlinks, tables, lists, etc.</li>
+        <li>The <code>&lt;!--  --&gt;</code> element defines a comment. comments are ignored by the browser.</li>
+        <li>The <code>&lt;h1&gt;</code> element defines a large heading</li>
+        <li>The <code>&lt;hr/&gt;</code> element defines a horizontal divider</li>
+        <li>The <code>&lt;p&gt;</code> element defines a paragraph</li>
+        <li>The <code>&lt;br&gt;</code> element defines a line break</li>
+    </ul>
+    <p>Some HTML elements have no content (like the <code>&lt;br&gt;</code> and <code>&lt;hr/&gt;</code> element). These
+        elements are called empty elements or self closing elements. They do not have an end tag!</p>
+    <h4 id="web-browsers">Web Browsers</h4>
+    <p>The purpose of a web browser (Chrome, Edge, Firefox, Safari) is to read HTML documents and display them
+        correctly.</p>
+    <p>A browser does not display the HTML tags, but uses them to determine how to display the document:</p>
+    <p><img src="../assets/images/img_chrome.png" alt="How the Web Works" title="How the Web Works"></p>
+    <h4 id="html-page-structure">HTML Page Structure</h4>
+    <p>Below is a visualization of an HTML page structure:</p>
+    <div class="ws-grey" style="width:99%;border:1px solid grey;padding:3px;margin:0;">&lt;html&gt;
+        <div style="width:90%;border:1px solid grey;padding:3px;margin:20px">&lt;head&gt;
+            <div style="width:90%;border:1px solid grey;padding:5px;margin:20px">&lt;title&gt;Page title&lt;/title&gt;
+            </div>
+            &lt;/head&gt;
+        </div>
+        <div class="ws-grey" style="width:90%;border:1px solid grey;padding:3px;margin:20px;">&lt;body&gt;
+            <div class="w3-white" style="width:90%;border:1px solid grey;padding:3px;margin:20px;">
+                <div style="width:90%;border:1px solid grey;padding:5px;margin:20px">&lt;h1&gt;This is a
+                    heading&lt;/h1&gt;</div>
+                <div style="width:90%;border:1px solid grey;padding:5px;margin:20px">&lt;p&gt;This is a
+                    paragraph.&lt;/p&gt;</div>
+                <div style="width:90%;border:1px solid grey;padding:5px;margin:20px">&lt;p&gt;This is another
+                    paragraph.&lt;/p&gt;</div>
+            </div>
+            &lt;/body&gt;
+        </div>
+        &lt;/html&gt;
+    </div>
+
+    <p>The content inside the <code>&lt;body&gt;</code> section (the white area above) will be displayed in a browser.
+        The content inside the <code>&lt;title&gt;</code> element will be shown in the browser&#39;s title bar or in the
+        page&#39;s tab.</p>
+    <h4 id="html-history">HTML History</h4>
+    <p>Since the early days of the World Wide Web, there have been many versions of HTML:</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Year</th>
+                <th>Version</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1989</td>
+                <td>Tim Berners-Lee invented www</td>
+            </tr>
+            <tr>
+                <td>1991</td>
+                <td>Tim Berners-Lee invented HTML</td>
+            </tr>
+            <tr>
+                <td>1993</td>
+                <td>Dave Raggett drafted HTML+</td>
+            </tr>
+            <tr>
+                <td>1995</td>
+                <td>HTML Working Group defined HTML 2.0</td>
+            </tr>
+            <tr>
+                <td>1997</td>
+                <td>W3C Recommendation: HTML 3.2</td>
+            </tr>
+            <tr>
+                <td>2008</td>
+                <td>WHATWG HTML5 First Public Draft</td>
+            </tr>
+            <tr>
+                <td>2012</td>
+                <td><a href="http://whatwg.org/html/">WHATWG HTML5 Living Standard</a></td>
+            </tr>
+            <tr>
+                <td>2014</td>
+                <td><a href="http://www.w3.org/TR/html5/">W3C Recommendation: HTML5</a></td>
+            </tr>
+            <tr>
+                <td>2016</td>
+                <td>W3C Candidate Recommendation: HTML 5.1</td>
+            </tr>
+            <tr>
+                <td>2017</td>
+                <td><a href="http://www.w3.org/TR/html51/">W3C Recommendation: HTML5.1 2nd Edition</a></td>
+            </tr>
+            <tr>
+                <td>2017</td>
+                <td><a href="http://www.w3.org/TR/html52/">W3C Recommendation: HTML5.2</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <h2 id="2-html-editors">2. HTML Editors</h2>
+    <p>Web pages can be created and modified by using professional HTML editors.</p>
+    <p>However, for learning HTML we recommend a simple text editor like Notepad (PC), Sublime Text, TextEdit (Mac), or
+        VSCode. In This tutorial, we&#39;ll be using VSCode (Visual Studio Code). </p>
+    <p>Follow the steps below to create your first web page with VSCode.</p>
+    <ol>
+        <li>
+            <p>Download the Visual Studio Code installer from <a href="(https://code.visualstudio.com/download">VSCode
+                    download page</a>)</p>
+        </li>
+        <li>
+            <p>Once it is downloaded, run the installer (VSCodeUserSetup-{version}.exe). This will only take a minute.
+            </p>
+        </li>
+        <li>
+            <p>Launch the application and Go to File &gt; New File</p>
+        </li>
+        <li>
+            <p>Write some HTML</p>
+        </li>
+        <li>Save the HTML page. Select File &gt; Save as. Save with a <code>.html</code> or <code>.htm</code> extension.
+            (You can use either <code>.htm</code> or <code>.html</code> as file extension. There is no difference; it is
+            up to you.)</li>
+        <li>To view the HTML Page in Your Browser. Open the saved HTML file in your favorite browser (double click on
+            the file, or right-click - and choose &quot;Open with&quot;).</li>
+    </ol>
+    <h2 id="3-html-elements-and-their-attributes">3. HTML Elements and their Attributes</h2>
+    <p>All HTML documents must start with a document type declaration: <code>&lt;!DOCTYPE html&gt;</code>.</p>
+    <p>The HTML document itself begins with <code>&lt;html&gt;</code> and ends with <code>&lt;/html&gt;</code>.</p>
+    <p>The visible part of the HTML document is between <code>&lt;body&gt;</code> and <code>&lt;/body&gt;</code>.</p>
+    <h5 id="the-doctype-declaration">The <code>&lt;!DOCTYPE&gt;</code> Declaration</h5>
+    <p>The <code>&lt;!DOCTYPE&gt;</code> declaration represents the document type, and helps browsers to display web
+        pages correctly.</p>
+    <p>It must only appear once, at the top of the page (before any HTML tags).</p>
+    <p>The <code>&lt;!DOCTYPE&gt;</code> declaration is not case sensitive.</p>
+    <p>The <code>&lt;!DOCTYPE&gt;</code> declaration for HTML5 is:
+        <code>&lt;!DOCTYPE html&gt;</code>
+    </p>
+    <h4 id="html-elements">HTML Elements</h4>
+    <p>Here we look into a list of commonly used html elements and tags before dissecting them. See the full
+        list/reference <a href="https://www.w3schools.com/tags/default.asp">here</a></p>
+    <table>
+        <thead>
+            <tr>
+                <th>Tag</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>&lt;!--whatever--&gt;</code></td>
+                <td>Defines the document type</td>
+            </tr>
+            <tr>
+                <td><code>&lt;!DOCTYPE&gt;</code></td>
+                <td>Defines the document type</td>
+            </tr>
+            <tr>
+                <td><code>&lt;a&gt;</code></td>
+                <td>Defines a hyperlink</td>
+            </tr>
+            <tr>
+                <td><code>&lt;a&gt;</code></td>
+                <td>Defines a hyperlink</td>
+            </tr>
+        </tbody>
+    </table>
+    <h4 id="the-head-element-and-it-s-children">The <code>&lt;head&gt;</code> Element and it&#39;s children</h4>
+    <p>The <code>&lt;head&gt;</code> element is a container for metadata (data about data) and is placed between the
+        <code>&lt;html&gt;</code> tag and the <code>&lt;body&gt;</code> tag.
+    </p>
+    <p>Metadata is data about the HTML document. Metadata is not displayed.</p>
+    <p>Metadata typically define the document title, character set, styles, scripts, and other meta information.</p>
+    <p>Some tags are meant to be used only between the <code>&lt;head&gt;</code> ... <code>&lt;/head&gt;</code> tag.
+        Some are:</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Tag</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>&lt;title&gt;</code></td>
+                <td>Defines a title for the document on browser tab</td>
+            </tr>
+            <tr>
+                <td><code>&lt;style&gt;</code></td>
+                <td>Defines style information for a document</td>
+            </tr>
+            <tr>
+                <td><code>&lt;meta&gt;</code></td>
+                <td>Defines &quot;metadata&quot; about an HTML document</td>
+            </tr>
+            <tr>
+                <td><code>&lt;link&gt;</code></td>
+                <td>Defines the relationship between a document and an external resource (mostly used to link to style
+                    sheets)</td>
+            </tr>
+            <tr>
+                <td><code>&lt;script&gt;</code></td>
+                <td>Defines a client-side script</td>
+            </tr>
+            <tr>
+                <td><code>&lt;noscript&gt;</code></td>
+                <td>Defines an alternate content for users that do not support client-side scripts</td>
+            </tr>
+            <tr>
+                <td><code>&lt;base&gt;</code></td>
+                <td>Specifies the base URL/target for all relative URLs in a document</td>
+            </tr>
+        </tbody>
+    </table>
+    <h5 id="a-closer-look-at-the-tags">A closer look at the tags</h5>
+    <h5 id="-title-"><code>&lt;title&gt;</code>:</h5>
+    <p>The <code>&lt;title&gt;</code> element:</p>
+    <ul>
+        <li>defines a title in the browser toolbar</li>
+        <li>provides a title for the page when it is added to favorites/bookmarks.</li>
+        <li>displays a title for the page in search-engine results
+            You can NOT have more than one <code>&lt;title&gt;</code> element in an HTML document.</li>
+    </ul>
+    <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span> HTML Tutorial By Ilodigwe Chinaza<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    </code></pre>
+    <h5 id="-style-"><code>&lt;style&gt;</code>:</h5>
+    <p>The <code>&lt;style&gt;</code> tag is one of the ways of adding style information (CSS) to a document.</p>
+    <p>Inside the <code>&lt;style&gt;</code> element you specify how HTML elements should render in a browser.</p>
+    <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+      <span class="hljs-selector-tag">h1</span>{<span class="hljs-attribute">background-color</span>:<span class="hljs-string">"red"</span>}
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+    </code></pre>
+    <h5 id="-meta-"><code>&lt;meta&gt;</code>:</h5>
+    <p>The <code>&lt;meta&gt;</code> tag defines metadata about an HTML document. Metadata is data (information) about
+        data.</p>
+    <p><code>&lt;meta&gt;</code> tags always go inside the <code>&lt;head&gt;</code> element, and are typically used to
+        specify character set, page description, keywords, author of the document, and viewport settings.</p>
+    <p>Metadata will not be displayed on the page, but is machine parsable.</p>
+    <p>Metadata is used by browsers (how to display content or reload page), search engines (keywords), and other web
+        services.</p>
+    <p>There is a method to let web designers take control over the viewport (the user&#39;s visible area of a web
+        page), through the <code>&lt;meta&gt;</code> tag (See &quot;Setting The Viewport&quot; example below).</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Attribute</th>
+                <th>Value</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>charset</td>
+                <td>character_set</td>
+                <td>Specifies the character encoding for the HTML document</td>
+            </tr>
+            <tr>
+                <td>content</td>
+                <td>text</td>
+                <td>Specifies the value associated with the http-equiv or name attribute</td>
+            </tr>
+            <tr>
+                <td>http-equiv</td>
+                <td>content-security-policy, content-type, default-style, refresh</td>
+                <td>Provides an HTTP header for the information/value of the content attribute</td>
+            </tr>
+            <tr>
+                <td>name</td>
+                <td>application-name, author, description, generator, keywords, viewport</td>
+                <td>Specifies a name for the metadata</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>Examples</p>
+    <pre><code class="lang-html"><span class="hljs-comment">&lt;!-- Define keywords for search engines: --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"keywords"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"HTML, CSS, JavaScript"</span>&gt;</span>
+    
+    <span class="hljs-comment">&lt;!-- Define a description of your web page: --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"description"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Free Web tutorials for HTML and CSS"</span>&gt;</span>
+    
+    <span class="hljs-comment">&lt;!-- Define the author of a page: --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"author"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"John Doe"</span>&gt;</span>
+    
+    <span class="hljs-comment">&lt;!-- Refresh document every 30 seconds: --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">"refresh"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"30"</span>&gt;</span>
+    
+    <span class="hljs-comment">&lt;!-- Setting the viewport to make your website look good on all devices: --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span>&gt;</span>
+    </code></pre>
+    <p><code>meta</code> is an empty element, it contains attributes only.</p>
+    <h5 id="-link-"><code>&lt;link&gt;</code>:</h5>
+    <ul>
+        <li>defines the relationship between the current document and an external resource.</li>
+        <li>
+            <p>is most often used to link to external style sheets or to add a favicon to your website.</p>
+        </li>
+        <li>
+            <p>is an empty element, it contains attributes only.</p>
+        </li>
+    </ul>
+    <table>
+        <thead>
+            <tr>
+                <th>Attribute</th>
+                <th>Value</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>crossorigin</td>
+                <td>anonymous, use-credentials</td>
+                <td>Specifies how the element handles cross-origin requests</td>
+            </tr>
+            <tr>
+                <td>href</td>
+                <td><code>URL</code></td>
+                <td>Specifies the location of the linked document either as an <strong>absolute URL</strong> - points to
+                    another web site (like href=&quot;<a
+                        href="http://www.example.com/theme.css">http://www.example.com/theme.css</a>&quot;) or a
+                    <strong>relative URL</strong> - points to a file within a web site (like
+                    href=&quot;/themes/theme.css&quot;)
+                </td>
+            </tr>
+            <tr>
+                <td>hreflang</td>
+                <td><a href="https://www.w3schools.com/tags/ref_language_codes.asp">language_code</a> (e.g
+                    &quot;en&quot; for english)</td>
+                <td>Specifies the language of the text in the linked document</td>
+            </tr>
+            <tr>
+                <td>media</td>
+                <td>print, screen, speech, all(default)</td>
+                <td>Specifies on what device the linked document will be displayed. <a
+                        href="https://www.w3schools.com/tags/att_link_media.asp">more</a></td>
+            </tr>
+            <tr>
+                <td>referrerpolicy</td>
+                <td>no-referrer, no-referrer-when-downgrade, origin, origin-when-cross-origin, unsafe-url</td>
+                <td>Specifies the reference information that will be sent to the server when the user clicks on a
+                    hyperlink or resource, <a
+                        href="https://www.w3schools.com/tags/att_iframe_referrerpolicy.asp">more</a></td>
+            </tr>
+            <tr>
+                <td>rel</td>
+                <td>alternate, author, dns-prefetch, help, icon, license, next, pingback, preconnect, prefetch, preload,
+                    prerender, prev, search, stylesheet Required.</td>
+                <td>Specifies the relationship between the current document and the linked document. <a
+                        href="https://www.w3schools.com/tags/att_link_rel.asp">more</a></td>
+            </tr>
+            <tr>
+                <td>sizes</td>
+                <td>HeightxWidth, any</td>
+                <td>Specifies the size of the linked resource. Only for rel=&quot;icon&quot;. <a
+                        href="https://www.w3schools.com/tags/att_link_sizes.asp">more</a></td>
+            </tr>
+            <tr>
+                <td>type</td>
+                <td><a href="http://www.iana.org/assignments/media-types/">media_type</a> e,g &quot;text/css&quot;</td>
+                <td>Specifies the media type of the linked document</td>
+            </tr>
+        </tbody>
+    </table>
+    <pre><code class="lang-html">
+    <span class="hljs-comment">&lt;!-- "hreflang" attribute tells the browser to interpret resource in english: --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"styles.css"</span> <span class="hljs-attr">hreflang</span>=<span class="hljs-string">"en"</span>&gt;</span>
+    
+    <span class="hljs-comment">&lt;!-- "rel" attribute specifies resource as an icon (favicon): --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"icon"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"image/x-icon"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"favicon.ico"</span>&gt;</span>
+    
+    <span class="hljs-comment">&lt;!-- the "type" attribute indicates that the linked document is an a text file of css format --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/css"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"styles.css"</span>&gt;</span>
+    
+    <span class="hljs-comment">&lt;!-- "size" attribute to specify size of icon resource: --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"icon"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"demo_icon.gif"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"image/gif"</span> <span class="hljs-attr">sizes</span>=<span class="hljs-string">"16x16"</span>&gt;</span>
+    
+    <span class="hljs-comment">&lt;!-- "media" attribute - Two different style sheets for two different media types (screen and print): --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/css"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"theme.css"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/css"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"print.css"</span> <span class="hljs-attr">media</span>=<span class="hljs-string">"print"</span>&gt;</span>
+    </code></pre>
+    <h5 id="-script-"><code>&lt;script&gt;</code>:</h5>
+    <ul>
+        <li>
+            <p>used to embed a client-side script (JavaScript).</p>
+        </li>
+        <li>
+            <p>contains scripting statements, or it points to an external script file through the src attribute.</p>
+        </li>
+        <li>
+            <p>common uses for JavaScript are image manipulation, form validation, and dynamic changes of content.</p>
+        </li>
+    </ul>
+    <pre><code class="lang-html"><span class="hljs-comment">&lt;!-- inline script --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+      <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"demo"</span>).innerHTML = <span class="hljs-string">"Hello JavaScript!"</span>;
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    
+    <span class="hljs-comment">&lt;!-- async attribute --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"demo_async.js"</span> <span class="hljs-attr">async</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    
+    <span class="hljs-comment">&lt;!-- defer attribute --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"demo_defer.js"</span> <span class="hljs-attr">defer</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    
+    
+    <span class="hljs-comment">&lt;!-- integrity attribute --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://code.jquery.com/jquery-3.3.1.slim.min.js"</span>
+    <span class="hljs-attr">integrity</span>=<span class="hljs-string">"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"</span>
+    <span class="hljs-attr">crossorigin</span>=<span class="hljs-string">"anonymous"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    
+    <span class="hljs-comment">&lt;!-- type attribute --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"application/javascript"</span>&gt;</span><span class="javascript">
+    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"demo"</span>).innerHTML = <span class="hljs-string">"Hello JavaScript!"</span>;
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    
+    <span class="hljs-comment">&lt;!--  --&gt;</span>
+    </code></pre>
+    <table>
+        <thead>
+            <tr>
+                <th>Attribute</th>
+                <th>Value</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>async</td>
+                <td>boolean attribute</td>
+                <td>postpone execution till full script is downloaded (only for external scripts and if the
+                    <code>src</code> attribute is present)
+                </td>
+            </tr>
+            <tr>
+                <td>crossorigin</td>
+                <td>anonymous, use-credentials</td>
+                <td>Sets the mode of the request to an HTTP CORS Request</td>
+            </tr>
+            <tr>
+                <td>defer</td>
+                <td>defer</td>
+                <td>postpone execution till the whole page is parsed/interpreted (only for external scripts)</td>
+            </tr>
+            <tr>
+                <td>integrity</td>
+                <td>filehash to check</td>
+                <td>Allows a browser to check the fetched script to ensure that the code is never loaded if the source
+                    has been manipulated. The webpage holds the hash and the server holds the file (the .js file in this
+                    case). The browser downloads the file, then checks it, to make sure that it is a match with the hash
+                    in the integrity attribute. If it matches, the file is used, and if not, the file is blocked</td>
+            </tr>
+            <tr>
+                <td>nomodule</td>
+                <td>True, False</td>
+                <td>Specifies that the script should not be executed in browsers supporting ES2015 modules</td>
+            </tr>
+            <tr>
+                <td>referrerpolicy</td>
+                <td>(...check <code>&lt;link&gt;</code> attributes)</td>
+                <td>-----------</td>
+            </tr>
+            <tr>
+                <td>src</td>
+                <td><code>URL</code></td>
+                <td>Specifies the URL of an external script file (just like &quot;href&quot; )</td>
+            </tr>
+            <tr>
+                <td>type</td>
+                <td><a href="http://www.iana.org/assignments/media-types/">scripttype</a> e.g (
+                    &quot;text/javascript&quot; )</td>
+                <td>Specifies the media type of the script</td>
+            </tr>
+        </tbody>
+    </table>
+    <h5 id="-noscript-"><code>&lt;noscript&gt;</code></h5>
+    <p>Display stuff for users that have disabled scripts in their browser, or have a browser that doesn&#39;t support
+        client-side scripting.</p>
+    <h5 id="-base-"><code>&lt;base&gt;</code>:</h5>
+    <ul>
+        <li>
+            <p>Specifies the base URL and/or target for all relative URLs in a document.</p>
+        </li>
+        <li>
+            <p>Must have either an href or a target attribute present, or both.</p>
+        </li>
+        <li>
+            <p>There can only be one single
+                <base> element in a document, and it must be inside the
+
+                <head> element.
+            </p>
+        </li>
+    </ul>
+    <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">base</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://www.w3schools.com/"</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_blank"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/stickman.gif"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"24"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"39"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"Stickman"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"tags/tag_base.asp"</span>&gt;</span>HTML base Tag<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+    </code></pre>
+    <p><code>target</code> atttribute specifies the default target for all hyperlinks and forms in the page. This
+        attribute can be overridden by using the target attribute for each hyperlink/form.</p>
+    <ul>
+        <li><code>_blank</code> - Opens the link in a new window or tab</li>
+        <li><code>_self</code> - Default. Opens the link in the same frame as it was clicked</li>
+        <li><code>_parent</code> - Opens the link in the parent frame</li>
+        <li><code>_top</code> - Opens the link in the full body of the window</li>
+    </ul>
+    <h4 id="html-element-attributes">HTML Element Attributes</h4>
+    <p>Before moving on lets talk a little more about attributes.</p>
+    <p>In HTML, elements can have attributes that further modifies their behaviour. </p>
+    <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">tagname</span> <span class="hljs-attr">attribute1</span>=<span class="hljs-string">"value"</span> <span class="hljs-attr">attribute2</span>=<span class="hljs-string">"value"</span> &gt;</span> Content goes here... <span class="hljs-tag">&lt;/<span class="hljs-name">tagname</span>&gt;</span>
+    </code></pre>
+    <p>Some attribute only applies to some elements but global attributes can be applied to any element.</p>
+    <p><strong>List of Global attributes</strong>:</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Attribute</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>accesskey</td>
+                <td>Specifies a shortcut key to activate/focus an element</td>
+            </tr>
+            <tr>
+                <td>class</td>
+                <td>Specifies one or more classnames for an element (refers to a class in a style sheet). Must begin
+                    with a letter. No whitespace</td>
+            </tr>
+            <tr>
+                <td>contenteditable</td>
+                <td>Specifies whether the content of an element is editable or not. When the contenteditable attribute
+                    is not set on an element, the element will inherit it from its parent.</td>
+            </tr>
+            <tr>
+                <td>data-*</td>
+                <td>Used to store custom data private to the page or application</td>
+            </tr>
+            <tr>
+                <td>dir</td>
+                <td>Specifies the text direction for the content in an element e.g &quot;ltr&quot; (left-to-right) or
+                    &quot;rtl&quot; (right-to-left)</td>
+            </tr>
+            <tr>
+                <td>draggable</td>
+                <td>Specifies whether an element is draggable or not</td>
+            </tr>
+            <tr>
+                <td>hidden</td>
+                <td>Specifies that an element is not yet, or is no longer, relevant</td>
+            </tr>
+            <tr>
+                <td>lang</td>
+                <td>Specifies the language of the element&#39;s content</td>
+            </tr>
+            <tr>
+                <td>spellcheck</td>
+                <td>Specifies whether the element is to have its spelling and grammar checked or not</td>
+            </tr>
+            <tr>
+                <td>style</td>
+                <td>Specifies an inline CSS style for an element</td>
+            </tr>
+            <tr>
+                <td>tabindex</td>
+                <td>Specifies the tabbing order of an element</td>
+            </tr>
+            <tr>
+                <td>title</td>
+                <td>Specifies extra information about an element</td>
+            </tr>
+            <tr>
+                <td>translate</td>
+                <td>Specifies whether the content of an element should be translated or not</td>
+            </tr>
+        </tbody>
+    </table>
+    <p><strong>Example</strong>:</p>
+    <pre><code class="lang-html"><span class="hljs-comment">&lt;!-- To avoid conflict with other key standards, most browsers will use accesskeys only if pressed together with the "Alt" key. --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://www.w3schools.com/html/"</span> <span class="hljs-attr">accesskey</span>=<span class="hljs-string">"h"</span>&gt;</span>HTML<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://www.w3schools.com/css/"</span> <span class="hljs-attr">accesskey</span>=<span class="hljs-string">"c"</span>&gt;</span>CSS<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    
+    <span class="hljs-comment">&lt;!-- "class" attribute --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"intro"</span>&gt;</span>Header 1<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- "id" attribute --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"myHeader"</span>&gt;</span>Hello World!<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+    
+    <span class="hljs-comment">&lt;!-- "contenteditable" attribute: An editable paragraph --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">contenteditable</span>=<span class="hljs-string">"true"</span>&gt;</span>This is an editable paragraph.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    
+    <span class="hljs-comment">&lt;!-- data-* attribute: An editable paragraph --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">data-animal-type</span>=<span class="hljs-string">"bird"</span>&gt;</span>Owl<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">data-animal-type</span>=<span class="hljs-string">"fish"</span>&gt;</span>Salmon<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">data-animal-type</span>=<span class="hljs-string">"spider"</span>&gt;</span>Tarantula<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- "dir"  attribute: A paragraph with a right-to-left direction: --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">dir</span>=<span class="hljs-string">"rtl"</span>&gt;</span>Write this text right-to-left!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    
+    <span class="hljs-comment">&lt;!-- "draggable" attribute  --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">draggable</span>=<span class="hljs-string">"true"</span>&gt;</span>This is a draggable paragraph.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    
+    <span class="hljs-comment">&lt;!-- "hidden" attribute: Some French text in a paragraph --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">hidden</span>&gt;</span>This paragraph should be hidden.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    
+    <span class="hljs-comment">&lt;!-- "fr" attribute --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"fr"</span>&gt;</span>Ceci est un paragraphe.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    
+    <span class="hljs-comment">&lt;!-- "spellcheck" attribute --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">spellcheck</span>=<span class="hljs-string">"true"</span>&gt;</span>This is a paragraph.<span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span>
+    
+    <span class="hljs-comment">&lt;!-- "style" attribute --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"color:blue;text-align:center;"</span>&gt;</span>This is a header<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+    
+    <span class="hljs-comment">&lt;!-- "title" attribute --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">abbr</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"World Health Organization"</span>&gt;</span>WHO<span class="hljs-tag">&lt;/<span class="hljs-name">abbr</span>&gt;</span> was founded in 1948.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Free Web tutorials"</span>&gt;</span>W3Schools.com<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    
+    <span class="hljs-comment">&lt;!-- "translate" attribute --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">translate</span>=<span class="hljs-string">"no"</span>&gt;</span>Don't translate this!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>This can be translated to any language.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    </code></pre>
+    <h4 id="the-body-element-and-it-s-children">The <code>&lt;body&gt;</code> Element and it&#39;s children</h4>
+    <ul>
+        <li>
+            <p>The
+
+                <body> tag defines the document&#39;s body.
+            </p>
+        </li>
+        <li>
+            <p>The <code>&lt;body&gt;</code> element contains all the contents of an HTML document, such as
+                headings(<code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code>), paragraphs(<code>&lt;p&gt;</code>),
+                images(<code>&lt;img/&gt;</code>), hyperlinks(<code>&lt;a&gt;</code>),
+                tables(<code>&lt;table&gt;</code>), lists(<code>&lt;li&gt;</code>), etc.</p>
+        </li>
+        <li>
+            <p>Note: There can only be one <code>&lt;body&gt;</code> element in an HTML document.</p>
+        </li>
+    </ul>
+    <table>
+        <thead>
+            <tr>
+                <th>Tag</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Headings</strong></td>
+            </tr>
+            <tr>
+                <td><code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code></td>
+                <td>Defines HTML headings</td>
+            </tr>
+            <tr>
+                <td><strong>Paragraph</strong></td>
+            </tr>
+            <tr>
+                <td><code>&lt;p&gt;</code></td>
+                <td>Defines a paragraph</td>
+            </tr>
+            <tr>
+                <td><strong>Formatting:</strong></td>
+            </tr>
+            <tr>
+                <td><code>&lt;b&gt;</code></td>
+                <td>Defines bold text</td>
+            </tr>
+            <tr>
+                <td><code>&lt;del&gt;</code></td>
+                <td>Defines text that has been deleted from a document (strikethrough)</td>
+            </tr>
+            <tr>
+                <td><code>&lt;em&gt;</code></td>
+                <td>Defines emphasized text</td>
+            </tr>
+            <tr>
+                <td><code>&lt;i&gt;</code></td>
+                <td>Defines a part of text in an alternate voice or mood</td>
+            </tr>
+            <tr>
+                <td><code>&lt;ins&gt;</code></td>
+                <td>Defines a text that has been inserted into a document</td>
+            </tr>
+            <tr>
+                <td><code>&lt;mark&gt;</code></td>
+                <td>Defines marked/highlighted text</td>
+            </tr>
+            <tr>
+                <td><code>&lt;pre&gt;</code></td>
+                <td>Defines preformatted text (preserve line breaks)</td>
+            </tr>
+            <tr>
+                <td><code>&lt;small&gt;</code></td>
+                <td>Defines smaller font-size for text</td>
+            </tr>
+            <tr>
+                <td><code>&lt;sub&gt;</code></td>
+                <td>Defines subscripted text</td>
+            </tr>
+            <tr>
+                <td><code>&lt;sup&gt;</code></td>
+                <td>Defines subscripted text</td>
+            </tr>
+            <tr>
+                <td><code>&lt;strong&gt;</code></td>
+                <td>Defines important text</td>
+            </tr>
+            <tr>
+                <td><strong>Quotations:</strong></td>
+            </tr>
+            <tr>
+                <td><code>&lt;blockquote&gt;</code></td>
+                <td>Defines a section that is quoted from another source</td>
+            </tr>
+            <tr>
+                <td><code>&lt;q&gt;</code></td>
+                <td>Defines a short quotation</td>
+            </tr>
+            <tr>
+                <td><strong>Tables:</strong></td>
+            </tr>
+            <tr>
+                <td><code>&lt;table&gt;</code></td>
+                <td>Defines a table</td>
+            </tr>
+            <tr>
+                <td><code>&lt;thead&gt;</code></td>
+                <td>Groups the header content in a table</td>
+            </tr>
+            <tr>
+                <td><code>&lt;tr&gt;</code></td>
+                <td>Defines a row in a table</td>
+            </tr>
+            <tr>
+                <td><code>&lt;th&gt;</code></td>
+                <td>Defines a header cell in a table</td>
+            </tr>
+            <tr>
+                <td><code>&lt;tbody&gt;</code></td>
+                <td>Groups the body content in a table</td>
+            </tr>
+            <tr>
+                <td><code>&lt;td&gt;</code></td>
+                <td>Defines a cell in a table</td>
+            </tr>
+            <tr>
+                <td><code>&lt;tfoot&gt;</code></td>
+                <td>Groups the footer content in a table</td>
+            </tr>
+            <tr>
+                <td><code>&lt;colgroup&gt;</code></td>
+                <td>Specifies a group of one or more columns in a table for formatting</td>
+            </tr>
+            <tr>
+                <td><code>&lt;col&gt;</code></td>
+                <td>Specifies column properties for each column within a <code>&lt;colgroup&gt;</code> element</td>
+            </tr>
+            <tr>
+                <td><strong>Lists</strong></td>
+            </tr>
+            <tr>
+                <td><code>&lt;ol&gt;</code></td>
+                <td>Defines an ordered list</td>
+            </tr>
+            <tr>
+                <td><code>&lt;ul&gt;</code></td>
+                <td>Defines an unordered list</td>
+            </tr>
+            <tr>
+                <td><code>&lt;li&gt;</code></td>
+                <td>Defines a list item</td>
+            </tr>
+            <tr>
+                <td><strong>Computer Code:</strong></td>
+            </tr>
+            <tr>
+                <td><code>&lt;code&gt;</code></td>
+                <td>Defines a piece of computer code</td>
+            </tr>
+            <tr>
+                <td><code>&lt;kbd&gt;</code></td>
+                <td>Defines keyboard input</td>
+            </tr>
+            <tr>
+                <td><code>&lt;samp&gt;</code></td>
+                <td>Defines sample output from a computer program</td>
+            </tr>
+            <tr>
+                <td><code>&lt;var&gt;</code></td>
+                <td>Defines a variable</td>
+            </tr>
+            <tr>
+                <td><strong>Form:</strong></td>
+            </tr>
+            <tr>
+                <td><code>&lt;form&gt;</code></td>
+                <td>Defines an HTML form for user input</td>
+            </tr>
+            <tr>
+                <td><code>&lt;input&gt;</code></td>
+                <td>Defines an input element</td>
+            </tr>
+            <tr>
+                <td><code>&lt;label&gt;</code></td>
+                <td>Defines a label for an <code>&lt;input&gt;</code> element</td>
+            </tr>
+            <tr>
+                <td><code>&lt;legend&gt;</code></td>
+                <td>Defines a caption for a <code>&lt;fieldset&gt;</code> element</td>
+            </tr>
+            <tr>
+                <td><code>&lt;optgroup&gt;</code></td>
+                <td>Defines a group of related options in a drop-down list</td>
+            </tr>
+            <tr>
+                <td><code>&lt;option&gt;</code></td>
+                <td>Defines an option in a drop-down list</td>
+            </tr>
+            <tr>
+                <td><code>&lt;select&gt;</code></td>
+                <td>Defines a drop-down list</td>
+            </tr>
+            <tr>
+                <td><code>&lt;fieldset&gt;</code></td>
+                <td>Groups related elements in a form</td>
+            </tr>
+            <tr>
+                <td><code>&lt;textarea&gt;</code></td>
+                <td>Defines a multiline input control (text area)</td>
+            </tr>
+            <tr>
+                <td><strong>Media:</strong></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><code>&lt;audio&gt;</code></td>
+                <td>Defines an embedded sound content</td>
+            </tr>
+            <tr>
+                <td><code>&lt;video&gt;</code></td>
+                <td>Defines an embedded video content</td>
+            </tr>
+            <tr>
+                <td><code>&lt;svg&gt;</code></td>
+                <td>Defines a container for SVG graphics</td>
+            </tr>
+            <tr>
+                <td><code>&lt;figure&gt;</code></td>
+                <td>Specifies a self-contained content</td>
+            </tr>
+            <tr>
+                <td><code>&lt;figcaption&gt;</code></td>
+                <td>Defines a caption for a <code>&lt;figure&gt;</code> element</td>
+            </tr>
+            <tr>
+                <td><strong>Others:</strong></td>
+            </tr>
+            <tr>
+                <td><code>&lt;a&gt;</code></td>
+                <td>Defines a hyperlink</td>
+            </tr>
+            <tr>
+                <td><code>&lt;br&gt;</code></td>
+                <td>Defines a single line break</td>
+            </tr>
+            <tr>
+                <td><code>&lt;button&gt;</code></td>
+                <td>Defines a clickable button</td>
+            </tr>
+            <tr>
+                <td><code>&lt;div&gt;</code></td>
+                <td>Defines a section in a document</td>
+            </tr>
+            <tr>
+                <td><code>&lt;hr&gt;</code></td>
+                <td>Defines a thematic change in the content</td>
+            </tr>
+            <tr>
+                <td><code>&lt;map&gt;</code></td>
+                <td>Defines an image map</td>
+            </tr>
+            <tr>
+                <td><code>&lt;nav&gt;</code></td>
+                <td>Defines navigation links</td>
+            </tr>
+            <tr>
+                <td><code>&lt;span&gt;</code></td>
+                <td>Defines a section in a document</td>
+            </tr>
+            <tr>
+                <td><code>&lt;summary&gt;</code></td>
+                <td>Defines a visible heading for a <code>&lt;details&gt;</code> element</td>
+            </tr>
+            <tr>
+                <td><code>&lt;details&gt;</code></td>
+                <td>Defines additional details that the user can view or hide</td>
+            </tr>
+            <tr>
+                <td><code>&lt;u&gt;</code></td>
+                <td>Defines some text that is unarticulated and styled differently from normal text</td>
+            </tr>
+            <tr>
+                <td><code>&lt;footer&gt;</code></td>
+                <td>Defines a footer for a document or section</td>
+            </tr>
+        </tbody>
+    </table>
+    <h4 id="a-closer-look-">A Closer Look:</h4>
+    <h4 id="headings-tags">Headings Tags</h4>
+    <p><code>&lt;h1&gt; - &lt;h6&gt;</code></p>
+    <ul>
+        <li>
+            <p>The <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code> tags are used to define HTML headings.</p>
+        </li>
+        <li>
+            <p><code>&lt;h1&gt;</code> defines the most important heading. <code>&lt;h6&gt;</code> defines the least
+                important heading.</p>
+        </li>
+        <li>
+            <p>Note: Only use one <code>&lt;h1&gt;</code> per page - this should represent the main heading/subject for
+                the whole page. </p>
+        </li>
+        <li>Also, do not skip heading levels - start with <code>&lt;h1&gt;</code>, then use <code>&lt;h2&gt;</code>, and
+            so on.</li>
+    </ul>
+    <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>This is heading 1<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>This is heading 2<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>This is heading 3<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>This is heading 4<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h5</span>&gt;</span>This is heading 5<span class="hljs-tag">&lt;/<span class="hljs-name">h5</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h6</span>&gt;</span>This is heading 6<span class="hljs-tag">&lt;/<span class="hljs-name">h6</span>&gt;</span>
+    </code></pre>
+    <p><strong>Paragraphs:</strong></p>
+    <p><code>&lt;p&gt;</code>:</p>
+    <p>The <code>&lt;p&gt;</code> tag defines a paragraph.</p>
+    <p>Browsers automatically add a single blank line before and after each <code>&lt;p&gt;</code> element.</p>
+    <pre><code class="lang-html">&lt;p&gt;This is <span class="hljs-keyword">a</span> <span class="hljs-keyword">normal</span> <span class="hljs-keyword">paragraph</span>&lt;/p&gt;&lt;p&gt;This is also <span class="hljs-keyword">a</span> <span class="hljs-keyword">normal</span> <span class="hljs-keyword">paragraph</span>&lt;/p&gt;
+    </code></pre>
+    <p><strong>Formatting:</strong></p>
+    <p><code>&lt;b&gt;</code>: </p>
+    <p>The <code>&lt;b&gt;</code> tag specifies bold text without any extra importance.</p>
+    <p>According to the HTML5 specification, the <code>&lt;b&gt;</code> tag should be used as a LAST resort when no
+        other tag is more appropriate. The specification states that headings should be denoted with the
+        <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code> tags, emphasized text should be denoted with the
+        <code>&lt;em&gt;</code> tag, important text should be denoted with the <code>&lt;strong&gt;</code> tag, and
+        marked/highlighted text should be denoted with the <code>&lt;mark&gt;</code> tag.
+    </p>
+    <p>Tip: You can also use the following CSS to set bold text: <code>font-weight: bold</code>;.</p>
+    <pre><code class="lang-html"><span class="hljs-symbol">&lt;p&gt;</span>This <span class="hljs-keyword">is</span> <span class="hljs-keyword">normal</span> text - <span class="hljs-symbol">&lt;b&gt;</span><span class="hljs-built_in">and</span> this <span class="hljs-keyword">is</span> bold text&lt;/<span class="hljs-keyword">b</span>&gt;.&lt;/<span class="hljs-keyword">p</span>&gt;
+    </code></pre>
+    <p><code>&lt;del&gt;</code>:</p>
+    <p>The <code>&lt;del&gt;</code> tag defines text that has been deleted from a document. Browsers will usually strike
+        a line through deleted text.</p>
+    <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>My favorite color is <span class="hljs-tag">&lt;<span class="hljs-name">del</span>&gt;</span>blue<span class="hljs-tag">&lt;/<span class="hljs-name">del</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">ins</span>&gt;</span>red<span class="hljs-tag">&lt;/<span class="hljs-name">ins</span>&gt;</span>!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    </code></pre>
+    <p><code>&lt;em&gt;</code></p>
+    <p>The <code>&lt;em&gt;</code> tag is used to define emphasized text. The content inside is typically displayed in
+        italic.</p>
+    <p>A screen reader will pronounce the words in <code>&lt;em&gt;</code> with an emphasis, using verbal stress</p>
+    <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>You <span class="hljs-tag">&lt;<span class="hljs-name">em</span>&gt;</span>have<span class="hljs-tag">&lt;/<span class="hljs-name">em</span>&gt;</span> to hurry up!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>We <span class="hljs-tag">&lt;<span class="hljs-name">em</span>&gt;</span>cannot<span class="hljs-tag">&lt;/<span class="hljs-name">em</span>&gt;</span> live like this.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    </code></pre>
+    <p><code>&lt;i&gt;</code></p>
+    <p>The <code>&lt;i&gt;</code> tag defines a part of text in an alternate voice or mood. The content inside is
+        typically displayed in italic.</p>
+    <p>The <code>&lt;i&gt;</code> tag is often used to indicate a technical term, a phrase from another language, a
+        thought, a ship name, etc.</p>
+    <p>Use the <code>&lt;i&gt;</code> element only when there is not a more appropriate semantic element, such as:</p>
+    <pre><code class="lang-html">
+    </code></pre>
+    <p><code>&lt;ins&gt;</code></p>
+    <p>The <ins> tag defines a text that has been inserted into a document. Browsers will usually underline inserted
+            text</p>
+    <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>My favorite color is <span class="hljs-tag">&lt;<span class="hljs-name">del</span>&gt;</span>blue<span class="hljs-tag">&lt;/<span class="hljs-name">del</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">ins</span>&gt;</span>red<span class="hljs-tag">&lt;/<span class="hljs-name">ins</span>&gt;</span>!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    </code></pre>
+    <p><code>&lt;mark&gt;</code></p>
+    <p>The <code>&lt;mark&gt;</code> tag defines text that should be marked or highlighted.</p>
+    <pre><code class="lang-html">
+    </code></pre>
+    <p><code>&lt;pre&gt;</code></p>
+    <pre><code class="lang-html">
+    </code></pre>
+    <p><code>&lt;small&gt;</code></p>
+    <pre><code class="lang-html">
+    </code></pre>
+    <p><code>&lt;sub&gt;</code></p>
+    <p>The <code>&lt;sub&gt;</code> tag defines subscript text. Subscript text appears half a character below the normal
+        line, and is sometimes rendered in a smaller font. Subscript text can be used for chemical formulas, like
+        H<sub>2</sub>O.</p>
+    <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>This text contains <span class="hljs-tag">&lt;<span class="hljs-name">sub</span>&gt;</span>subscript<span class="hljs-tag">&lt;/<span class="hljs-name">sub</span>&gt;</span> text.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    </code></pre>
+    <p><code>&lt;sup&gt;</code></p>
+    <p>The <code>&lt;sup&gt;</code> tag defines superscript text. Superscript text appears half a character above the
+        normal line, and is sometimes rendered in a smaller font. Superscript text can be used for footnotes, like
+        23<sup>2</sup> .</p>
+    <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>This text contains <span class="hljs-tag">&lt;<span class="hljs-name">sup</span>&gt;</span>superscript<span class="hljs-tag">&lt;/<span class="hljs-name">sup</span>&gt;</span> text.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    </code></pre>
+    <p><code>&lt;strong&gt;</code></p>
+    <pre><code class="lang-html">
+    </code></pre>
+    <p><strong>Quotations:</strong>
+        <code>&lt;blockquote&gt;</code>
+        The <code>&lt;blockquote&gt;</code> tag specifies a section that is quoted from another source.
+    </p>
+    <p>Browsers usually indent <code>&lt;blockquote&gt;</code> elements (look at example below to see how to remove the
+        indentation).</p>
+    <pre><code class="lang-html">&lt;blockquote cite=<span class="hljs-string">"http://www.worldwildlife.org/who/index.html"</span>&gt;
+    <span class="hljs-keyword">For</span> <span class="hljs-number">50</span> years, WWF has been protecting the future <span class="hljs-keyword">of</span> nature. The world<span class="hljs-symbol">'s</span> leading conservation organization, WWF works <span class="hljs-keyword">in</span> <span class="hljs-number">100</span> countries <span class="hljs-keyword">and</span> <span class="hljs-keyword">is</span> supported by <span class="hljs-number">1.2</span> million members <span class="hljs-keyword">in</span> the United States <span class="hljs-keyword">and</span> close <span class="hljs-keyword">to</span> <span class="hljs-number">5</span> million globally.
+    &lt;/blockquote&gt;
+    </code></pre>
+    <p><code>&lt;q&gt;</code></p>
+    <p>The <code>&lt;q&gt;</code> tag defines a short quotation.</p>
+    <p>Browsers normally insert quotation marks around the quotation</p>
+    <pre><code class="lang-html">&lt;p&gt;WWF's goal <span class="hljs-keyword">is</span> <span class="hljs-keyword">to</span>:
+    &lt;q&gt;Build a future <span class="hljs-keyword">where</span> people live <span class="hljs-keyword">in</span> harmony <span class="hljs-keyword">with</span> nature.&lt;/q&gt;
+    We hope they succeed.&lt;/p&gt;
+    </code></pre>
+    <p><strong>Tables:</strong></p>
+    <p><code>&lt;table&gt;</code></p>
+    <p>The
+    <table> tag defines an HTML table.</p>
+        <p>An HTML table consists of one <code>&lt;table&gt;</code> element and one or more <code>&lt;tr&gt;</code>,
+            <code>&lt;th&gt;</code>, and <code>&lt;td&gt;</code> elements.
+        </p>
+        <p>The <code>&lt;tr&gt;</code> element defines a table row, the <code>&lt;th&gt;</code> element defines a table
+            header, and the <code>&lt;td&gt;</code>element defines a table cell.</p>
+        <p>An HTML table may also include <code>&lt;caption&gt;</code>, <code>&lt;colgroup&gt;</code>,
+            <code>&lt;thead&gt;</code>, <code>&lt;tfoot&gt;</code>, and <code>&lt;tbody&gt;</code> elements.
+        </p>
+        <p><img src="../assets/images/table.jpg" alt="anatomy of a table" title="anatomy of a table"></p>
+        <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Month<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Savings<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>January<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>$100<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
+    </code></pre>
+        <p><code>&lt;tr&gt;</code>
+            The <code>&lt;tr&gt;</code> tag defines a row in an HTML table.</p>
+        <p>A <code>&lt;tr&gt;</code> element contains one or more <code>&lt;th&gt;</code> or <code>&lt;td&gt;</code>
+            elements.
+            <code>&lt;th&gt;</code>
+        </p>
+        <p>The <code>&lt;th&gt;</code> tag defines a header cell in an HTML table.</p>
+        <p>An HTML table has two kinds of cells:</p>
+        <ul>
+            <li>Header cells - contains header information (created with the <code>&lt;th&gt;</code> element)</li>
+            <li>Data cells - contains data (created with the <code>&lt;td&gt;</code> element)
+                The text in <code>&lt;th&gt;</code> elements are bold and centered by default.</li>
+        </ul>
+        <p>The text in <code>&lt;td&gt;</code> elements are regular and left-aligned by default.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Value</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>colspan</td>
+                    <td>number</td>
+                    <td>Specifies the number of columns a cell should span</td>
+                </tr>
+                <tr>
+                    <td>headers</td>
+                    <td>header_id</td>
+                    <td>Specifies one or more header cells a cell is related to</td>
+                </tr>
+                <tr>
+                    <td>rowspan</td>
+                    <td>number</td>
+                    <td>Sets the number of rows a cell should span</td>
+                </tr>
+                <tr>
+                    <td>scope</td>
+                    <td>col, colgroup, row, rowgroup</td>
+                    <td>Specifies whether a header cell is a header for a column, row, or group of columns or rows</td>
+                </tr>
+            </tbody>
+        </table>
+        <pre><code class="lang-html"><span class="hljs-comment">&lt;!-- colspan attribute --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">th</span> <span class="hljs-attr">colspan</span>=<span class="hljs-string">"2"</span>&gt;</span>Monthly Savings<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>January<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>$100<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>February<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>$80<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
+    
+    <span class="hljs-comment">&lt;!-- headers attribute --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">th</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"name"</span> <span class="hljs-attr">colspan</span>=<span class="hljs-string">"2"</span>&gt;</span>Name<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">th</span> <span class="hljs-attr">headers</span>=<span class="hljs-string">"name"</span>&gt;</span>Firsname<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">th</span> <span class="hljs-attr">headers</span>=<span class="hljs-string">"name"</span>&gt;</span>Lastname<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
+    
+    <span class="hljs-comment">&lt;!-- rowspan attribute --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Month<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Savings<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">th</span> <span class="hljs-attr">rowspan</span>=<span class="hljs-string">"3"</span>&gt;</span>Savings for holiday!<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>January<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>$100<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>February<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>$80<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
+    </code></pre>
+        <p><code>&lt;td&gt;</code></p>
+        <p>The <code>&lt;td&gt;</code> tag defines a standard data cell in an HTML table.</p>
+        <p>An HTML table has two kinds of cells:</p>
+        <p>Header cells - contains header information (created with the <code>&lt;th&gt;</code> element)
+            Data cells - contains data (created with the <code>&lt;td&gt;</code> element)
+            The text in <code>&lt;td&gt;</code> elements are regular and left-aligned by default.</p>
+        <p>The text in <code>&lt;th&gt;</code> elements are bold and centered by default. </p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Value</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>colspan</td>
+                    <td>number</td>
+                    <td>Specifies the number of columns a cell should span</td>
+                </tr>
+                <tr>
+                    <td>headers</td>
+                    <td>header_id</td>
+                    <td>Specifies one or more header cells a cell is related to</td>
+                </tr>
+                <tr>
+                    <td>rowspan</td>
+                    <td>number</td>
+                    <td>Sets the number of rows a cell should span</td>
+                </tr>
+            </tbody>
+        </table>
+        <pre><code class="lang-html">
+    </code></pre>
+        <p><code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;tfoot&gt;</code></p>
+        <p>The <code>&lt;thead&gt;</code> tag is used to group header content in an HTML table.</p>
+        <p>The <code>&lt;thead&gt;</code> element is used in conjunction with the <code>&lt;tbody&gt;</code> and
+            <code>&lt;tfoot&gt;</code> elements to specify each part of a table (header, body, footer).
+        </p>
+        <p>Browsers can use these elements to enable scrolling of the table body independently of the header and footer.
+            Also, when printing a large table that spans multiple pages, these elements can enable the table header and
+            footer to be printed at the top and bottom of each page.</p>
+        <p>The <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, and <code>&lt;tfoot&gt;</code> elements will not
+            affect the layout of the table by default. However, you can use CSS to style these elements (see example
+            below)!</p>
+        <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">thead</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Month<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Savings<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">thead</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">tbody</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>January<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>$100<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>February<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>$80<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">tbody</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">tfoot</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Sum<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>$180<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">tfoot</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
+    </code></pre>
+        <p><code>&lt;colgroup&gt;</code></p>
+        <p>The <code>&lt;colgroup&gt;</code> tag specifies a group of one or more columns in a table for formatting.</p>
+        <p>The <code>&lt;colgroup&gt;</code> tag is useful for applying styles to entire columns, instead of repeating
+            the styles for each cell, for each row.</p>
+        <p>Note: The <code>&lt;colgroup&gt;</code> tag must be a child of a <code>&lt;table&gt;</code> element, after
+            any <code>&lt;caption&gt;</code> elements and before any
+            <code>&lt;thead&gt;</code>,<code>&lt;tbody&gt;</code>, <code>&lt;tfoot&gt;</code>, and
+            <code>&lt;tr&gt;</code> elements.
+        </p>
+        <p>Tip: To define different properties to a column within a <code>&lt;colgroup&gt;</code>, use the
+            <code>&lt;col&gt;</code> tag within the <code>&lt;colgroup&gt;</code> tag.
+        </p>
+        <p><code>&lt;col&gt;</code></p>
+        <p>The <code>&lt;col&gt;</code> tag specifies column properties for each column within a
+            <code>&lt;colgroup&gt;</code> element.
+        </p>
+        <p>The <code>&lt;col&gt;</code> tag is useful for applying styles to entire columns, instead of repeating the
+            styles for each cell, for each row.</p>
+        <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">colgroup</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">col</span> <span class="hljs-attr">span</span>=<span class="hljs-string">"2"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"background-color:red"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">col</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"background-color:yellow"</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">colgroup</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>ISBN<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Title<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Price<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>3476896<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>My first HTML<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>$53<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
+    </code></pre>
+        <p><strong>List:</strong></p>
+        <p><code>&lt;ol&gt;</code></p>
+        <p>The <code>&lt;ol&gt;</code> tag defines an ordered list. An ordered list can be numerical or alphabetical.
+        </p>
+        <p>The <code>&lt;li&gt;</code> tag is used to define each list item.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Value</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>reversed</td>
+                    <td>reversed</td>
+                    <td>Specifies that the list order should be reversed (9,8,7...)</td>
+                </tr>
+                <tr>
+                    <td>start</td>
+                    <td>number</td>
+                    <td>Specifies the start value of an ordered list</td>
+                </tr>
+                <tr>
+                    <td>type</td>
+                    <td>1,A,a,I,i</td>
+                    <td>Specifies the kind of marker to use in the list</td>
+                </tr>
+            </tbody>
+        </table>
+        <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">ol</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Coffee<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Tea<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Milk<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ol</span>&gt;</span>
+    
+    <span class="hljs-tag">&lt;<span class="hljs-name">ol</span> <span class="hljs-attr">start</span>=<span class="hljs-string">"50"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"A"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Coffee<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Tea<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Milk<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ol</span>&gt;</span>
+    </code></pre>
+        <p><code>&lt;li&gt;</code></p>
+        <p>The <code>&lt;li&gt;</code> tag defines a list item.</p>
+        <p>The <code>&lt;li</code>&gt; tag is used inside ordered lists(<code>&lt;ol&gt;</code>) and unordered lists
+            (<code>&lt;ul&gt;</code>).</p>
+        <p>In <code>&lt;ul&gt;</code> and , the list items will usually be displayed with bullet points.</p>
+        <p>In <code>&lt;ol&gt;</code>, the list items will usually be displayed with numbers or letters.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Value</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>value</td>
+                    <td>number</td>
+                    <td>Only for <code>&lt;ol&gt;</code> lists. Specifies the start value of a list item. The following
+                        list items will increment from that number</td>
+                </tr>
+            </tbody>
+        </table>
+        <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">ol</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"100"</span>&gt;</span>Coffee<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Tea<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Milk<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Water<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Juice<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Beer<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ol</span>&gt;</span>
+    </code></pre>
+        <p><code>&lt;ul&gt;</code></p>
+        <p>The <code>&lt;ul&gt;</code> tag defines an unordered (bulleted) list.</p>
+        <p>Use the <code>&lt;ul&gt;</code> tag together with the <code>&lt;li&gt;</code> tag to create unordered lists.
+        </p>
+        <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"list-style-type:circle"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Coffee<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Tea<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Milk<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+    
+    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"list-style-type:disc"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Coffee<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Tea<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Milk<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+    
+    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"list-style-type:square"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Coffee<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Tea<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Milk<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+    </code></pre>
+        <p><strong>Computer Code:</strong></p>
+        <p><code>&lt;code&gt;</code></p>
+        <p>The <code>&lt;code&gt;</code> tag is used to define a piece of computer code. The content inside is displayed
+            in the browser&#39;s default monospace font.</p>
+        <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>The HTML <span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span> tag defines a clickable button.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    </code></pre>
+        <p><code>&lt;kbd&gt;</code></p>
+        <p>The <code>&lt;kbd&gt;</code> tag is used to define keyboard input. The content inside is displayed in the
+            browser&#39;s default monospace font.</p>
+        <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Press <span class="hljs-tag">&lt;<span class="hljs-name">kbd</span>&gt;</span>Ctrl<span class="hljs-tag">&lt;/<span class="hljs-name">kbd</span>&gt;</span> + <span class="hljs-tag">&lt;<span class="hljs-name">kbd</span>&gt;</span>C<span class="hljs-tag">&lt;/<span class="hljs-name">kbd</span>&gt;</span> to copy text (Windows).<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    </code></pre>
+        <p><code>&lt;samp&gt;</code></p>
+        <p>The <code>&lt;samp&gt;</code> tag is used to define sample output from a computer program. The content inside
+            is displayed in the browser&#39;s default monospace font.</p>
+        <pre><code class="lang-html">&lt;p&gt;Message <span class="hljs-keyword">from</span> my computer:<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span>
+    
+    &lt;p&gt;<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">samp</span>&gt;</span>File not found.<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>Press F1 to continue<span class="hljs-tag">&lt;/<span class="hljs-name">samp</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span>
+    </code></pre>
+        <p><code>&lt;var&gt;</code></p>
+        <p>The <code>&lt;var&gt;</code> tag is used to defines a variable in programming or in a mathematical
+            expression. The content inside is typically displayed in <em>italic</em>.</p>
+        <pre><code class="lang-html">&lt;p&gt;The area of a <span class="hljs-built_in">triangle</span> <span class="hljs-built_in">is</span>: <span class="hljs-number">1</span>/<span class="hljs-number">2</span> x &lt;<span class="hljs-built_in">var</span>&gt;b&lt;/<span class="hljs-built_in">var</span>&gt; x &lt;<span class="hljs-built_in">var</span>&gt;h&lt;/<span class="hljs-built_in">var</span>&gt;, where &lt;<span class="hljs-built_in">var</span>&gt;b&lt;/<span class="hljs-built_in">var</span>&gt; <span class="hljs-built_in">is</span> the base, <span class="hljs-keyword">and</span> &lt;<span class="hljs-built_in">var</span>&gt;h&lt;/<span class="hljs-built_in">var</span>&gt; <span class="hljs-built_in">is</span> the vertical <span class="hljs-built_in">height</span>.&lt;/p&gt;
+    </code></pre>
+        <p><strong>Form:</strong></p>
+        <p><code>&lt;form&gt;</code></p>
+        <p>The <code>&lt;form&gt;</code> tag is used to create an HTML form for user input.</p>
+        <p>The <code>&lt;form&gt;</code> element can contain one or more of the following form elements:</p>
+        <ul>
+            <li><code>&lt;input&gt;</code></li>
+            <li><code>&lt;textarea&gt;</code></li>
+            <li><code>&lt;button&gt;</code></li>
+            <li><code>&lt;select&gt;</code></li>
+            <li><code>&lt;option&gt;</code></li>
+            <li><code>&lt;optgroup&gt;</code></li>
+            <li><code>&lt;fieldset&gt;</code></li>
+            <li><code>&lt;label&gt;</code></li>
+            <li><code>&lt;output&gt;</code></li>
+        </ul>
+        <pre><code class="lang-html">&lt;<span class="hljs-keyword">form</span> action=<span class="hljs-string">"/action_page.php"</span> method=<span class="hljs-string">"get"</span>&gt;
+      &lt;<span class="hljs-keyword">label</span> <span class="hljs-keyword">for</span>=<span class="hljs-string">"fname"</span>&gt;First name:&lt;/<span class="hljs-keyword">label</span>&gt;
+      &lt;<span class="hljs-keyword">input</span> <span class="hljs-keyword">type</span>=<span class="hljs-string">"text"</span> id=<span class="hljs-string">"fname"</span> name=<span class="hljs-string">"fname"</span>&gt;&lt;<span class="hljs-keyword">br</span>&gt;&lt;<span class="hljs-keyword">br</span>&gt;
+      &lt;<span class="hljs-keyword">label</span> <span class="hljs-keyword">for</span>=<span class="hljs-string">"lname"</span>&gt;Last name:&lt;/<span class="hljs-keyword">label</span>&gt;
+      &lt;<span class="hljs-keyword">input</span> <span class="hljs-keyword">type</span>=<span class="hljs-string">"text"</span> id=<span class="hljs-string">"lname"</span> name=<span class="hljs-string">"lname"</span>&gt;&lt;<span class="hljs-keyword">br</span>&gt;&lt;<span class="hljs-keyword">br</span>&gt;
+      &lt;<span class="hljs-keyword">input</span> <span class="hljs-keyword">type</span>=<span class="hljs-string">"submit"</span> value=<span class="hljs-string">"Submit"</span>&gt;
+    &lt;/<span class="hljs-keyword">form</span>&gt;
+    </code></pre>
+        <table>
+            <thead>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Value</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>action</td>
+                    <td>URL</td>
+                    <td>Specifies where to send the form-data when a form is submitted</td>
+                </tr>
+                <tr>
+                    <td>autocomplete</td>
+                    <td>on,off</td>
+                    <td>Specifies whether a form should have autocomplete on or off</td>
+                </tr>
+                <tr>
+                    <td>enctype</td>
+                    <td>application/,x-www-form-urlencoded, multipart/form-data, text/plain</td>
+                    <td>Specifies how the form-data should be encoded when submitting it to the server (only for
+                        method=&quot;post&quot;)</td>
+                </tr>
+                <tr>
+                    <td>autocomplete</td>
+                    <td>on, off</td>
+                    <td>Specifies whether a form should have autocomplete on or off</td>
+                </tr>
+                <tr>
+                    <td>method</td>
+                    <td>get, post</td>
+                    <td>Specifies the HTTP method to use when sending form-data</td>
+                </tr>
+                <tr>
+                    <td>novalidate</td>
+                    <td>novalidate</td>
+                    <td>Specifies that the form should not be validated when submitted</td>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td>text</td>
+                    <td>Specifies the name of a form</td>
+                </tr>
+                <tr>
+                    <td>target</td>
+                    <td>_blank, _self, _parent, _top</td>
+                    <td>Specifies where to display the response that is received after submitting the form</td>
+                </tr>
+            </tbody>
+        </table>
+        <p><code>&lt;input&gt;</code></p>
+        <p>The <code>&lt;input&gt;</code> tag specifies an input field where the user can enter data.</p>
+        <p>The <code>&lt;input&gt;</code> element is the most important form element.</p>
+        <p>The <code>&lt;input&gt;</code> element can be displayed in several ways, depending on the type attribute.</p>
+        <p>The different input types are as follows:</p>
+        <ul>
+            <li><code>&lt;input type=&quot;button&quot;&gt;</code></li>
+            <li><code>&lt;input type=&quot;checkbox&quot;&gt;</code></li>
+            <li><code>&lt;input type=&quot;color&quot;&gt;</code></li>
+            <li><code>&lt;input type=&quot;date&quot;&gt;</code></li>
+            <li>
+                <p><code>&lt;input type=&quot;datetime-local&quot;&gt;</code></p>
+            </li>
+            <li>
+                <p><code>&lt;input type=&quot;email&quot;&gt;</code></p>
+            </li>
+            <li><code>&lt;input type=&quot;file&quot;&gt;</code></li>
+            <li><code>&lt;input type=&quot;hidden&quot;&gt;</code></li>
+            <li><code>&lt;input type=&quot;image&quot;&gt;</code></li>
+            <li><code>&lt;input type=&quot;month&quot;&gt;</code></li>
+            <li><code>&lt;input type=&quot;number&quot;&gt;</code></li>
+            <li><code>&lt;input type=&quot;password&quot;&gt;</code></li>
+            <li><code>&lt;input type=&quot;radio&quot;&gt;</code></li>
+            <li><code>&lt;input type=&quot;range&quot;&gt;</code></li>
+            <li><code>&lt;input type=&quot;reset&quot;&gt;</code></li>
+            <li><code>&lt;input type=&quot;search&quot;&gt;</code></li>
+            <li><code>&lt;input type=&quot;submit&quot;&gt;</code></li>
+            <li><code>&lt;input type=&quot;tel&quot;&gt;</code></li>
+            <li><code>&lt;input type=&quot;text&quot;&gt;</code> (default value)</li>
+            <li><code>&lt;input type=&quot;time&quot;&gt;</code></li>
+            <li><code>&lt;input type=&quot;url&quot;&gt;</code></li>
+            <li><code>&lt;input type=&quot;week&quot;&gt;</code></li>
+        </ul>
+        <table>
+            <thead>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Value</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>accept</td>
+                    <td>file_extension or ( audio/#, video/#, image/# ) media_type</td>
+                    <td>Specifies a filter for what file types the user can pick from the file input dialog box (only
+                        for type=&quot;file&quot;)</td>
+                </tr>
+                <tr>
+                    <td>alt</td>
+                    <td>text</td>
+                    <td>Specifies an alternate text for images (only for type=&quot;image&quot;)</td>
+                </tr>
+                <tr>
+                    <td>autocomplete</td>
+                    <td>on, off</td>
+                    <td>Specifies whether an <code>&lt;input&gt;</code> element should have autocomplete enabled</td>
+                </tr>
+                <tr>
+                    <td>autofocus</td>
+                    <td>autofocus</td>
+                    <td>Specifies that an <code>&lt;input&gt;</code> element should automatically get focus when the
+                        page loads</td>
+                </tr>
+                <tr>
+                    <td>checked</td>
+                    <td>checked</td>
+                    <td>Specifies that an <code>&lt;input&gt;</code> element should be pre-selected when the page loads
+                        (for type=&quot;checkbox&quot; or type=&quot;radio&quot;)</td>
+                </tr>
+                <tr>
+                    <td>disabled</td>
+                    <td>disabled</td>
+                    <td>Specifies that an <code>&lt;input&gt;</code> element should be disabled</td>
+                </tr>
+                <tr>
+                    <td>form</td>
+                    <td>form_id</td>
+                    <td>Specifies the form the <code>&lt;input&gt;</code> element belongs to</td>
+                </tr>
+                <tr>
+                    <td>formaction</td>
+                    <td>URL</td>
+                    <td>Specifies the URL of the file that will process the input control when the form is submitted
+                        (for type=&quot;submit&quot; and type=&quot;image&quot;)</td>
+                </tr>
+                <tr>
+                    <td>height</td>
+                    <td>pixels (e.g 50px)</td>
+                    <td>Specifies the height of an <code>&lt;input&gt;</code> element (only for type=&quot;image&quot;)
+                    </td>
+                </tr>
+                <tr>
+                    <td>max</td>
+                    <td>number, date</td>
+                    <td>Specifies the maximum value for an <code>type=&quot;number&quot; or type=&quot;date&quot;</code>
+                        element</td>
+                </tr>
+                <tr>
+                    <td>min</td>
+                    <td>number, date</td>
+                    <td>Specifies the minimum value for an <code>type=&quot;number&quot; or type=&quot;date&quot;</code>
+                        element</td>
+                </tr>
+                <tr>
+                    <td>maxlength</td>
+                    <td>number</td>
+                    <td>Specifies the maximum number of characters allowed in an <code>&lt;input&gt;</code> element</td>
+                </tr>
+                <tr>
+                    <td>minlength</td>
+                    <td>number</td>
+                    <td>Specifies the minimum number of characters allowed in an <code>&lt;input&gt;</code> element</td>
+                </tr>
+                <tr>
+                    <td>multiple</td>
+                    <td>multiple</td>
+                    <td>Specifies that a user can enter more than one value in an <code>&lt;input&gt;</code> element
+                    </td>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td>text</td>
+                    <td>needed to reference the form data after the form is submitted (if you omit the name attribute,
+                        no data from that input will be submitted). This is used in the
+                        &quot;key&quot;:&quot;value&quot; on submission</td>
+                </tr>
+                <tr>
+                    <td>pattern</td>
+                    <td>regexp</td>
+                    <td>Specifies a regular expression that an <code>&lt;input&gt;</code> element&#39;s value is checked
+                        against</td>
+                </tr>
+                <tr>
+                    <td>placeholder</td>
+                    <td>text</td>
+                    <td>Specifies a short hint that describes the expected value of an <code>&lt;input&gt;</code>
+                        element</td>
+                </tr>
+                <tr>
+                    <td>readonly</td>
+                    <td>readonly</td>
+                    <td>Specifies that an input field is read-only i.e cannot be changed by the user</td>
+                </tr>
+                <tr>
+                    <td>required</td>
+                    <td>required</td>
+                    <td>Specifies that an input field must be filled out before submitting the form</td>
+                </tr>
+                <tr>
+                    <td>size</td>
+                    <td>number</td>
+                    <td>Specifies the width, in characters, of an <code>&lt;input&gt;</code> element</td>
+                </tr>
+                <tr>
+                    <td>src</td>
+                    <td>URL</td>
+                    <td>Specifies the URL of the image to use as a submit button (only for type=&quot;image&quot;)</td>
+                </tr>
+                <tr>
+                    <td>step</td>
+                    <td>number, any</td>
+                    <td>Specifies the interval between legal numbers in an input field</td>
+                </tr>
+                <tr>
+                    <td>type</td>
+                    <td>button, checkbox, color, date, datetime-local, email, file, hidden, image, month, number,
+                        password, radio, range, reset, search, submit, tel, text, time, url, week</td>
+                    <td>Specifies the type <code>&lt;input&gt;</code> element to display</td>
+                </tr>
+                <tr>
+                    <td>value</td>
+                    <td>text</td>
+                    <td>Specifies the value of an <code>&lt;input&gt;</code> element</td>
+                </tr>
+                <tr>
+                    <td>width</td>
+                    <td>pixels (e.g 50px)</td>
+                    <td>Specifies the width of an <code>&lt;input&gt;</code> element (only for type=&quot;image&quot;)
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <pre><code class="lang-html">
+    <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">"/action_page.php"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"form1"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"img"</span>&gt;</span>Select image:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+      <span class="hljs-comment">&lt;!-- accept, multiple attribute --&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"file"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"img"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"img"</span> <span class="hljs-attr">accept</span>=<span class="hljs-string">"image/*"</span> <span class="hljs-attr">multiple</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    
+      <span class="hljs-comment">&lt;!-- alt, width, height and src attribute --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"image"</span>&gt;</span>Image 1:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"image"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"submit.gif"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"Submit"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"48"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"48"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    
+      <span class="hljs-comment">&lt;!-- name, autocomplete, autofocus attribute --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"email"</span>&gt;</span>Email:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"email"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"email"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"email"</span> <span class="hljs-attr">autocomplete</span>=<span class="hljs-string">"off"</span> <span class="hljs-attr">autofocus</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    
+      <span class="hljs-comment">&lt;!-- checked, disabled attribute --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"vehicle2"</span>&gt;</span> Name of vehicle<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"vehicle3"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Car"</span> <span class="hljs-attr">checked</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"vehicle3"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Boat"</span> <span class="hljs-attr">disabled</span>&gt;</span>
+    
+      <span class="hljs-comment">&lt;!-- min, max attribute --&gt;</span>
+    
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"quantity"</span>&gt;</span>Quantity (between 2 and 15):<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"number"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"quantity"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"quantity"</span> <span class="hljs-attr">min</span>=<span class="hljs-string">"2"</span> <span class="hljs-attr">max</span>=<span class="hljs-string">"15"</span> <span class="hljs-attr">step</span>=<span class="hljs-string">"3"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    
+      <span class="hljs-comment">&lt;!-- placeholder, maxlength, minlength attribute --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"username"</span>&gt;</span>Username:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"username"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"username"</span> <span class="hljs-attr">minlength</span>=<span class="hljs-string">"10"</span> <span class="hljs-attr">maxlength</span>=<span class="hljs-string">"20"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Enter Username"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    
+      <span class="hljs-comment">&lt;!-- readonly attribute --&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"country"</span>&gt;</span>Country:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"country"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"country"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Nigeria"</span> <span class="hljs-attr">readonly</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    
+      <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+    
+    
+      <span class="hljs-comment">&lt;!-- form attribute --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"lname"</span>&gt;</span>Last name:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"lname"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"lname"</span> <span class="hljs-attr">form</span>=<span class="hljs-string">"form1"</span>&gt;</span>
+    </code></pre>
+        <p><code>&lt;label&gt;</code></p>
+        <p>The <label> tag defines a label for several elements.
+                Proper use of labels with the elements above will benefit:</p>
+        <ul>
+            <li>Screen reader users (will read out loud the label, when the user is focused on the element)</li>
+            <li>Users who have difficulty clicking on very small regions (such as checkboxes) - because when a user
+                clicks the text within the <label> element, it toggles the input (this increases the hit area). </li>
+        </ul>
+        <p><code>&lt;select&gt;</code> and <code>&lt;option&gt;</code> tags</p>
+        <p>The <code>&lt;select&gt;</code> element is used to create a drop-down list.</p>
+        <p>The <code>&lt;select&gt;</code> element is most often used in a form, to collect user input.</p>
+        <p>The <code>&lt;option&gt;</code> tags inside the <code>&lt;select&gt;</code> element define the available
+            options in the drop-down list. </p>
+        <p><code>&lt;option&gt;</code> Attributes: </p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Value</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>disabled</td>
+                    <td>disabled</td>
+                    <td>Specifies that an option should be disabled</td>
+                </tr>
+                <tr>
+                    <td>label</td>
+                    <td>text</td>
+                    <td>Specifies a shorter label for an option</td>
+                </tr>
+                <tr>
+                    <td>selected</td>
+                    <td>selected</td>
+                    <td>Specifies that an option should be pre-selected when the page loads</td>
+                </tr>
+                <tr>
+                    <td>value</td>
+                    <td>text</td>
+                    <td>Specifies the value to be sent to a server</td>
+                </tr>
+            </tbody>
+        </table>
+        <pre><code class="lang-html">&lt;label <span class="hljs-keyword">for</span>=<span class="hljs-string">"cars"</span>&gt;Choose a car:&lt;/label&gt;
+    &lt;select name=<span class="hljs-string">"cars"</span> id=<span class="hljs-string">"cars"</span>&gt;
+      &lt;<span class="hljs-keyword">option</span> <span class="hljs-keyword">value</span>=<span class="hljs-string">"volvo"</span>&gt;Volvo&lt;/<span class="hljs-keyword">option</span>&gt;
+      &lt;<span class="hljs-keyword">option</span> <span class="hljs-keyword">value</span>=<span class="hljs-string">"saab"</span> selected&gt;Saab&lt;/<span class="hljs-keyword">option</span>&gt;
+      &lt;<span class="hljs-keyword">option</span> <span class="hljs-keyword">value</span>=<span class="hljs-string">"mercedes"</span>&gt;Mercedes&lt;/<span class="hljs-keyword">option</span>&gt;
+      &lt;<span class="hljs-keyword">option</span> <span class="hljs-keyword">value</span>=<span class="hljs-string">"audi"</span>&gt;Audi&lt;/<span class="hljs-keyword">option</span>&gt;
+    &lt;/select&gt;
+    </code></pre>
+        <p><code>&lt;optgroup&gt;</code>
+            The <code>&lt;optgroup&gt;</code> tag is used to group related options in a <code>&lt;select&gt;</code>
+            element (drop-down list).</p>
+        <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"cars"</span>&gt;</span>Choose a car:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">select</span>  <span class="hljs-attr">name</span>=<span class="hljs-string">"cars"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"cars"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">optgroup</span> <span class="hljs-attr">label</span>=<span class="hljs-string">"Swedish Cars"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"volvo"</span>&gt;</span>Volvo<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"saab"</span>&gt;</span>Saab<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">optgroup</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">optgroup</span> <span class="hljs-attr">label</span>=<span class="hljs-string">"German Cars"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"mercedes"</span>&gt;</span>Mercedes<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"audi"</span>&gt;</span>Audi<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">optgroup</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+    </code></pre>
+        <p><code>&lt;fieldset&gt;</code> and <code>&lt;legend&gt;</code></p>
+        <p>The <code>&lt;fieldset&gt;</code> tag is used to group related elements in a form.</p>
+        <p>The <code>&lt;legend&gt;</code> tag defines a caption for the <code>&lt;fieldset&gt;</code> element.</p>
+        <pre><code class="lang-html">&lt;<span class="hljs-keyword">form</span> action=<span class="hljs-string">"/action_page.php"</span>&gt;
+      &lt;fieldset&gt;
+                &lt;legend&gt;<span class="hljs-keyword">Personal</span> Info:&lt;/legend&gt;
+                &lt;<span class="hljs-keyword">label</span> <span class="hljs-keyword">for</span>=<span class="hljs-string">"fname"</span>&gt;First name:&lt;/<span class="hljs-keyword">label</span>&gt;
+                &lt;<span class="hljs-keyword">input</span> <span class="hljs-keyword">type</span>=<span class="hljs-string">"text"</span> id=<span class="hljs-string">"fname"</span> name=<span class="hljs-string">"fname"</span>&gt;&lt;<span class="hljs-keyword">br</span>&gt;&lt;<span class="hljs-keyword">br</span>&gt;
+                &lt;<span class="hljs-keyword">label</span> <span class="hljs-keyword">for</span>=<span class="hljs-string">"lname"</span>&gt;Last name:&lt;/<span class="hljs-keyword">label</span>&gt;
+                &lt;<span class="hljs-keyword">input</span> <span class="hljs-keyword">type</span>=<span class="hljs-string">"text"</span> id=<span class="hljs-string">"lname"</span> name=<span class="hljs-string">"lname"</span>&gt;&lt;<span class="hljs-keyword">br</span>&gt;&lt;<span class="hljs-keyword">br</span>&gt;
+            &lt;/fieldset&gt;
+            &lt;fieldset&gt;
+                &lt;legend&gt;Contact Info:&lt;/legend&gt;
+                &lt;<span class="hljs-keyword">label</span> <span class="hljs-keyword">for</span>=<span class="hljs-string">"email"</span>&gt;Email:&lt;/<span class="hljs-keyword">label</span>&gt;
+                &lt;<span class="hljs-keyword">input</span> <span class="hljs-keyword">type</span>=<span class="hljs-string">"email"</span> id=<span class="hljs-string">"email"</span> name=<span class="hljs-string">"email"</span>&gt;&lt;<span class="hljs-keyword">br</span>&gt;&lt;<span class="hljs-keyword">br</span>&gt;
+                &lt;<span class="hljs-keyword">label</span> <span class="hljs-keyword">for</span>=<span class="hljs-string">"address"</span>&gt;Address:&lt;/<span class="hljs-keyword">label</span>&gt;
+                &lt;<span class="hljs-keyword">input</span> <span class="hljs-keyword">type</span>=<span class="hljs-string">"text"</span> id=<span class="hljs-string">"address"</span> name=<span class="hljs-string">"address"</span>&gt;&lt;<span class="hljs-keyword">br</span>&gt;&lt;<span class="hljs-keyword">br</span>&gt;
+                &lt;<span class="hljs-keyword">input</span> <span class="hljs-keyword">type</span>=<span class="hljs-string">"submit"</span> value=<span class="hljs-string">"Submit"</span>&gt;
+            &lt;/fieldset&gt;
+    &lt;/<span class="hljs-keyword">form</span>&gt;
+    </code></pre>
+        <p><code>&lt;textarea&gt;</code></p>
+        <p>The <code>&lt;textarea&gt;</code> tag defines a multi-line text input control.</p>
+        <p>The <code>&lt;textarea&gt;</code> element is often used in a form, to collect user inputs like comments or
+            reviews.</p>
+        <p>A text area can hold an unlimited number of characters, and the text renders in a fixed-width font (usually
+            Courier).</p>
+        <p>The size of a text area is specified by the cols and rows attributes (or with CSS).</p>
+        <pre><code class="lang-html">&lt;<span class="hljs-selector-tag">label</span> <span class="hljs-keyword">for</span>=<span class="hljs-string">"w3review"</span>&gt;Review of W3Schools:&lt;/label&gt;
+    
+    &lt;<span class="hljs-selector-tag">textarea</span> id=<span class="hljs-string">"w3review"</span> name=<span class="hljs-string">"w3review"</span> rows=<span class="hljs-string">"4"</span> cols=<span class="hljs-string">"50"</span>&gt;
+    At w3schools<span class="hljs-selector-class">.com</span> you will learn how to make <span class="hljs-selector-tag">a</span> website. They offer free tutorials <span class="hljs-keyword">in</span> all web development technologies.
+    &lt;/textarea&gt;
+    </code></pre>
+        <p><strong>Media:</strong></p>
+        <p><code>&lt;img/&gt;</code></p>
+        <p>The <code>&lt;img&gt;</code> tag is used to embed an image in an HTML page.</p>
+        <p>The <code>&lt;img&gt;</code> tag has two required attributes:</p>
+        <ul>
+            <li><code>src</code> - Specifies the path to the image</li>
+            <li><code>alt</code> - Specifies an alternate text for the image, if the image for some reason cannot be
+                displayed.</li>
+        </ul>
+        <p>it also asccepts <code>width</code> and <code>height</code> attributes</p>
+        <pre><code class="lang-html">&lt;<span class="hljs-selector-tag">img</span> src=<span class="hljs-string">"img_girl.jpg"</span> alt=<span class="hljs-string">"Girl in a jacket"</span> <span class="hljs-attribute">width</span>=<span class="hljs-string">"500"</span> height=<span class="hljs-string">"600"</span>&gt;
+    </code></pre>
+        <p><code>&lt;audio&gt;</code></p>
+        <p>The <code>&lt;audio&gt;</code> tag is used to embed sound content in a document, such as music or other audio
+            streams.</p>
+        <p>The <code>&lt;audio&gt;</code> tag contains one or more <code>&lt;source&gt;</code> tags with different audio
+            sources. The browser will choose the first source it supports.</p>
+        <p>The text between the <code>&lt;audio&gt;</code> and <code>&lt;/audio&gt;</code> tags will only be displayed
+            in browsers that do not support the <code>&lt;audio&gt;</code> element.</p>
+        <p>There are three supported audio formats in HTML: MP3, WAV, and OGG.</p>
+        <p><code>&lt;audio&gt;</code></p>
+        <pre><code class="lang-html">&lt;audio controls&gt;
+      &lt;<span class="hljs-keyword">source</span> src=<span class="hljs-string">"horse.ogg"</span> <span class="hljs-built_in">type</span>=<span class="hljs-string">"audio/ogg"</span>&gt;
+      &lt;<span class="hljs-keyword">source</span> src=<span class="hljs-string">"horse.mp3"</span> <span class="hljs-built_in">type</span>=<span class="hljs-string">"audio/mpeg"</span>&gt;
+      Your browser does not support the audio <span class="hljs-keyword">tag</span>.
+    &lt;/audio&gt;
+    </code></pre>
+        <table>
+            <thead>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Value</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>autoplay</td>
+                    <td>autoplay</td>
+                    <td>Specifies that the audio will start playing as soon as it is ready</td>
+                </tr>
+                <tr>
+                    <td>controls</td>
+                    <td>controls</td>
+                    <td>Specifies that audio controls should be displayed (such as a play/pause button etc)</td>
+                </tr>
+                <tr>
+                    <td>loop</td>
+                    <td>loop</td>
+                    <td>Specifies that the audio will start over again, every time it is finished</td>
+                </tr>
+                <tr>
+                    <td>muted</td>
+                    <td>muted</td>
+                    <td>Specifies that the audio output should be muted</td>
+                </tr>
+                <tr>
+                    <td>preload</td>
+                    <td>auto, metadata, none</td>
+                    <td>Specifies if and how the author thinks the audio should be loaded when the page loads</td>
+                </tr>
+                <tr>
+                    <td>src</td>
+                    <td>URL</td>
+                    <td>Specifies the URL of the audio file</td>
+                </tr>
+            </tbody>
+        </table>
+        <p><code>&lt;video&gt;</code></p>
+        <p>The <code>&lt;video&gt;</code> tag is used to embed video content in a document, such as a movie clip or
+            other video streams.</p>
+        <p>The <code>&lt;video&gt;</code> tag contains one or more &lt;<code>source&gt;</code> tags with different video
+            sources. The browser will choose the first source it supports.</p>
+        <p>The text between the <code>&lt;video&gt;</code> and <code>&lt;/video&gt;</code> tags will only be displayed
+            in browsers that do not support the <code>&lt;video&gt;</code> element.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Value</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>poster</td>
+                    <td>URL</td>
+                    <td>Specifies an image to be shown while the video is downloading, or until the user hits the play
+                        button</td>
+                </tr>
+                <tr>
+                    <td>width</td>
+                    <td>pixels</td>
+                    <td>Sets the width of the video player</td>
+                </tr>
+                <tr>
+                    <td>height</td>
+                    <td>pixels</td>
+                    <td>Sets the height of the video player</td>
+                </tr>
+                <tr>
+                    <td>+ all <code>&lt;audio&gt;</code> attributes</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        <pre><code class="lang-html">
+    </code></pre>
+        <p><code>&lt;svg&gt;</code></p>
+        <p>The <code>&lt;svg&gt;</code> tag defines a container for SVG graphics.</p>
+        <p>SVG has several methods for drawing paths, boxes, circles, text, and graphic images. Most icons are svgs.</p>
+        <pre><code class="lang-html">&lt;svg <span class="hljs-built_in">width</span>=<span class="hljs-string">"100"</span> <span class="hljs-built_in">height</span>=<span class="hljs-string">"100"</span>&gt;
+      &lt;<span class="hljs-built_in">circle</span> cx=<span class="hljs-string">"50"</span> cy=<span class="hljs-string">"50"</span> r=<span class="hljs-string">"40"</span> <span class="hljs-built_in">stroke</span>=<span class="hljs-string">"green"</span> <span class="hljs-built_in">stroke</span>-<span class="hljs-built_in">width</span>=<span class="hljs-string">"4"</span> <span class="hljs-built_in">fill</span>=<span class="hljs-string">"yellow"</span> /&gt;
+    &lt;/svg&gt;
+    </code></pre>
+        <p><code>&lt;figure&gt;</code></p>
+        <p>The <code>&lt;figure&gt;</code> tag specifies self-contained content, like illustrations, diagrams, photos,
+            code listings, etc.</p>
+        <p>While the content of the <code>&lt;figure&gt;</code> element is related to the main flow, its position is
+            independent of the main flow, and if removed it should not affect the flow of the document.</p>
+        <p>The <code>&lt;figcaption&gt;</code> element is used to add a caption for the <code>&lt;figure&gt;</code>
+            element.</p>
+        <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">figure</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"pic_trulli.jpg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"Trulli"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width:100%"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">figcaption</span>&gt;</span>Fig.1 - Trulli, Puglia, Italy.<span class="hljs-tag">&lt;/<span class="hljs-name">figcaption</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">figure</span>&gt;</span>
+    </code></pre>
+        <p><code>&lt;figcaption&gt;</code></p>
+        <pre><code class="lang-html">
+    </code></pre>
+        <p><strong>Others:</strong></p>
+        <p><code>&lt;a&gt;</code></p>
+        <p>The <code>&lt;a&gt;</code> tag defines a hyperlink, which is used to link from one page to another.</p>
+        <p>The most important attribute of the <code>&lt;a&gt;</code> element is the <code>href</code> attribute, which
+            indicates the link&#39;s destination.</p>
+        <p>By default, links will appear as follows in all browsers:</p>
+        <ul>
+            <li>An unvisited link is underlined and blue</li>
+            <li>A visited link is underlined and purple</li>
+            <li>An active link is underlined and red</li>
+        </ul>
+        <p>On click, the linked page is normally opened in the current browser window, unless you specify another
+            <code>target</code> attribute.
+        </p>
+        <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://chifarol.github.io/my-portfolio/"</span>&gt;</span>Visit W3Schools.com!<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    </code></pre>
+        <p><code>&lt;button&gt;</code>
+            The <code>&lt;button&gt;</code> tag defines a clickable button.</p>
+        <p>Inside a <code>&lt;button&gt;</code> element you can put text (and tags like <code>&lt;i&gt;</code>,
+            <code>&lt;b&gt;</code>, <code>&lt;strong&gt;</code>, <code>&lt;br&gt;</code>, <code>&lt;img&gt;</code>,
+            etc.). That is not possible with a button created with the <code>&lt;input&gt;</code> element!
+        </p>
+        <p>it is also used inside <code>&lt;form&gt;</code></p>
+        <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span>&gt;</span>Click Me!<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    </code></pre>
+        <p>The <code>type</code> attribute can be &quot;button, reset or submit&quot;</p>
+        <p><code>&lt;div&gt;</code></p>
+        <p>The <code>&lt;div&gt;</code> tag defines a division or a section in an HTML document.</p>
+        <p>The <code>&lt;div&gt;</code> tag is easily styled by using the class or id attribute.</p>
+        <p>Any sort of content can be put inside the <code>&lt;div&gt;</code> tag!. It is actually the most used tag in
+            HTML. </p>
+        <p>Note: By default, browsers always place a line break before and after the <code>&lt;div&gt;</code> element.
+        </p>
+        <pre><code class="lang-html">&lt;<span class="hljs-selector-tag">div</span> class=<span class="hljs-string">"myDiv"</span>&gt;
+      &lt;h2&gt;This is <span class="hljs-selector-tag">a</span> heading <span class="hljs-keyword">in</span> <span class="hljs-selector-tag">a</span> <span class="hljs-selector-tag">div</span> element&lt;/h2&gt;
+      &lt;p&gt;This is some text <span class="hljs-keyword">in</span> <span class="hljs-selector-tag">a</span> <span class="hljs-selector-tag">div</span> element.&lt;/p&gt;
+    &lt;/div&gt;
+    </code></pre>
+        <p><code>&lt;hr&gt;</code></p>
+        <p>The <code>&lt;hr&gt;</code> element is most often displayed as a horizontal rule that is used to separate
+            content (or define a change) in an HTML page.</p>
+        <pre><code class="lang-html">&lt;h1&gt;The Main Languages <span class="hljs-keyword">of</span> <span class="hljs-keyword">the</span> Web&lt;/h1&gt;
+    
+    &lt;p&gt;HTML <span class="hljs-keyword">is</span> <span class="hljs-keyword">the</span> standard markup language <span class="hljs-keyword">for</span> creating Web pages. HTML describes <span class="hljs-keyword">the</span> structure <span class="hljs-keyword">of</span> a Web page, <span class="hljs-keyword">and</span> consists <span class="hljs-keyword">of</span> a series <span class="hljs-keyword">of</span> elements. HTML elements <span class="hljs-keyword">tell</span> <span class="hljs-keyword">the</span> browser how <span class="hljs-keyword">to</span> display <span class="hljs-keyword">the</span> content.&lt;/p&gt;
+    
+    &lt;hr&gt;
+    
+    &lt;p&gt;CSS <span class="hljs-keyword">is</span> a language <span class="hljs-keyword">that</span> describes how HTML elements are <span class="hljs-keyword">to</span> be displayed <span class="hljs-keyword">on</span> screen, paper, <span class="hljs-keyword">or</span> <span class="hljs-keyword">in</span> other media. CSS saves a lot <span class="hljs-keyword">of</span> work, because <span class="hljs-keyword">it</span> can control <span class="hljs-keyword">the</span> layout <span class="hljs-keyword">of</span> multiple web pages all <span class="hljs-keyword">at</span> once.&lt;/p&gt;
+    </code></pre>
+        <p><code>&lt;nav&gt;</code></p>
+        <p>The <code>&lt;nav&gt;</code> tag defines a set of navigation links.</p>
+        <p>Notice that NOT all links of a document should be inside a <code>&lt;nav&gt;</code> element. The
+            <code>&lt;nav&gt;</code> element is intended only for major blocks of navigation links.
+        </p>
+        <p>Browsers, such as screen readers for disabled users, can use this element to determine whether to omit the
+            initial rendering of this content.</p>
+        <pre><code class="lang-html">&lt;nav&gt;
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/html/"</span>&gt;</span>HTML<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span> |
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/css/"</span>&gt;</span>CSS<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span> |
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/js/"</span>&gt;</span>JavaScript<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span> |
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/python/"</span>&gt;</span>Python<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span>
+    &lt;<span class="hljs-regexp">/nav&gt;</span>
+    </code></pre>
+        <p><code>&lt;span&gt;</code></p>
+        <p>The <code>&lt;span&gt;</code> tag is an inline container used to mark up a part of a text, or a part of a
+            document.</p>
+        <p>The <code>&lt;span&gt;</code> tag is easily styled by CSS or manipulated with JavaScript using the class or
+            id attribute.</p>
+        <p>The <code>&lt;span&gt;</code> tag is much like the <code>&lt;div&gt;</code> element, but
+            <code>&lt;div&gt;</code> is a block-level element and <code>&lt;span&gt;</code> is an inline element.
+        </p>
+        <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>My mother has <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"color:blue"</span>&gt;</span>blue<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> eyes.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    </code></pre>
+        <p><code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code></p>
+        <p>The <code>&lt;summary&gt;</code> tag defines a visible heading for the <code>&lt;details&gt;</code> element.
+            The heading can be clicked to view/hide the details.</p>
+        <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">details</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">summary</span>&gt;</span>Epcot Center<span class="hljs-tag">&lt;/<span class="hljs-name">summary</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">details</span>&gt;</span>
+    </code></pre>
+        <p><code>&lt;footer&gt;</code>:</p>
+        <p>The <code>&lt;footer&gt;</code> tag defines a footer for a document or section.</p>
+        <p>A <code>&lt;footer&gt;</code> element typically contains:</p>
+        <p>authorship information
+            copyright information
+            contact information
+            sitemap
+            back to top links
+            related documents
+            You can have several <code>&lt;footer&gt;</code> elements in one document.</p>
+        <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Author: Hege Refsnes<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"mailto:hege@example.com"</span>&gt;</span>hege@example.com<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span>
+    </code></pre>
+</body>
+
+</html>
