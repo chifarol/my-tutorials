@@ -20,7 +20,7 @@
 
   - Anatomy of HTML Elements
   - The `<html !DOCTYPE>` Declaration
-  - General guidelines: case sensitivity, self-closing Tags etc.
+  - General guidelines: case sensitivity, self-closing Tags etc. 
   - **`<head>` Element and it's children**
   - `<head>`
   - `<title>`
@@ -30,14 +30,13 @@
   - `<script>`
   - `<base>`
   - **`<body>` Element and it's children:**
-  - `<body>`
-  - `<footer>`
-  - `<header>`
-  - `<main>`
+
   - **Headings:**
   - `<h1> - <h6>`
+
   - **Paragraphs:**
   - `<p>`
+
   - **Formatting:**
   - `<b>`
   - `<del>`
@@ -50,11 +49,13 @@
   - `<sub>`
   - `<sup>`
   - `<strong>`
+
   - **Quotations:**
   - `<abbr>`
   - `<blockquote>`
   - `<cite>`
   - `<q>`
+
   - **Tables:**
   - `<table>`
   - `<thead>`
@@ -69,15 +70,6 @@
   - `<ol>`
   - `<li>`
   - `<ul>`
-  - **Javascript and CSS:**
-  - `<style>`
-  - style attribute
-  - class attribute
-  - id attribute
-  - `<script>`
-  - `<link>`
-  - File Paths
-  - `<noscript>`
   - **Computer Code:**
   - `<code>`
   - `<kbd>`
@@ -109,9 +101,9 @@
   - `<nav>`
   - `<span>`
   - `<summary>`
-  - `<tabindex>`
+  - `<details>`
   - `<u>`
-  - comment tag
+  - `<footer>`
   - comment tag
   - Block and Inline Elements
   - Semantic and Non Semantic Elements
